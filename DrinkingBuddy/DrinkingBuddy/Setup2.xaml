@@ -43,10 +43,12 @@
                         <TranslateTransform/>
                     </phone:PanoramaItem.RenderTransform>
                     <Grid>
-                    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="¿Nombre amigo?" VerticalAlignment="Top" Margin="12,0,0,0"/>
-                    	<TextBox x:Name="friendName" Height="72" TextWrapping="Wrap" Margin="0,25,0,0" VerticalAlignment="Top"/>
-                    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="¿Numero amigo?" VerticalAlignment="Top" Margin="12,100,0,0"/>
-                    	<TextBox x:Name="friendNumber" Height="72" TextWrapping="Wrap" Margin="0,150,0,0" VerticalAlignment="Top"/>
+                    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="12,0,0,0">
+                    		<Run Text="¿Quíén te apaña si estás muy curado? Déjanos su nombre"/>
+                    	</TextBlock>
+                    	<TextBox x:Name="friendName" Height="72" TextWrapping="Wrap" Margin="0,55,0,0" VerticalAlignment="Top"/>
+                    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="¿Cuál es su número?" VerticalAlignment="Top" Margin="12,150,0,0"/>
+                    	<TextBox x:Name="friendNumber" Height="72" TextWrapping="Wrap" Margin="0,175,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </phone:PanoramaItem>
             </phone:Panorama>
