@@ -10,17 +10,11 @@ using Microsoft.Phone.Shell;
 
 namespace DrinkingBuddy
 {
-    public partial class Contact : PhoneApplicationPage
+    public partial class Curado : PhoneApplicationPage
     {
-        public Contact()
+        public Curado()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            string nombre = TexT_1.Text;
-
         }
     }
 }
