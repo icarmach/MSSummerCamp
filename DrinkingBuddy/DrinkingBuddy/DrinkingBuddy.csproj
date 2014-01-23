@@ -112,6 +112,9 @@
     <Compile Include="Setup.xaml.cs">
       <DependentUpon>Setup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tips.xaml.cs">
+      <DependentUpon>Tips.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -131,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Setup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tips.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
