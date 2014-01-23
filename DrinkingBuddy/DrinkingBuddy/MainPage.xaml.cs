@@ -22,9 +22,14 @@ namespace DrinkingBuddy
             //BuildLocalizedApplicationBar();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Page1s.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Setup.xaml", UriKind.Relative));
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
         }
 
         // Sample code for building a localized ApplicationBar
