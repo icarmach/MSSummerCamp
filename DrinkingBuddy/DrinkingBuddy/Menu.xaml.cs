@@ -10,18 +10,11 @@ using Microsoft.Phone.Shell;
 
 namespace DrinkingBuddy
 {
-    public partial class Setup : PhoneApplicationPage
+    public partial class Menu : PhoneApplicationPage
     {
-        public Setup()
+        public Menu()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            string name = name_txt.Text;
-
-            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
     }
 }
