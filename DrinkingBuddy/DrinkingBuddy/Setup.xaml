@@ -29,8 +29,22 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
         	<TextBlock HorizontalAlignment="Left" Margin="33,49,0,0" TextWrapping="Wrap" Text="¿Cómo te llamas?" VerticalAlignment="Top"/>
-        	<TextBox x:Name="name_txt" HorizontalAlignment="Left" Height="72" Margin="0,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="453"/>
-        	<Button Content="Guardar" HorizontalAlignment="Left" Margin="281,201,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        	<TextBox x:Name="userName" HorizontalAlignment="Left" Height="72" Margin="0,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="453" FontFamily="Portable User Interface"/>
+        	<Button x:Name="saveButton" Content="Guardar" HorizontalAlignment="Left" Margin="299,494,0,0" VerticalAlignment="Top" Click="Button_Click" FontFamily="Portable User Interface"/>
+        	<TextBlock HorizontalAlignment="Left" Margin="33,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Portable User Interface">
+        		<Run Text="¿"/>
+        		<Run Text="Quíen te va a apa"/>
+        		<Run Text="ña"/>
+        		<Run Text="r"/>
+        		<Run Text="?"/>
+        	</TextBlock>
+        	<TextBox x:Name="friendName" HorizontalAlignment="Left" Height="72" Margin="0,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="453" FontFamily="Portable User Interface"/>
+        	<TextBlock HorizontalAlignment="Left" Margin="33,336,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+        		<Run Text="¿C"/>
+        		<Run Text="úal es su número"/>
+        		<Run Text="?"/>
+        	</TextBlock>
+        	<TextBox x:Name="friendNumber" HorizontalAlignment="Left" Height="72" Margin="0,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="453" FontFamily="Portable User Interface"/>
 
         </Grid>
     </Grid>

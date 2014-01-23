@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using DrinkingBuddy.Resources;
+using System.IO.IsolatedStorage;
 
 namespace DrinkingBuddy
 {
@@ -20,6 +21,14 @@ namespace DrinkingBuddy
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+        }
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            if (!IsolatedStorageSettings.ApplicationSettings.Contains("settingsDone"))
+            {
+                NavigationService.Navigate(new Uri("/Setup.xaml", UriKind.Relative));
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
