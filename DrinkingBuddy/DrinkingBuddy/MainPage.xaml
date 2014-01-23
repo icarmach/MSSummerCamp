@@ -41,15 +41,20 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="Drinking Buddy" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
+            <TextBlock Text="Configuración" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-        	<Button Content="Button" HorizontalAlignment="Left" Margin="182,139,0,0" VerticalAlignment="Top"/>
+            <Button Content="Continuar" HorizontalAlignment="Left" Margin="269,190,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
         </Grid>
+        <TextBox HorizontalAlignment="Left" Height="72" Margin="14,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="36,60,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top">
+        	<Run Text="¿"/>
+        	<Run Text="Cómo te llamas?"/>
+        </TextBlock>
 
         <!--Uncomment to see an alignment grid to help ensure your controls are
             aligned on common boundaries.  The image has a top margin of -32px to
