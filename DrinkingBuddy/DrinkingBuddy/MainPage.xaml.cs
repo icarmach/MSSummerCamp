@@ -48,7 +48,7 @@ namespace DrinkingBuddy
 
             if (!IsolatedStorageSettings.ApplicationSettings.Contains("settingsDone"))
             {
-                NavigationService.Navigate(new Uri("/Setup.xaml", UriKind.Relative));
+                NavigationService.Navigate(new Uri("/Setup2.xaml", UriKind.Relative));
             }
         }
 
@@ -58,7 +58,7 @@ namespace DrinkingBuddy
         }
         private void Settings_Click(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Setup.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Setup2.xaml", UriKind.Relative));
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

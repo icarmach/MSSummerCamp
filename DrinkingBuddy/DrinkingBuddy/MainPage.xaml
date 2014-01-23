@@ -63,7 +63,7 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar Mode="Default" Opacity="1.0" IsMenuEnabled="True" IsVisible="True">
 
-            <shell:ApplicationBarIconButton Click="Settings_Click" IconUri="/Assets/feature.settings.png" Text="Configuracion" />
+            <shell:ApplicationBarIconButton Click="Settings_Click" IconUri="/Assets/feature.settings.png" Text="Ajustes" />
             <!--<shell:ApplicationBarIconButton Click="Save_Click" IconUri="/Images/save.png" Text="save" />
             
 
