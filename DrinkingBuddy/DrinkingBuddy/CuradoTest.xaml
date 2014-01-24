@@ -22,13 +22,25 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Drinking Buddy" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="En la pelota!!" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="drinking buddy" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}">
+            	<Run Text="arriba"/>
+            	<Run Text="!!"/>
+            </TextBlock>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-        	<TextBlock Margin="12,0" TextWrapping="Wrap" Text="¿Así que en la pelota? Prueba que puedes continuar!" VerticalAlignment="Top"/>
+        	<TextBlock Margin="12,0" TextWrapping="Wrap" VerticalAlignment="Top">
+        		<Run Text="¿Así que "/>
+        		<Run Text="arriba de la "/>
+        		<Run Text="pelota? Prueba que puedes continuar!"/>
+        	</TextBlock>
+        	<TextBlock x:Name="Num1" Margin="70,133,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="96"/>
+        	<TextBlock x:Name="Num2" Margin="281,133,60,0" TextWrapping="Wrap" Text="20" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="96"/>
+        	<TextBlock x:Name="Num1_Copy" Margin="189,133,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="96"/>
+            <TextBox x:Name="Result" Height="72" Margin="0,0,0,20" TextWrapping="Wrap" Width="350" TextAlignment="Center"/>
+        	<Button Content="Responder" HorizontalAlignment="Center" Margin="0,120,0,0" VerticalAlignment="Center" Click="Button_Click"/>
 
         </Grid>
     </Grid>

@@ -16,5 +16,20 @@ namespace DrinkingBuddy
         {
             InitializeComponent();
         }
+
+        private void happyImage_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/CuradoTest.xaml", UriKind.Relative));
+        }
+
+        private void curadoImage_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/CuradoTips.xaml", UriKind.Relative));
+        }
+
+        private void zombieImage_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/CuradoSOS.xaml", UriKind.Relative));
+        }
     }
 }

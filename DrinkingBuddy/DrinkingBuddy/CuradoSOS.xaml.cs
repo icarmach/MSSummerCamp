@@ -10,9 +10,9 @@ using Microsoft.Phone.Shell;
 
 namespace DrinkingBuddy
 {
-    public partial class Page2 : PhoneApplicationPage
+    public partial class CuradoSOS : PhoneApplicationPage
     {
-        public Page2()
+        public CuradoSOS()
         {
             InitializeComponent();
         }
