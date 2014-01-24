@@ -15,60 +15,46 @@ namespace DrinkingBuddy
     public partial class Tips : PhoneApplicationPage
     {
         
-        string TipCabeza = "Toma un vaso de agua ";
-        string TipEstomago = "Recuestate";
-        string TipMareo = "Toma aguita de hiervas ";
-        string TipVomito = "Sigue ";
-        string TipZombie = "Adiós amigo ...";
         public Tips()
         {
             
             InitializeComponent();
-            int [] arreglo2 = Menu.arreglo;
+            int [] arreglo2 = encanadoMenu.arreglo;
 
             //CABEZA
-            if (arreglo2[0] == 1)
+            if (arreglo2[0] == 0)
             {
-                c_txtBox.Text = TipCabeza;
-            }else
-            {
-                c_txtBox.Visibility = Visibility.Collapsed;
+                tipCabeza.Visibility = Visibility.Collapsed;
             }
 
             //ESTOMAGO
-            if (arreglo2[1] == 1)
+            if (arreglo2[1] == 0)
             {
-                e_txtBox.Text = TipEstomago;
-            }else
-            {
-                e_txtBox.Visibility = Visibility.Collapsed;
+                tipGuata.Visibility = Visibility.Collapsed;
             }
 
-            //MAREO
-            if (arreglo2[2] == 1)
+            //Cacana
+            if (arreglo2[2] == 0)
             {
-                m_txtBox.Text = TipMareo;
-            }else
-            {
-                m_txtBox.Visibility = Visibility.Collapsed;
+                tipCacana.Visibility = System.Windows.Visibility.Collapsed;
             }
 
-            //VOMITO
-            if (arreglo2[3] == 1)
+            //Mareo
+            if (arreglo2[3] == 0)
             {
-                v_txtBox.Text = TipVomito;
-            }else
+                tipMareo.Visibility = System.Windows.Visibility.Collapsed;
+            }
+
+            //witre
+            if (arreglo2[4] == 0)
             {
-                v_txtBox.Visibility = Visibility.Collapsed;
+                tipWitre.Visibility = System.Windows.Visibility.Collapsed;
             }
 
             //ZOMBIE
-            if (arreglo2[4] == 1)
+            if (arreglo2[5] == 0)
             {
-                z_txtBox.Text = TipZombie;
-            }else
-            {
-                z_txtBox.Visibility = Visibility.Collapsed;
+                tipZombie.Visibility = System.Windows.Visibility.Collapsed;
             }
         }
     }

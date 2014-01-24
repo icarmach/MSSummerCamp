@@ -22,18 +22,101 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="Drinking Buddy" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Tips" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <Grid Height="26">
+            	<Grid.ColumnDefinitions>
+            		<ColumnDefinition Width="5*"/>
+            		<ColumnDefinition/>
+            	</Grid.ColumnDefinitions>
+            	<TextBlock Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FF008E8E" Margin="0">
+            		<Run Text="drinking"/>
+            		<Run Text="buddy">
+            			<Run.Foreground>
+            				<SolidColorBrush Color="#FFE56C19">
+            					<SolidColorBrush.RelativeTransform>
+            						<MatrixTransform Matrix="Identity"/>
+            					</SolidColorBrush.RelativeTransform>
+            					<SolidColorBrush.Transform>
+            						<MatrixTransform Matrix="Identity"/>
+            					</SolidColorBrush.Transform>
+            				</SolidColorBrush>
+            			</Run.Foreground>
+            		</Run>
+            	</TextBlock>
+            	<Image Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Assets/logoColor.png" Grid.Column="1"/>
+            </Grid>
+            <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBox x:Name="c_txtBox" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
-            <TextBox x:Name="e_txtBox" HorizontalAlignment="Left" Height="72" Margin="0,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
-            <TextBox x:Name="m_txtBox" HorizontalAlignment="Left" Height="72" Margin="0,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
-            <TextBox x:Name="v_txtBox" HorizontalAlignment="Left" Height="72" Margin="0,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
-            <TextBox x:Name="z_txtBox" HorizontalAlignment="Left" Height="72" Margin="0,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
-            <TextBox x:Name="ca_txtBox" HorizontalAlignment="Left" Height="72" Margin="0,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+        	<phone:Panorama HorizontalAlignment="Left" Title="tips para pasar la caña" VerticalAlignment="Top" Margin="0,-140,0,0" Foreground="#FFE56C19">
+        		<phone:PanoramaItem x:Name="tipCabeza" CacheMode="{x:Null}" Header="¡Tomar agua!">
+        			<phone:PanoramaItem.RenderTransform>
+        				<TranslateTransform/>
+        			</phone:PanoramaItem.RenderTransform>
+        			<Grid Margin="0,0,0,22" Background="#FFE56C19">
+        				<Grid.RowDefinitions>
+        					<RowDefinition Height="2*"/>
+        					<RowDefinition/>
+        				</Grid.RowDefinitions>
+        				<Image Margin="5" Source="/Assets/vasoagua.jpg" Stretch="UniformToFill"/>
+        				<TextBlock Margin="5" Grid.Row="1" TextWrapping="Wrap" Text="Tu cerebro está deshidratado, por eso sientes que te va a reventar la cabeza. Toma mucha agua, pero calmao’, de a tragos cortos." Foreground="White" TextAlignment="Center"/>
+        			</Grid>
+        		</phone:PanoramaItem>
+        		<phone:PanoramaItem x:Name="tipGuata" CacheMode="{x:Null}" Header="Calorsito">
+        			<phone:PanoramaItem.RenderTransform>
+        				<TranslateTransform/>
+        			</phone:PanoramaItem.RenderTransform>
+        			<Grid Margin="0,0,0,22" Background="#FF008E8E">
+        				<Grid.RowDefinitions>
+        					<RowDefinition Height="2*"/>
+        					<RowDefinition/>
+        				</Grid.RowDefinitions>
+        				<Image Margin="5" Source="/Assets/te.jpg" Stretch="UniformToFill"/>
+        				<TextBlock Margin="5" Grid.Row="1" TextWrapping="Wrap" Text="Evita las bebidas heladas. Toma té o aguas de hierba calientes y acurrúcate en tu cama con un buen guatero. El café es una muy mala idea, no lo hagas." Foreground="White" TextAlignment="Center"/>
+        			</Grid>
+        		</phone:PanoramaItem>
+        		<phone:PanoramaItem x:Name="tipCacana" Header="Carbón">
+        			<Grid Margin="0,0,0,22" Background="#FFE56C19">
+        				<Grid.RowDefinitions>
+        					<RowDefinition Height="2*"/>
+        					<RowDefinition/>
+        				</Grid.RowDefinitions>
+        				<Image Margin="5" Source="/Assets/carbonpan.jpg" Stretch="UniformToFill"/>
+        				<TextBlock Margin="5" Grid.Row="1" TextWrapping="Wrap" Text="Si no tienes a mano las salvadoras pastillas de carbón puedes comer pan de molde blanco muy tostado, sin agregados. Toma mucha agua para que no te deshidrates." Foreground="White" TextAlignment="Center"/>
+        			</Grid>
+        		</phone:PanoramaItem>
+        		<phone:PanoramaItem x:Name="tipMareo" Header="Plátanos">
+        			<Grid Margin="0,0,0,22" Background="#FF008E8E">
+        				<Grid.RowDefinitions>
+        					<RowDefinition Height="2*"/>
+        					<RowDefinition/>
+        				</Grid.RowDefinitions>
+        				<Image Margin="5" Source="/Assets/platano.jpg" Stretch="UniformToFill"/>
+        				<TextBlock Margin="5" Grid.Row="1" TextWrapping="Wrap" Text="Cómete dos plátanos, esto te devolverá al nivel normal de azúcar que necesita tu cuerpo sin maltratar más a tu pobre estómago." Foreground="White" TextAlignment="Center"/>
+        			</Grid>
+        		</phone:PanoramaItem>
+        		<phone:PanoramaItem x:Name="tipWitre" Header="Enfermito">
+        			<Grid Margin="0,0,0,22" Background="#FFE56C19">
+        				<Grid.RowDefinitions>
+        					<RowDefinition Height="2*"/>
+        					<RowDefinition/>
+        				</Grid.RowDefinitions>
+        				<Image Margin="5" Source="/Assets/galletas.jpg" Stretch="UniformToFill"/>
+        				<TextBlock Margin="5" Grid.Row="1" TextWrapping="Wrap" Text="A pesar del malestar debes comer de a poco, te recomendamos galletas de agua, pan y arroz blanco. Nada de verduras. Toma mucha agua para que no te deshidrates." Foreground="White" TextAlignment="Center"/>
+        			</Grid>
+        		</phone:PanoramaItem>
+        		<phone:PanoramaItem x:Name="tipZombie" Header="La resucitación">
+        			<Grid Margin="0,0,0,22" Background="#FF008E8E">
+        				<Grid.RowDefinitions>
+        					<RowDefinition Height="2*"/>
+        					<RowDefinition/>
+        				</Grid.RowDefinitions>
+        				<Image Margin="5" Source="/Assets/duerme.jpeg" Stretch="UniformToFill"/>
+        				<TextBlock Margin="5" Grid.Row="1" TextWrapping="Wrap" Text="No lo fuerces. Tu primer paso debe ser tomar agua, sin apuro. Luego oblígate a comer en pequeñas cantidades. De a poco comenzarás a recuperarte. Cada vez que tu cuerpo lo pida vuelve a la cama y duerme." Foreground="White" TextAlignment="Center" FontSize="18.667"/>
+        			</Grid>
+        		</phone:PanoramaItem>
+        	</phone:Panorama>
         </Grid>
     </Grid>
 

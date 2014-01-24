@@ -22,30 +22,79 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="drinking buddy" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <Grid Height="26">
+            	<Grid.ColumnDefinitions>
+            		<ColumnDefinition Width="5*"/>
+            		<ColumnDefinition/>
+            	</Grid.ColumnDefinitions>
+            	<TextBlock Style="{StaticResource PhoneTextNormalStyle}" Grid.ColumnSpan="2" Margin="0" Foreground="#FF008E8E">
+            		<Run Text="drinking"/>
+            		<Run Text="buddy">
+            			<Run.Foreground>
+            				<SolidColorBrush Color="#FFE56C19">
+            					<SolidColorBrush.RelativeTransform>
+            						<MatrixTransform Matrix="Identity"/>
+            					</SolidColorBrush.RelativeTransform>
+            					<SolidColorBrush.Transform>
+            						<MatrixTransform Matrix="Identity"/>
+            					</SolidColorBrush.Transform>
+            				</SolidColorBrush>
+            			</Run.Foreground>
+            		</Run>
+            	</TextBlock>
+            	<Image Grid.ColumnSpan="2" Margin="0" Grid.Column="1" Source="/Assets/logoColor.png"/>
+            </Grid>
             <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-        	<phone:Panorama Margin="0,-130,0,0" Title="adentro de la pelota!!">
-        		<phone:PanoramaItem CacheMode="{x:Null}" Header="tip1">
+        	<phone:Panorama Margin="0,-130,0,0" Title="adentro de la pelota!!" Foreground="#FF008E8E">
+        		<phone:PanoramaItem CacheMode="{x:Null}" Header="bajón">
         			<phone:PanoramaItem.RenderTransform>
         				<TranslateTransform/>
         			</phone:PanoramaItem.RenderTransform>
-        			<Grid/>
+        			<Grid Margin="0,0,0,12" Background="#FF008E8E">
+        				<Grid.RowDefinitions>
+        					<RowDefinition Height="2*"/>
+        					<RowDefinition/>
+        				</Grid.RowDefinitions>
+        				<Image Margin="5" Source="/Assets/burger.jpg"/>
+        				<TextBlock Margin="5" Grid.Row="1" TextWrapping="Wrap" Text="Ataca el refrigerador, sea propio o ajeno, no mercy. Los modales no importan en estas circunstancias, ¡dale con todo! Comiendo superaremos de a poco esta curadera." Foreground="White" TextAlignment="Center"/>
+        			</Grid>
         		</phone:PanoramaItem>
-        		<phone:PanoramaItem CacheMode="{x:Null}" Header="tip2">
+        		<phone:PanoramaItem CacheMode="{x:Null}" Header="deja de tomar!">
         			<phone:PanoramaItem.RenderTransform>
         				<TranslateTransform/>
         			</phone:PanoramaItem.RenderTransform>
-        			<Grid/>
+        			<Grid Margin="0,0,0,12" Background="#FFE56C19">
+        				<Grid.RowDefinitions>
+        					<RowDefinition Height="2*"/>
+        					<RowDefinition/>
+        				</Grid.RowDefinitions>
+        				<Image Margin="5" Source="/Assets/stop_sign.jpg" Stretch="UniformToFill"/>
+        				<TextBlock Margin="5" Grid.Row="1" TextWrapping="Wrap" Text="Ya tuvimos suficiente, es hora de cerrar la jornada antes de que algo salga mal. Y si sigues con sed, aplícate con agua o bebida isotónica, lo agradecerás en la mañana." Foreground="White" TextAlignment="Center"/>
+        			</Grid>
         		</phone:PanoramaItem>
-        		<phone:PanoramaItem Header="tip3">
-        			<Grid/>
+        		<phone:PanoramaItem Header="invoca a guajardo">
+        			<Grid Margin="0,0,0,12" Background="#FF008E8E">
+        				<Grid.RowDefinitions>
+        					<RowDefinition Height="2*"/>
+        					<RowDefinition/>
+        				</Grid.RowDefinitions>
+        				<Image Margin="5" Source="/Assets/wc.jpg" Stretch="UniformToFill"/>
+        				<TextBlock Margin="5" Grid.Row="1" TextWrapping="Wrap" Text="Te aseguro que luego de vomitar te sentirás mucho mejor. Así que partiste, dirigete al baño, o alguna plantita desafortunada que te ofrezca privacidad." Foreground="White" TextAlignment="Center"/>
+        			</Grid>
         		</phone:PanoramaItem>
         		<phone:PanoramaItem Header="nada funca :S">
-        			<Grid/>
+        			<Grid Margin="0,0,0,12" Background="#FFE56C19">
+        				<Grid.RowDefinitions>
+        					<RowDefinition Height="2*"/>
+        					<RowDefinition/>
+        				</Grid.RowDefinitions>
+        				<TextBlock Margin="5" Grid.Row="1" TextWrapping="Wrap" Text="Si nada funciona y haz perdido la batalla, llama refuerzos. Soldado que arranca sirve para otra batalla." Foreground="White" TextAlignment="Center"/>
+        				<Button x:Name="callButton" Content="Llamar a tu amigo S.O.S" Background="#FF008E8E" Click="Button_Click"/>
+        			</Grid>
         		</phone:PanoramaItem>
         	</phone:Panorama>
 

@@ -41,21 +41,28 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0" Foreground="#FF008E8E">
-            	<Run Text="drinking"/>
-            	<Run Text="buddy">
-            		<Run.Foreground>
-            			<SolidColorBrush Color="#FFE56C19">
-            				<SolidColorBrush.RelativeTransform>
-            					<MatrixTransform Matrix="Identity"/>
-            				</SolidColorBrush.RelativeTransform>
-            				<SolidColorBrush.Transform>
-            					<MatrixTransform Matrix="Identity"/>
-            				</SolidColorBrush.Transform>
-            			</SolidColorBrush>
-            		</Run.Foreground>
-            	</Run>
-            </TextBlock>
+            <Grid Height="26">
+            	<Grid.ColumnDefinitions>
+            		<ColumnDefinition Width="5*"/>
+            		<ColumnDefinition/>
+            	</Grid.ColumnDefinitions>
+            	<TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="0" Foreground="#FF008E8E" Grid.ColumnSpan="2">
+            		<Run Text="drinking"/>
+            		<Run Text="buddy">
+            			<Run.Foreground>
+            				<SolidColorBrush Color="#FFE56C19">
+            					<SolidColorBrush.RelativeTransform>
+            						<MatrixTransform Matrix="Identity"/>
+            					</SolidColorBrush.RelativeTransform>
+            					<SolidColorBrush.Transform>
+            						<MatrixTransform Matrix="Identity"/>
+            					</SolidColorBrush.Transform>
+            				</SolidColorBrush>
+            			</Run.Foreground>
+            		</Run>
+            	</TextBlock>
+            	<Image Grid.Column="1" Source="/Assets/logoColor.png"/>
+            </Grid>
             <TextBlock Text="¿en que andas?" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontFamily="Portable User Interface" FontSize="64"/>
         </StackPanel>
 

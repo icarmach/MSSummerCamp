@@ -44,7 +44,7 @@
             			</Run.Foreground>
             		</Run>
             	</TextBlock>
-            	<Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Source="/Assets/cabezaOn.png"/>
+            	<Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Source="/Assets/logoColor.png"/>
             </Grid>
             <TextBlock Margin="0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF008E8E" Text="curado" Height="100"/>
             <Canvas Background="#FF008E8E" Height="100" Margin="0,0,12,0">

@@ -12,7 +12,7 @@ namespace DrinkingBuddy
 {
     public partial class encanadoMenu : PhoneApplicationPage
     {
-        public static int[] arreglo = new int[] { 0, 0, 0, 0, 0 };
+        public static int[] arreglo = new int[] { 0, 0, 0, 0, 0, 0 };
 
         public encanadoMenu()
         {
@@ -109,6 +109,11 @@ namespace DrinkingBuddy
             ZombieOff_img.Visibility = Visibility.Collapsed;
             ZombieOn_img.Visibility = Visibility.Visible;
             arreglo[5] = 1;
+        }
+
+        private void tipsButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Tips.xaml", UriKind.Relative));
         }
 
         //Metodo boton enviar

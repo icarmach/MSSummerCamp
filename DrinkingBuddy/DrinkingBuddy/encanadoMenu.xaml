@@ -23,16 +23,43 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="encañado" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <Grid Height="26">
+            	<Grid.ColumnDefinitions>
+            		<ColumnDefinition Width="5*"/>
+            		<ColumnDefinition/>
+            	</Grid.ColumnDefinitions>
+            	<TextBlock Style="{StaticResource PhoneTextNormalStyle}" Grid.ColumnSpan="2" Margin="0" Foreground="#FF008E8E">
+            		<Run Text="drinking"/>
+            		<Run Text="buddy">
+            			<Run.Foreground>
+            				<SolidColorBrush Color="#FFE56C19">
+            					<SolidColorBrush.RelativeTransform>
+            						<MatrixTransform Matrix="Identity"/>
+            					</SolidColorBrush.RelativeTransform>
+            					<SolidColorBrush.Transform>
+            						<MatrixTransform Matrix="Identity"/>
+            					</SolidColorBrush.Transform>
+            				</SolidColorBrush>
+            			</Run.Foreground>
+            		</Run>
+            	</TextBlock>
+            	<Image HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Source="/Assets/logoColor.png"/>
+            </Grid>
+            <TextBlock Text="encañado" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FFE56C19"/>
+            <Canvas Height="100" Background="#FFE56C19" Margin="0,0,12,0">
+            	<TextBlock Text="elige tus síntomas" Margin="0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White" Canvas.Top="17" Width="459" TextAlignment="Center" FontSize="48"/>
+            </Canvas>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" Grid.RowSpan="2">
-        	<Grid Margin="0">
+        	<Grid Margin="0,0,0,100">
         		<Grid.RowDefinitions>
+        			<RowDefinition Height="3*"/>
         			<RowDefinition/>
+        			<RowDefinition Height="3*"/>
         			<RowDefinition/>
+        			<RowDefinition Height="3*"/>
         			<RowDefinition/>
         		</Grid.RowDefinitions>
         		<Grid.ColumnDefinitions>
@@ -41,17 +68,24 @@
         		</Grid.ColumnDefinitions>
         		<Image x:Name="CabezaOff_img" Margin="0" Source="/Assets/cabezaOff.png" MouseLeftButtonUp="CabezaOff_img_MouseLeftButtonUp"/>
         		<Image x:Name="GuataOff_img" Grid.Column="1" Margin="0" Source="/Assets/guataOff.png" MouseLeftButtonUp="GuataOff_img_MouseLeftButtonUp"/>
-        		<Image x:Name="cacaOff_img" Margin="0" Grid.Row="1" Source="/Assets/cacañaOff.png" MouseLeftButtonUp="cacaOff_img_MouseLeftButtonUp"/>
-        		<Image x:Name="MareOff_img" Grid.Column="1" Margin="0" Grid.Row="1" Source="/Assets/mareoOff.png" MouseLeftButtonUp="MareOff_img_MouseLeftButtonUp"/>
-        		<Image x:Name="WitreoOff_img" Margin="0" Grid.Row="2" Source="/Assets/witreOff.png" MouseLeftButtonUp="WitreoOff_img_MouseLeftButtonUp"/>
+        		<Image x:Name="cacaOff_img" Margin="0" Grid.Row="2" Source="/Assets/cacañaOff.png" MouseLeftButtonUp="cacaOff_img_MouseLeftButtonUp"/>
+        		<Image x:Name="MareOff_img" Grid.Column="1" Margin="0" Grid.Row="2" Source="/Assets/mareoOff.png" MouseLeftButtonUp="MareOff_img_MouseLeftButtonUp"/>
+        		<Image x:Name="WitreoOff_img" Margin="0" Grid.Row="4" Source="/Assets/witreOff.png" MouseLeftButtonUp="WitreoOff_img_MouseLeftButtonUp"/>
         		<Image x:Name="CabezaOn_im" Margin="0" Source="/Assets/cabezaOn.png" MouseLeftButtonUp="CabezaOn_im_MouseLeftButtonUp"/>
         		<Image x:Name="GuataOn_img" Grid.Column="1" Margin="0" Source="/Assets/guataOn.png" MouseLeftButtonUp="GuataOn_img_MouseLeftButtonUp"/>
-        		<Image x:Name="CacaOn_img" Margin="0" Grid.Row="1" Source="/Assets/cacañaOn.png" MouseLeftButtonUp="CacaOn_img_MouseLeftButtonUp"/>
-        		<Image x:Name="MareOn_img" Grid.Column="1" Margin="0" Grid.Row="1" Source="/Assets/mareoOn.png" MouseLeftButtonUp="MareOn_img_MouseLeftButtonUp"/>
-        		<Image x:Name="witreoOn_img" Margin="0" Grid.Row="2" Source="/Assets/witreOn.png" MouseLeftButtonUp="witreoOn_img_MouseLeftButtonUp"/>
-        		<Image x:Name="ZombieOff_img" Grid.Column="1" Margin="0" Grid.Row="2" Source="/Assets/zombieOff.png" MouseLeftButtonUp="ZombieOff_img_MouseLeftButtonUp"/>
-        		<Image x:Name="ZombieOn_img" Grid.Column="1" Margin="0" Grid.Row="2" Source="/Assets/zombieOn.png" MouseLeftButtonUp="ZombieOn_img_MouseLeftButtonUp"/>
+        		<Image x:Name="CacaOn_img" Margin="0" Grid.Row="2" Source="/Assets/cacañaOn.png" MouseLeftButtonUp="CacaOn_img_MouseLeftButtonUp"/>
+        		<Image x:Name="MareOn_img" Grid.Column="1" Margin="0" Grid.Row="2" Source="/Assets/mareoOn.png" MouseLeftButtonUp="MareOn_img_MouseLeftButtonUp"/>
+        		<Image x:Name="witreoOn_img" Margin="0" Grid.Row="4" Source="/Assets/witreOn.png" MouseLeftButtonUp="witreoOn_img_MouseLeftButtonUp"/>
+        		<Image x:Name="ZombieOff_img" Grid.Column="1" Margin="0" Grid.Row="4" Source="/Assets/zombieOff.png" MouseLeftButtonUp="ZombieOff_img_MouseLeftButtonUp"/>
+        		<Image x:Name="ZombieOn_img" Grid.Column="1" Margin="0" Grid.Row="4" Source="/Assets/zombieOn.png" MouseLeftButtonUp="ZombieOn_img_MouseLeftButtonUp"/>
+        		<TextBlock HorizontalAlignment="Center" Margin="0,-20,0,0" Grid.Row="1" TextWrapping="Wrap" Text="hachazo" VerticalAlignment="Center"/>
+        		<TextBlock HorizontalAlignment="Center" Margin="0,-20,0,0" Grid.Row="1" TextWrapping="Wrap" Text="guata" VerticalAlignment="Center" Grid.Column="1"/>
+        		<TextBlock HorizontalAlignment="Center" Margin="0,-20,0,0" Grid.Row="3" TextWrapping="Wrap" Text="cacaña" VerticalAlignment="Center"/>
+        		<TextBlock HorizontalAlignment="Center" Margin="0,-20,0,0" Grid.Row="3" TextWrapping="Wrap" Text="mareo" VerticalAlignment="Center" Grid.Column="1"/>
+        		<TextBlock HorizontalAlignment="Center" Margin="0,-20,0,0" Grid.Row="5" TextWrapping="Wrap" Text="witre" VerticalAlignment="Center"/>
+        		<TextBlock HorizontalAlignment="Center" Margin="0,-20,0,0" Grid.Row="5" TextWrapping="Wrap" Text="zombie mode" VerticalAlignment="Center" Grid.Column="1"/>
         	</Grid>
+        	<Button x:Name="tipsButton" Content="obtener tips" HorizontalAlignment="Center" Margin="0,413,0,0" VerticalAlignment="Center" Foreground="#FFE56C19" Click="tipsButton_Click"/>
 
         </Grid>
     </Grid>

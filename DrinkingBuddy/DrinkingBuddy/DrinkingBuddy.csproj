@@ -181,18 +181,27 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\burger.jpg" />
     <Content Include="Assets\cabezaOff.png" />
     <Content Include="Assets\cabezaOn.png" />
     <Content Include="Assets\cacañaOff.png" />
     <Content Include="Assets\cacañaOn.png" />
+    <Content Include="Assets\carbonpan.jpg" />
     <Content Include="Assets\curado.png" />
+    <Content Include="Assets\duerme.jpeg" />
     <Content Include="Assets\feature.settings.png" />
+    <Content Include="Assets\galletas.jpg" />
     <Content Include="Assets\guataOff.png" />
     <Content Include="Assets\guataOn.png" />
     <Content Include="Assets\happy.png" />
+    <Content Include="Assets\logoColor.png" />
     <Content Include="Assets\mareoOff.png" />
     <Content Include="Assets\mareoOn.png" />
+    <Content Include="Assets\platano.jpg" />
     <Content Include="Assets\save.png" />
+    <Content Include="Assets\stop.jpg" />
+    <Content Include="Assets\stop_sign.jpg" />
+    <Content Include="Assets\te.jpg" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -208,6 +217,8 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\vasoagua.jpg" />
+    <Content Include="Assets\wc.jpg" />
     <Content Include="Assets\witreOff.png" />
     <Content Include="Assets\witreOn.png" />
     <Content Include="Assets\zombie.png" />
@@ -223,7 +234,17 @@
     <Content Include="iconoslogo-08.png" />
     <Content Include="iconoslogo-09.png" />
     <Content Include="iconoslogo-10.png" />
+    <Content Include="iconoslogo2-01.png" />
+    <Content Include="iconoslogo2-02.png" />
+    <Content Include="iconoslogo2-03.png" />
+    <Content Include="iconoslogo2-04.png" />
+    <Content Include="iconoslogo2-05.png" />
+    <Content Include="iconoslogo2-06.png" />
+    <Content Include="iconoslogo2-07.png" />
+    <Content Include="iconoslogo2-08.png" />
+    <Content Include="iconoslogo2-10.png" />
     <Content Include="logo.png" />
+    <Content Include="logoBlanco.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">

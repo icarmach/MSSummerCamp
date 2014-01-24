@@ -22,15 +22,38 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Style="{StaticResource PhoneTextNormalStyle}">
-            	<Run Text="drinking "/>
-            	<Run Text="buddy"/>
-            </TextBlock>
-            <TextBlock Text="ayúdame!!" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <Grid Height="26">
+            	<Grid.ColumnDefinitions>
+            		<ColumnDefinition Width="5*"/>
+            		<ColumnDefinition/>
+            	</Grid.ColumnDefinitions>
+            	<TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="0" Foreground="#FF008E8E">
+            		<Run Text="drinking"/>
+            		<Run Text="buddy">
+            			<Run.Foreground>
+            				<SolidColorBrush Color="#FFE56C19">
+            					<SolidColorBrush.RelativeTransform>
+            						<MatrixTransform Matrix="Identity"/>
+            					</SolidColorBrush.RelativeTransform>
+            					<SolidColorBrush.Transform>
+            						<MatrixTransform Matrix="Identity"/>
+            					</SolidColorBrush.Transform>
+            				</SolidColorBrush>
+            			</Run.Foreground>
+            		</Run>
+            	</TextBlock>
+            	<Image HorizontalAlignment="Center" Height="26" VerticalAlignment="Center" Width="100" Grid.Column="1" Source="/Assets/logoColor.png"/>
+            </Grid>
+            <TextBlock Text="amigo S.O.S" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF008E8E"/>
+            <Canvas Height="100" Background="#FF008E8E" Margin="0,0,12,0">
+            	<TextBlock Text="ayúdame!!" Margin="0" Style="{StaticResource PhoneTextTitle1Style}" Width="459" TextAlignment="Center"/>
+            </Canvas>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        	<TextBlock x:Name="friendName" Text="amigoName" Margin="0,0,0,350" Style="{StaticResource PhoneTextTitle1Style}" TextAlignment="Center" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        	<Button Content="Llamar" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="300" Height="300" Background="#FFFF981D" Click="Button_Click"/>
 
         </Grid>
     </Grid>

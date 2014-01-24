@@ -39,7 +39,8 @@ namespace DrinkingBuddy
                     //mal
                     else
                     {
-                        NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+                        MessageBox.Show("parece que no estás tan bien, te paso algunos tips");
+                        NavigationService.Navigate(new Uri("/CuradoTips.xaml", UriKind.Relative));
                     }
                 }
                 
@@ -64,7 +65,21 @@ namespace DrinkingBuddy
             else
             {
                 //bien, consejo
-                NavigationService.Navigate(new Uri("/Curado.xaml", UriKind.Relative));
+                
+
+                if (IsolatedStorageSettings.ApplicationSettings.Contains("userName"))
+                {
+                    String s = IsolatedStorageSettings.ApplicationSettings["userName"] as string;
+
+                    MessageBox.Show("bien " + s + ", eres un campeón!");
+                }
+
+                else
+                {
+                    MessageBox.Show("eres un campeón!");
+                }
+
+                NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
             }
         }
 

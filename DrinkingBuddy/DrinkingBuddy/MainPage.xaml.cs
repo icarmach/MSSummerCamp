@@ -63,7 +63,7 @@ namespace DrinkingBuddy
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new Uri("/encanadoMenu.xaml", UriKind.Relative));
         }
 
         // Back Button pressed: notify MainPage so it can exit application
