@@ -102,6 +102,9 @@
     <Compile Include="CuradoTips.xaml.cs">
       <DependentUpon>CuradoTips.xaml</DependentUpon>
     </Compile>
+    <Compile Include="encanadoMenu.xaml.cs">
+      <DependentUpon>encanadoMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -139,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CuradoTips.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="encanadoMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
