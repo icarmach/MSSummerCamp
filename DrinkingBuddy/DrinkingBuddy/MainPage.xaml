@@ -41,14 +41,28 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="drinking buddy" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="¿Cómo estás?" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontFamily="Portable User Interface"/>
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0" Foreground="#FF008E8E">
+            	<Run Text="drinking"/>
+            	<Run Text="buddy">
+            		<Run.Foreground>
+            			<SolidColorBrush Color="#FFE56C19">
+            				<SolidColorBrush.RelativeTransform>
+            					<MatrixTransform Matrix="Identity"/>
+            				</SolidColorBrush.RelativeTransform>
+            				<SolidColorBrush.Transform>
+            					<MatrixTransform Matrix="Identity"/>
+            				</SolidColorBrush.Transform>
+            			</SolidColorBrush>
+            		</Run.Foreground>
+            	</Run>
+            </TextBlock>
+            <TextBlock Text="¿en que andas?" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontFamily="Portable User Interface" FontSize="64"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0"/>
-        <Button Content="curado" HorizontalAlignment="Center" Margin="0,-250,0,0" Grid.Row="1" VerticalAlignment="Center" Width="200" Height="200" Click="Button_Click_1"/>
-        <Button Content="encañado" HorizontalAlignment="Center" Margin="0,200,0,0" Grid.Row="1" VerticalAlignment="Center" Width="200" Height="200" Click="Button_Click_2"/>
+        <Button Content="curado" HorizontalAlignment="Center" Margin="0,-250,0,0" Grid.Row="1" VerticalAlignment="Center" Width="200" Height="200" Click="Button_Click_1" Background="#FF00D8CC"/>
+        <Button Content="encañado" HorizontalAlignment="Center" Margin="0,200,0,0" Grid.Row="1" VerticalAlignment="Center" Width="200" Height="200" Click="Button_Click_2" Background="#FFFF981D"/>
         
         
         <!--Uncomment to see an alignment grid to help ensure your controls are

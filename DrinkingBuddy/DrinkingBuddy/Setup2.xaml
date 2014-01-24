@@ -22,7 +22,21 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="drinking buddy" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FF008E8E">
+            	<Run Text="drinking"/>
+            	<Run Text="buddy">
+            		<Run.Foreground>
+            			<SolidColorBrush Color="#FFE56C19">
+            				<SolidColorBrush.RelativeTransform>
+            					<MatrixTransform Matrix="Identity"/>
+            				</SolidColorBrush.RelativeTransform>
+            				<SolidColorBrush.Transform>
+            					<MatrixTransform Matrix="Identity"/>
+            				</SolidColorBrush.Transform>
+            			</SolidColorBrush>
+            		</Run.Foreground>
+            	</Run>
+            </TextBlock>
             <TextBlock Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
@@ -34,7 +48,7 @@
                         <TranslateTransform/>
                     </phone:PanoramaItem.RenderTransform>
                     <Grid>
-                    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="¿Cómo te llamas?" VerticalAlignment="Top" Margin="12,0,0,0"/>
+                    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="hola, ¿cómo te llamas?" VerticalAlignment="Top" Margin="12,0,0,0"/>
                     	<TextBox x:Name="userName" Height="72" TextWrapping="Wrap" Margin="0,25,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </phone:PanoramaItem>
@@ -43,11 +57,9 @@
                         <TranslateTransform/>
                     </phone:PanoramaItem.RenderTransform>
                     <Grid>
-                    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="12,0,0,0">
-                    		<Run Text="¿Quíén te apaña si estás muy curado? Déjanos su nombre"/>
-                    	</TextBlock>
+                    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="12,0,0,0" Text="¿quíén te apaña si estás muy curado? déjanos su nombre"/>
                     	<TextBox x:Name="friendName" Height="72" TextWrapping="Wrap" Margin="0,55,0,0" VerticalAlignment="Top"/>
-                    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="¿Cuál es su número?" VerticalAlignment="Top" Margin="12,150,0,0"/>
+                    	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="¿cuál es su número?" VerticalAlignment="Top" Margin="12,150,0,0"/>
                     	<TextBox x:Name="friendNumber" Height="72" TextWrapping="Wrap" Margin="0,175,0,0" VerticalAlignment="Top" InputScope="Number" TextInput="friendNumber_TextInput"/>
                     </Grid>
                 </phone:PanoramaItem>

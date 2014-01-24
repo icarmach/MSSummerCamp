@@ -27,17 +27,37 @@ namespace DrinkingBuddy
             counter++;
             if(counter < 3)
             {
-                //bien
-                if(Convert.ToInt32(Num1.Text) + Convert.ToInt32(Num2.Text) == Convert.ToInt32(Result.Text))
+                try
                 {
-                    Result.Text = "";
-                    getRandomNumbers();
-                }
+                    //bien
+                    if(Convert.ToInt32(Num1.Text) + Convert.ToInt32(Num2.Text) == Convert.ToInt32(Result.Text))
+                    {
+                        Result.Text = "";
+                        getRandomNumbers();
+                    }
 
-                //mal
-                else
+                    //mal
+                    else
+                    {
+                        NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+                    }
+                }
+                
+                catch (Exception ex)
                 {
-                    NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+                    counter--;
+
+                    if (IsolatedStorageSettings.ApplicationSettings.Contains("userName"))
+                    {
+                        String s = IsolatedStorageSettings.ApplicationSettings["userName"] as string;
+
+                        MessageBox.Show(s + ", parece que tomaste mucho. por último adivina");
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("parece que tomaste mucho. por último adivina");
+                    }
                 }
             }
 

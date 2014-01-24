@@ -174,9 +174,18 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\cabezaOff.png" />
+    <Content Include="Assets\cabezaOn.png" />
+    <Content Include="Assets\cacañaOff.png" />
+    <Content Include="Assets\cacañaOn.png" />
+    <Content Include="Assets\curado.png" />
     <Content Include="Assets\feature.settings.png" />
+    <Content Include="Assets\guataOff.png" />
+    <Content Include="Assets\guataOn.png" />
+    <Content Include="Assets\happy.png" />
+    <Content Include="Assets\mareoOff.png" />
+    <Content Include="Assets\mareoOn.png" />
     <Content Include="Assets\save.png" />
-    <Content Include="Assets\Tiles\curado.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -186,14 +195,17 @@
     <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Tiles\happy.png" />
     <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Tiles\zombie.png" />
+    <Content Include="Assets\witreOff.png" />
+    <Content Include="Assets\witreOn.png" />
+    <Content Include="Assets\zombie.png" />
+    <Content Include="Assets\zombieOff.png" />
+    <Content Include="Assets\zombieOn.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">

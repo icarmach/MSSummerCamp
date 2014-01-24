@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 
 namespace DrinkingBuddy
 {
@@ -29,7 +30,15 @@ namespace DrinkingBuddy
 
         private void zombieImage_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/CuradoSOS.xaml", UriKind.Relative));
+            //NavigationService.Navigate(new Uri("/CuradoSOS.xaml", UriKind.Relative));
+
+            PhoneCallTask phoneCallTask = new PhoneCallTask()
+            {
+                DisplayName = "Casa",
+                PhoneNumber = "4445566"
+            };
+
+            phoneCallTask.Show();
         }
     }
 }

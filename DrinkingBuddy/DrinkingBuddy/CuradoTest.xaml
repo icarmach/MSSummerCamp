@@ -39,7 +39,7 @@
         	<TextBlock x:Name="Num1" Margin="70,133,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="96"/>
         	<TextBlock x:Name="Num2" Margin="281,133,60,0" TextWrapping="Wrap" Text="20" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="96"/>
         	<TextBlock x:Name="Num1_Copy" Margin="189,133,0,0" TextWrapping="Wrap" Text="+" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="96"/>
-            <TextBox x:Name="Result" Height="72" Margin="0,0,0,20" TextWrapping="Wrap" Width="350" TextAlignment="Center"/>
+            <TextBox x:Name="Result" Height="72" Margin="0,0,0,20" TextWrapping="Wrap" Width="350" TextAlignment="Center" InputScope="Number"/>
         	<Button Content="Responder" HorizontalAlignment="Center" Margin="0,120,0,0" VerticalAlignment="Center" Click="Button_Click"/>
 
         </Grid>
