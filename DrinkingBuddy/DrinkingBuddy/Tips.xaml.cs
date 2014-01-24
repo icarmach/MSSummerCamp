@@ -25,7 +25,51 @@ namespace DrinkingBuddy
             
             InitializeComponent();
             int [] arreglo2 = Menu.arreglo;
-            
+
+            //CABEZA
+            if (arreglo2[0] == 1)
+            {
+                c_txtBox.Text = TipCabeza;
+            }else
+            {
+                c_txtBox.Visibility = Visibility.Collapsed;
+            }
+
+            //ESTOMAGO
+            if (arreglo2[1] == 1)
+            {
+                e_txtBox.Text = TipEstomago;
+            }else
+            {
+                e_txtBox.Visibility = Visibility.Collapsed;
+            }
+
+            //MAREO
+            if (arreglo2[2] == 1)
+            {
+                m_txtBox.Text = TipMareo;
+            }else
+            {
+                m_txtBox.Visibility = Visibility.Collapsed;
+            }
+
+            //VOMITO
+            if (arreglo2[3] == 1)
+            {
+                v_txtBox.Text = TipVomito;
+            }else
+            {
+                v_txtBox.Visibility = Visibility.Collapsed;
+            }
+
+            //ZOMBIE
+            if (arreglo2[4] == 1)
+            {
+                z_txtBox.Text = TipZombie;
+            }else
+            {
+                z_txtBox.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }
