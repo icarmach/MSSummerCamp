@@ -21,19 +21,45 @@
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="drinking buddy" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="¿Muy Curado?" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28" Background="Black">
+            <TextBlock Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FF008E8E">
+            	<Run Text="drinking"/>
+            	<Run Text="buddy">
+            		<Run.Foreground>
+            			<SolidColorBrush Color="#FFE56C19">
+            				<SolidColorBrush.RelativeTransform>
+            					<MatrixTransform Matrix="Identity"/>
+            				</SolidColorBrush.RelativeTransform>
+            				<SolidColorBrush.Transform>
+            					<MatrixTransform Matrix="Identity"/>
+            				</SolidColorBrush.Transform>
+            			</SolidColorBrush>
+            		</Run.Foreground>
+            	</Run>
+            </TextBlock>
+            <Grid Height="100">
+            	<Grid.ColumnDefinitions>
+            		<ColumnDefinition Width="4*"/>
+            		<ColumnDefinition/>
+            	</Grid.ColumnDefinitions>
+            	<TextBlock Margin="0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF008E8E" Text="curado" Grid.ColumnSpan="2"/>
+            	<Image Source="/Assets/ApplicationIcon.png" Margin="0" Grid.Column="1"/>
+            </Grid>
+            <Canvas Background="#FF008E8E" Height="100">
+            	<TextBlock TextWrapping="Wrap" Text="¿qué tanto?" FontSize="64" Canvas.Left="65"/>
+            </Canvas>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-        	<Image x:Name="happyImage" HorizontalAlignment="Center" Height="150" Margin="0,0,0,450" VerticalAlignment="Center" Width="150" Source="/Assets/ApplicationIcon.png" MouseLeftButtonUp="happyImage_MouseLeftButtonUp"/>
-        	<Image x:Name="curadoImage" HorizontalAlignment="Center" Height="150" Margin="0,0,0,50" VerticalAlignment="Center" Width="150" Source="/Assets/ApplicationIcon.png" MouseLeftButtonUp="curadoImage_MouseLeftButtonUp"/>
-        	<Image x:Name="zombieImage" HorizontalAlignment="Center" Height="150" Margin="0,350,0,0" VerticalAlignment="Center" Width="150" Source="/Assets/ApplicationIcon.png" MouseLeftButtonUp="zombieImage_MouseLeftButtonUp"/>
-        	<TextBlock HorizontalAlignment="Center" Margin="0,0,0,300" TextWrapping="Wrap" Text="Arriba de la pelota" VerticalAlignment="Center"/>
-        	<TextBlock x:Name="curadoText" HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" Text="Adentro de la pelota" VerticalAlignment="Center"/>
-        	<TextBlock x:Name="zombieText" HorizontalAlignment="Center" Margin="0,500,0,0" TextWrapping="Wrap" Text="¿Pelota?" VerticalAlignment="Center"/>
+        	<Image x:Name="happyImage" HorizontalAlignment="Center" Height="120" Margin="0,0,0,350" VerticalAlignment="Center" Width="120" Source="/Assets/Tiles/happy.png" MouseLeftButtonUp="happyImage_MouseLeftButtonUp"/>
+        	<Image x:Name="curadoImage" HorizontalAlignment="Center" Height="120" Margin="0,0,0,20" VerticalAlignment="Center" Width="120" Source="/Assets/Tiles/curado.png" MouseLeftButtonUp="curadoImage_MouseLeftButtonUp"/>
+        	<Image x:Name="zombieImage" HorizontalAlignment="Center" Height="120" Margin="0,300,0,0" VerticalAlignment="Center" Width="120" Source="/Assets/Tiles/zombie.png" MouseLeftButtonUp="zombieImage_MouseLeftButtonUp"/>
+        	<TextBlock HorizontalAlignment="Center" Margin="0,0,0,200" TextWrapping="Wrap" Text="Arriba de la pelota" VerticalAlignment="Center"/>
+        	<TextBlock x:Name="curadoText" HorizontalAlignment="Center" Margin="0,130,0,0" TextWrapping="Wrap" Text="Adentro de la pelota" VerticalAlignment="Center"/>
+        	<TextBlock x:Name="zombieText" HorizontalAlignment="Center" Margin="0,450,0,0" TextWrapping="Wrap" Text="¿Pelota?" VerticalAlignment="Center"/>
         </Grid>
     </Grid>
 
