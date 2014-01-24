@@ -2,7 +2,7 @@
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="es-419" />
   <App xmlns="" ProductID="{861950ca-69d5-4eb0-bd30-58aeae6aab58}" Title="drinkingbuddy" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Vanilla Skype" Description="¿Estás carreteando? Prueba que tan curado estás y ve si puedes seguir o necesitas llamar a tu mejor amigo para que te rescate.&#xD;&#xA;&#xD;&#xA;¿Estás encañado? Dime que te duele y te diré como mejorarte." Publisher="VanillaSkype" PublisherID="{798c3fb1-0eec-41aa-81df-89818d9eb6ab}">
-    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+    <IconPath IsRelative="true" IsResource="false">logo.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_PHONEDIALER" />
     </Capabilities>
@@ -11,22 +11,24 @@
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="DrinkingBuddyToken" TaskName="_default">
-        <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+        <TemplateCycle>
+          <SmallImageURI IsRelative="true" IsResource="false">iconoslogo-10.png</SmallImageURI>
+          <Title>
+          </Title>
+          <Photo01ImageURI IsRelative="true" IsResource="false">iconoslogo-01.png</Photo01ImageURI>
+          <Photo02ImageURI IsRelative="true" IsResource="false">iconoslogo-02.png</Photo02ImageURI>
+          <Photo03ImageURI IsRelative="true" IsResource="false">iconoslogo-03.png</Photo03ImageURI>
+          <Photo04ImageURI IsRelative="true" IsResource="false">iconoslogo-04.png</Photo04ImageURI>
+          <Photo05ImageURI IsRelative="true" IsResource="false">iconoslogo-05.png</Photo05ImageURI>
+          <Photo06ImageURI IsRelative="true" IsResource="false">iconoslogo-06.png</Photo06ImageURI>
+          <Photo07ImageURI IsRelative="true" IsResource="false">iconoslogo-07.png</Photo07ImageURI>
+          <Photo08ImageURI IsRelative="true" IsResource="false">iconoslogo-08.png</Photo08ImageURI>
+          <Photo09ImageURI IsRelative="true" IsResource="false">iconoslogo-09.png</Photo09ImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>drinkingbuddy</Title>
-          <BackContent>
-          </BackContent>
-          <BackBackgroundImageURI>
-          </BackBackgroundImageURI>
-          <BackTitle>
-          </BackTitle>
-          <DeviceLockImageURI>
+          <HasLarge>false</HasLarge>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
           </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
-        </TemplateFlip>
+        </TemplateCycle>
       </PrimaryToken>
     </Tokens>
     <ScreenResolutions>

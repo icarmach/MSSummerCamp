@@ -213,6 +213,17 @@
     <Content Include="Assets\zombie.png" />
     <Content Include="Assets\zombieOff.png" />
     <Content Include="Assets\zombieOn.png" />
+    <Content Include="iconoslogo-01.png" />
+    <Content Include="iconoslogo-02.png" />
+    <Content Include="iconoslogo-03.png" />
+    <Content Include="iconoslogo-04.png" />
+    <Content Include="iconoslogo-05.png" />
+    <Content Include="iconoslogo-06.png" />
+    <Content Include="iconoslogo-07.png" />
+    <Content Include="iconoslogo-08.png" />
+    <Content Include="iconoslogo-09.png" />
+    <Content Include="iconoslogo-10.png" />
+    <Content Include="logo.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">
