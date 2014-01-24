@@ -70,7 +70,11 @@ namespace DrinkingBuddy
                     MessageBox.Show("¿Qué pasa " + s + ", muy difícil?");
                 }
 
-                MessageBox.Show("¿Qué pasa, muy difícil?");
+                else
+                {
+                    MessageBox.Show("¿Qué pasa, muy difícil?");
+                }
+                
             }
 
             else if(canGoBack)

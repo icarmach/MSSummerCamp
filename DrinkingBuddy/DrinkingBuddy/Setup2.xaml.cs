@@ -76,5 +76,10 @@ namespace DrinkingBuddy
 
             NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
+
+        private void friendNumber_TextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            
+        }
     }
 }

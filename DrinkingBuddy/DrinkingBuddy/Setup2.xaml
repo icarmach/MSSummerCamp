@@ -48,7 +48,7 @@
                     	</TextBlock>
                     	<TextBox x:Name="friendName" Height="72" TextWrapping="Wrap" Margin="0,55,0,0" VerticalAlignment="Top"/>
                     	<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="¿Cuál es su número?" VerticalAlignment="Top" Margin="12,150,0,0"/>
-                    	<TextBox x:Name="friendNumber" Height="72" TextWrapping="Wrap" Margin="0,175,0,0" VerticalAlignment="Top" InputScope="Number"/>
+                    	<TextBox x:Name="friendNumber" Height="72" TextWrapping="Wrap" Margin="0,175,0,0" VerticalAlignment="Top" InputScope="Number" TextInput="friendNumber_TextInput"/>
                     </Grid>
                 </phone:PanoramaItem>
             </phone:Panorama>
