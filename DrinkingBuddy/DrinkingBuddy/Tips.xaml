@@ -33,6 +33,7 @@
             <TextBox x:Name="m_txtBox" HorizontalAlignment="Left" Height="72" Margin="0,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
             <TextBox x:Name="v_txtBox" HorizontalAlignment="Left" Height="72" Margin="0,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
             <TextBox x:Name="z_txtBox" HorizontalAlignment="Left" Height="72" Margin="0,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
+            <TextBox x:Name="ca_txtBox" HorizontalAlignment="Left" Height="72" Margin="0,360,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456"/>
         </Grid>
     </Grid>
 

@@ -17,7 +17,8 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="72*"/>
+            <RowDefinition Height="535*"/>
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
@@ -27,7 +28,7 @@
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0" Grid.RowSpan="2">
         	<Grid Margin="0">
         		<Grid.RowDefinitions>
         			<RowDefinition/>
@@ -38,8 +39,18 @@
         			<ColumnDefinition/>
         			<ColumnDefinition/>
         		</Grid.ColumnDefinitions>
-        		<Image Margin="0" Source="/Assets/ApplicationIcon.png"/>
-        		<Image Grid.Column="1" Margin="0" Source="/Assets/cabezaOff.png"/>
+        		<Image x:Name="CabezaOff_img" Margin="0" Source="/Assets/cabezaOff.png" MouseLeftButtonUp="CabezaOff_img_MouseLeftButtonUp"/>
+        		<Image x:Name="GuataOff_img" Grid.Column="1" Margin="0" Source="/Assets/guataOff.png" MouseLeftButtonUp="GuataOff_img_MouseLeftButtonUp"/>
+        		<Image x:Name="cacaOff_img" Margin="0" Grid.Row="1" Source="/Assets/cacañaOff.png" MouseLeftButtonUp="cacaOff_img_MouseLeftButtonUp"/>
+        		<Image x:Name="MareOff_img" Grid.Column="1" Margin="0" Grid.Row="1" Source="/Assets/mareoOff.png" MouseLeftButtonUp="MareOff_img_MouseLeftButtonUp"/>
+        		<Image x:Name="WitreoOff_img" Margin="0" Grid.Row="2" Source="/Assets/witreOff.png" MouseLeftButtonUp="WitreoOff_img_MouseLeftButtonUp"/>
+        		<Image x:Name="CabezaOn_im" Margin="0" Source="/Assets/cabezaOn.png" MouseLeftButtonUp="CabezaOn_im_MouseLeftButtonUp"/>
+        		<Image x:Name="GuataOn_img" Grid.Column="1" Margin="0" Source="/Assets/guataOn.png" MouseLeftButtonUp="GuataOn_img_MouseLeftButtonUp"/>
+        		<Image x:Name="CacaOn_img" Margin="0" Grid.Row="1" Source="/Assets/cacañaOn.png" MouseLeftButtonUp="CacaOn_img_MouseLeftButtonUp"/>
+        		<Image x:Name="MareOn_img" Grid.Column="1" Margin="0" Grid.Row="1" Source="/Assets/mareoOn.png" MouseLeftButtonUp="MareOn_img_MouseLeftButtonUp"/>
+        		<Image x:Name="witreoOn_img" Margin="0" Grid.Row="2" Source="/Assets/witreOn.png" MouseLeftButtonUp="witreoOn_img_MouseLeftButtonUp"/>
+        		<Image x:Name="ZombieOff_img" Grid.Column="1" Margin="0" Grid.Row="2" Source="/Assets/zombieOff.png" MouseLeftButtonUp="ZombieOff_img_MouseLeftButtonUp"/>
+        		<Image x:Name="ZombieOn_img" Grid.Column="1" Margin="0" Grid.Row="2" Source="/Assets/zombieOn.png" MouseLeftButtonUp="ZombieOn_img_MouseLeftButtonUp"/>
         	</Grid>
 
         </Grid>
