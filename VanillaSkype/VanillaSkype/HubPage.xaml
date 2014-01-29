@@ -47,6 +47,7 @@
                         <ColumnDefinition Width="80"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
+                    <Canvas Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="150" VerticalAlignment="Top" Width="1100" Margin="-40,-60,0,0" Background="Black" Opacity="0.3"/>
                     <Button  x:Name="backButton" Style="{StaticResource NavigationBackButtonNormalStyle}"
                         Margin="-1,-1,39,0" 
                         VerticalAlignment="Top"
@@ -58,7 +59,7 @@
                         VerticalAlignment="Top" IsHitTestVisible="false" TextWrapping="NoWrap" />
                 </Grid>
             </Hub.Header>
-            <HubSection Width="1200" Margin="0,0,80,0">
+            <HubSection Width="1100" Margin="0,0,80,0">
                 <HubSection.Background>
                     <ImageBrush ImageSource="Assets/IMG_20140129_124744.jpg" Stretch="UniformToFill" />
                 </HubSection.Background>
@@ -115,8 +116,7 @@
                         SelectionMode="None"
                         IsSwipeEnabled="false"
                         IsItemClickEnabled="True"
-                        ItemClick="ItemView_ItemClick">
-                    </GridView>
+                        ItemClick="ItemView_ItemClick"/>
                 </DataTemplate>
             </HubSection>
             <HubSection x:Uid="Section4Header" Header="Section 4">
