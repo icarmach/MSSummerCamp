@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BlendTutorial.Resources
+namespace VanillaSkypePhone.Resources
 {
     using System;
 
@@ -45,7 +45,7 @@ namespace BlendTutorial.Resources
             {
                 if (object.ReferenceEquals(resourceMan, null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BlendTutorial.Resources.AppResources", typeof(AppResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("VanillaSkypePhone.Resources.AppResources", typeof(AppResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -92,7 +92,7 @@ namespace BlendTutorial.Resources
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to MY APPLICATION.
+        ///   Looks up a localized string similar to my application.
         /// </summary>
         public static string ApplicationTitle
         {
@@ -103,24 +103,13 @@ namespace BlendTutorial.Resources
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to button.
+        ///   Looks up a localized string similar to Sample Runtime Property Value.
         /// </summary>
-        public static string AppBarButtonText
+        public static string SampleProperty
         {
             get
             {
-                return ResourceManager.GetString("AppBarButtonText", resourceCulture);
-            }
-        }
-
-        /// <summary>
-        ///   Looks up a localized string similar to menu item.
-        /// </summary>
-        public static string AppBarMenuItemText
-        {
-            get
-            {
-                return ResourceManager.GetString("AppBarMenuItemText", resourceCulture);
+                return ResourceManager.GetString("SampleProperty", resourceCulture);
             }
         }
     }

@@ -1,6 +1,6 @@
-﻿using BlendTutorial.Resources;
+﻿using VanillaSkypePhone.Resources;
 
-namespace BlendTutorial
+namespace VanillaSkypePhone
 {
     /// <summary>
     /// Provides access to string resources.

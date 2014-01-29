@@ -123,24 +123,24 @@
         				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/boton.png"/>
         			</Button.Background>
         		</Button>
-        		<Button x:Name="button9Div" Content="" BorderThickness="0" Grid.Row="1" Grid.Column="3" FontSize="32" Click="button9Div_Click">
+        		<Button x:Name="button9Div" Content="/" BorderThickness="0" Grid.Row="1" Grid.Column="3" FontSize="32" Click="button9Div_Click">
         			<Button.Background>
-        				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/div.png"/>
+        				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/boton.png"/>
         			</Button.Background>
         		</Button>
         		<Button x:Name="buttonMult" Content="x" BorderThickness="0" Grid.Row="2" Grid.Column="3" FontSize="32" Click="buttonMult_Click">
         			<Button.Background>
-        				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/mult.png"/>
+        				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/boton.png"/>
         			</Button.Background>
         		</Button>
         		<Button x:Name="buttonRest" Content="-" BorderThickness="0" Grid.Row="3" Grid.Column="3" FontSize="32" Click="buttonRest_Click">
         			<Button.Background>
-        				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/menos.png"/>
+        				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/boton.png"/>
         			</Button.Background>
         		</Button>
         		<Button x:Name="buttonSum" Content="+" BorderThickness="0" Grid.Row="4" Grid.Column="3" FontSize="32" Click="buttonSum_Click">
         			<Button.Background>
-        				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/mas.png"/>
+        				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/boton.png"/>
         			</Button.Background>
         		</Button>
         		<Button x:Name="buttonBorrar" Content="&lt;-" BorderThickness="0" Grid.Column="3" FontSize="32" Click="buttonBorrar_Click">

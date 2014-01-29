@@ -2,7 +2,7 @@
 
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US"/>
-  <App xmlns="" ProductID="{20c2efae-1671-4837-a3e7-a4b085475f9e}" Title="BlendTutorial" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="BlendTutorial author" Description="Sample description" Publisher="BlendTutorial" PublisherID="{80fe2654-4e70-467c-9019-34014012fbc6}">
+  <App xmlns="" ProductID="{2b211341-190a-429f-90bd-f768f48b91b0}" Title="VanillaSkypePhone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="VanillaSkypePhone author" Description="Sample description" Publisher="VanillaSkypePhone" PublisherID="{1973d589-b283-4e0d-b9b2-0681be678ec4}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING"/>
@@ -15,12 +15,12 @@
       <DefaultTask  Name ="_default" NavigationPage="MainPage.xaml"/>
     </Tasks>
     <Tokens>
-      <PrimaryToken TokenID="BlendTutorialToken" TaskName="_default">
+      <PrimaryToken TokenID="VanillaSkypePhoneToken" TaskName="_default">
         <TemplateFlip>
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>BlendTutorial</Title>
+          <Title>VanillaSkypePhone</Title>
           <BackContent></BackContent>
           <BackBackgroundImageURI></BackBackgroundImageURI>
           <BackTitle></BackTitle>
