@@ -58,9 +58,9 @@
                         VerticalAlignment="Top" IsHitTestVisible="false" TextWrapping="NoWrap" />
                 </Grid>
             </Hub.Header>
-            <HubSection Width="780" Margin="0,0,80,0">
+            <HubSection Width="1200" Margin="0,0,80,0">
                 <HubSection.Background>
-                    <ImageBrush ImageSource="Assets/MediumGray.png" Stretch="UniformToFill" />
+                    <ImageBrush ImageSource="Assets/IMG_20140129_124744.jpg" Stretch="UniformToFill" />
                 </HubSection.Background>
             </HubSection>
             <HubSection Width="500" x:Uid="Section1Header" Header="Section 1">
