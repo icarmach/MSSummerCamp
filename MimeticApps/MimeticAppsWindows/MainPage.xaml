@@ -26,8 +26,8 @@
     			<TextBlock x:Name="groupName" Margin="100,0,0,0" TextWrapping="Wrap" Text="MimeticApps" FontSize="56" Foreground="#FFFFEC00" Canvas.ZIndex="1" FontFamily="Comfortaa" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold"/>
 
     			<Image x:Name="groupPicture" Margin="0" Grid.RowSpan="2" Source="Assets/fotoGrupo.jpg" Stretch="UniformToFill"/>
-    			<Grid HorizontalAlignment="Left" Height="300" Margin="0,100,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFEC00" Opacity="0.6">
-    				<TextBlock x:Name="groupDescription" Margin="10" TextWrapping="Wrap" Text="Descripcion de grupo" Canvas.ZIndex="1" Foreground="Black" FontSize="21.333" TextAlignment="Justify" FontFamily="Segoe UI Semilight"/>
+    			<Grid HorizontalAlignment="Left" Height="300" Margin="0,100,0,0" Grid.Row="1" VerticalAlignment="Top" Width="300" Background="#FFFFEC00" Opacity="0.8">
+                    <TextBlock x:Name="groupDescription" Margin="10" TextWrapping="Wrap" Text="MimeticApps se enfoca en el desarrollo, diseño, e implementación de aplicaciones para Windows Phone y Windows 8.&#x0a;&#x0a;Nos motiva crear aplicaciones dinámicas, interactivas y prácticas con el fin de solucionar problemáticas diarias en la vida de las personas de forma atractiva y simple.&#x0a;&#x0a;Buscamos la excelencia y calidad en todos nuestros proyectos para entregar a nuestros clientes productos consistentes y confiables, de manera sostenida en el tiempo." Canvas.ZIndex="1" Foreground="Black" FontSize="14.667" TextAlignment="Justify" FontFamily="Segoe UI Semilight"/>
     			</Grid>
     			<Grid x:Name="abourGrid" Grid.Column="1" Grid.Row="1" Margin="80,0,0,0">
     				<Grid.ColumnDefinitions>
@@ -167,9 +167,8 @@
     					<TextBlock x:Name="portfolio4Text" Margin="0,10,0,0" TextWrapping="Wrap" Text="Emergency Chat                                                      En Desarrollo" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
     				</Grid>
     			</Grid>
-    			<Grid x:Name="abourGrid_Copy" Grid.Column="3" Grid.Row="1" Margin="80,0,0,0">
+    			<Grid x:Name="contactGrid" Grid.Column="3" Grid.Row="1" Margin="80,0">
     				<Grid.ColumnDefinitions>
-    					<ColumnDefinition/>
     					<ColumnDefinition/>
     				</Grid.ColumnDefinitions>
     				<Grid.RowDefinitions>
@@ -179,74 +178,13 @@
     					<RowDefinition Height="3*"/>
     					<RowDefinition/>
     				</Grid.RowDefinitions>
-    				<TextBlock x:Name="aboutTitle1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Quienes Somos" VerticalAlignment="Top" FontSize="26.667" Grid.ColumnSpan="2"/>
-    				<Grid x:Name="member7" Margin="0,0,10,10" Grid.Row="1" Width="150" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
-    					<Grid.Background>
-    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/cataF.jpg"/>
-    					</Grid.Background>
-    					<Grid.RowDefinitions>
-    						<RowDefinition Height="2*"/>
-    						<RowDefinition/>
-    					</Grid.RowDefinitions>
-    					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
-    					<TextBlock x:Name="member1Name1" Margin="0,10,0,0" TextWrapping="Wrap" Text="Catalina Lagos Diseñadora" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
-    				</Grid>
-    				<Grid x:Name="member8" Margin="0,0,10,10" Width="150" Height="150" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top">
-    					<Grid.Background>
-    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/nachoF.jpg"/>
-    					</Grid.Background>
-    					<Grid.RowDefinitions>
-    						<RowDefinition Height="2*"/>
-    						<RowDefinition/>
-    					</Grid.RowDefinitions>
-    					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
-    					<TextBlock x:Name="member2Name1" Margin="0,10,0,0" TextWrapping="Wrap" Text="Ignacio Carmach Ingeniero TI" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
-    				</Grid>
-    				<Grid x:Name="member9" Margin="0,0,10,10" Grid.Row="3" Width="150" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
-    					<Grid.Background>
-    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/carlosF.jpg"/>
-    					</Grid.Background>
-    					<Grid.RowDefinitions>
-    						<RowDefinition Height="2*"/>
-    						<RowDefinition/>
-    					</Grid.RowDefinitions>
-    					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
-    					<TextBlock x:Name="member3Name1" Margin="0,10,0,0" TextWrapping="Wrap" Text="Carlos Canales       Tutor" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
-    				</Grid>
-    				<Grid x:Name="member10" Margin="0,0,0,10" Grid.Row="1" Width="150" Height="150" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
-    					<Grid.Background>
-    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/marioF.jpg"/>
-    					</Grid.Background>
-    					<Grid.RowDefinitions>
-    						<RowDefinition Height="2*"/>
-    						<RowDefinition/>
-    					</Grid.RowDefinitions>
-    					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
-    					<TextBlock x:Name="member4Name1" Margin="0,10,0,0" TextWrapping="Wrap" Text="Mario Aburto  Ingeniero en Gestión" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
-    				</Grid>
-    				<Grid x:Name="member11" Margin="0,0,0,10" Grid.Row="2" Width="150" Height="150" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
-    					<Grid.Background>
-    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/camiF.jpg"/>
-    					</Grid.Background>
-    					<Grid.RowDefinitions>
-    						<RowDefinition Height="2*"/>
-    						<RowDefinition/>
-    					</Grid.RowDefinitions>
-    					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
-    					<TextBlock x:Name="member5Name1" Margin="0,10,0,0" TextWrapping="Wrap" Text="Camila Orellana Ingeniera TI" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
-    				</Grid>
-    				<Grid x:Name="member12" Margin="0,0,0,10" Grid.Row="3" Width="150" Height="150" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
-    					<Grid.Background>
-    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/logoFASN.png"/>
-    					</Grid.Background>
-    					<Grid.RowDefinitions>
-    						<RowDefinition Height="2*"/>
-    						<RowDefinition/>
-    					</Grid.RowDefinitions>
-    					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
-    					<TextBlock x:Name="member6Name1" Margin="0,10,0,0" TextWrapping="Wrap" Text="MimeticApps" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
-    				</Grid>
-    			</Grid>
+    				<TextBlock x:Name="contactTitle" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Contáctanos" VerticalAlignment="Top" FontSize="26.667" Grid.ColumnSpan="2"/>
+                    <HyperlinkButton Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="150" Grid.Row="1" NavigateUri="mailto:IgnacioC@summercampchile.com">
+                    	<HyperlinkButton.Background>
+                    		<ImageBrush Stretch="Uniform" ImageSource="Assets/contact.png" />
+                    	</HyperlinkButton.Background>
+                    </HyperlinkButton>
+                </Grid>
     		</Grid>
     	</ScrollViewer>
 

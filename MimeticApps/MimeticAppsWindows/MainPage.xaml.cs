@@ -26,5 +26,6 @@ namespace MimeticAppsWindows
         {
             this.InitializeComponent();
         }
+
     }
 }
