@@ -2,7 +2,7 @@
 
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US"/>
-  <App xmlns="" ProductID="{868a6e14-d447-4caf-aacb-aa506204de3f}" Title="MimeticAppsPhone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="MimeticAppsPhone author" Description="Sample description" Publisher="MimeticAppsPhone" PublisherID="{d6fc45b8-aa6b-4e8e-a28e-7874db4c1daf}">
+  <App xmlns="" ProductID="{31ca5b75-b6d2-4e61-88e8-ffd651ac525c}" Title="MimeticAppsPhone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="MimeticAppsPhone author" Description="Sample description" Publisher="MimeticAppsPhone" PublisherID="{f53d21a3-27c8-4d7e-986a-6ee3c688b6f9}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING"/>
