@@ -33,13 +33,13 @@
     <!--
     This grid acts as a root panel for the page.
   -->
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="White">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
                 <EntranceThemeTransition/>
             </TransitionCollection>
         </Grid.ChildrenTransitions>
-        <Hub SectionHeaderClick="Hub_SectionHeaderClick">
+        <Hub SectionHeaderClick="Hub_SectionHeaderClick" RequestedTheme="Light">
             <Hub.Header>
                 <!-- Back button and page title -->
                 <Grid>
@@ -55,13 +55,22 @@
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
                     <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        VerticalAlignment="Top" IsHitTestVisible="false" TextWrapping="NoWrap" />
+                        VerticalAlignment="Top" IsHitTestVisible="false" TextWrapping="NoWrap" Foreground="#FFFFF200" />
                 </Grid>
             </Hub.Header>
-            <HubSection Width="780" Margin="0,0,80,0">
+            <HubSection Width="1000" Margin="0,0,80,0">
                 <HubSection.Background>
-                    <ImageBrush ImageSource="Assets/MediumGray.png" Stretch="UniformToFill" />
+                    <ImageBrush ImageSource="Assets/grupo.jpg" Stretch="UniformToFill" />
                 </HubSection.Background>
+                <DataTemplate>
+                    <Grid Height="300" Width="300" Margin="-40,50,0,0" Background="#FFFFF200" Opacity="0.7">
+                        <Grid.RowDefinitions>
+                            <RowDefinition MinHeight="100" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Grid.Row="0" Margin="0" TextWrapping="Wrap"  
+                                   x:Uid="Section1Subtitle" Text="Lorem ipsum dolor sit nonumy sed consectetuer ising elit, sed diam"/>
+                    </Grid>
+                </DataTemplate>
             </HubSection>
             <HubSection Width="500" x:Uid="Section1Header" Header="Section 1">
                 <DataTemplate>
