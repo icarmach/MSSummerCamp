@@ -124,7 +124,7 @@
     				<TextBlock x:Name="portfolioTitle" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Portafolio" VerticalAlignment="Top" FontSize="26.667" Grid.ColumnSpan="2"/>
     				<Grid x:Name="portfolio1" Margin="0,0,10,10" Grid.Row="1" Width="310" Height="155" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="portfolio1_Tapped">
     					<Grid.Background>
-    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/cataF.jpg"/>
+    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/DB.png"/>
     					</Grid.Background>
     					<Grid.RowDefinitions>
     						<RowDefinition Height="2*"/>
@@ -135,7 +135,7 @@
     				</Grid>
     				<Grid x:Name="portfolio2" Margin="0,0,0,10" Grid.Row="1" Width="310" Height="155" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="portfolio2_Tapped">
     					<Grid.Background>
-    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/marioF.jpg"/>
+    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/TR.png"/>
     					</Grid.Background>
     					<Grid.RowDefinitions>
     						<RowDefinition Height="2*"/>
@@ -146,7 +146,7 @@
     				</Grid>
     				<Grid x:Name="portfolio3" Margin="0,0,0,10" Grid.Row="2" Width="310" Height="155" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="portfolio3_Tapped">
     					<Grid.Background>
-    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/camiF.jpg"/>
+    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/WFL.png"/>
     					</Grid.Background>
     					<Grid.RowDefinitions>
     						<RowDefinition Height="2*"/>
@@ -157,7 +157,7 @@
     				</Grid>
     				<Grid x:Name="portfolio4" Margin="0,0,0,10" Grid.Row="3" Width="310" Height="155" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="portfolio4_Tapped">
     					<Grid.Background>
-    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/logoFASN.png"/>
+    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/EC.png"/>
     					</Grid.Background>
     					<Grid.RowDefinitions>
     						<RowDefinition Height="2*"/>

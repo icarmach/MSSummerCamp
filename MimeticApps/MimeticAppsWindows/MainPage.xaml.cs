@@ -59,22 +59,22 @@ namespace MimeticAppsWindows
 
         private void portfolio1_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(drinkingbuddy));
+            //this.Frame.Navigate(typeof(drinkingbuddy));
         }
 
         private void portfolio2_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(TravelRoute));
+            //this.Frame.Navigate(typeof(TravelRoute));
         }
 
         private void portfolio3_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(WhatsForLunch));
+            //this.Frame.Navigate(typeof(WhatsForLunch));
         }
 
         private void portfolio4_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(EmergencyChat));
+            //this.Frame.Navigate(typeof(EmergencyChat));
         }
 
     }
