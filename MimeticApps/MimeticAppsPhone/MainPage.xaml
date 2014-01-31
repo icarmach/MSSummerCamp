@@ -71,27 +71,27 @@
                             <RowDefinition/>
                         </Grid.RowDefinitions>
                         <Image x:Name="memberImage1" Margin="0" Source="/Assets/cataC.jpg"/>
-                        <TextBlock x:Name="memberText1" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                        <TextBlock x:Name="memberText1" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Tap="memberText1_Tap">
                         	<Run Text="Catalina Lagos&#xA;Diseñadora&#xA;&#xA;"/>
                         	<Run FontSize="16" Text="CatalinaL@summercampchile.com"/>
                         </TextBlock>
                         <Image x:Name="memberImage2" Margin="0" Source="/Assets/marioC.jpg" Grid.Row="1"/>
-                        <TextBlock x:Name="memberText2" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1">
+                        <TextBlock x:Name="memberText2" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Tap="memberText2_Tap">
                         	<Run Text="Mario Aburto&#xA;Ingeniero en Gestión&#xA;&#xA;"/>
                         	<Run FontSize="16" Text="MarioA@summercampchile.com"/>
                         </TextBlock>
                         <Image x:Name="memberImage3" Margin="0" Source="/Assets/camiC.jpg" Grid.Row="2"/>
-                        <TextBlock x:Name="memberText3" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="2">
+                        <TextBlock x:Name="memberText3" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="2" Tap="memberText3_Tap">
                         	<Run Text="Camila Orellana&#xA;Ingeniera en TI&#xA;&#xA;"/>
                         	<Run FontSize="16" Text="CamilaO@summercampchile.com"/>
                         </TextBlock>
                         <Image x:Name="memberImage4" Margin="0" Source="/Assets/nachoC.jpg" Grid.Row="3"/>
-                        <TextBlock x:Name="memberText4" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="3">
+                        <TextBlock x:Name="memberText4" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="3" Tap="memberText4_Tap">
                         	<Run Text="Ignacio Carmach&#xA;Ingeniero en TI&#xA;&#xA;"/>
                         	<Run FontSize="16" Text="IgnacioC@summercampchile.com"/>
                         </TextBlock>
                         <Image x:Name="memberImage5" Margin="0" Source="/Assets/carlosF2.jpg" Grid.Row="4"/>
-                        <TextBlock x:Name="memberText5" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="4">
+                        <TextBlock x:Name="memberText5" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="4" Tap="memberText5_Tap">
                         	<Run Text="Carlos Canales&#xA;Tutor&#xA;&#xA;"/>
                         	<Run FontSize="16" Text="CarlosC@summercampchile.com"/>
                         </TextBlock>
@@ -110,16 +110,12 @@
                 <Grid>
                     <StackPanel Margin="0,4,16,0" Orientation="Vertical" VerticalAlignment="Top">
                         <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
+                            <Border Background="#FFFFC700" Height="173" Width="360" Margin="12,0,0,0"/>
+                            <Border Background="#FFFFC700" Height="173" Width="360" Margin="12,0,0,0"/>
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="0,12,0,0">
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="173" Margin="12,0,0,0"/>
+                            <Border Background="#FFFFC700" Height="173" Width="360" Margin="12,0,0,0"/>
+                            <Border Background="#FFFFC700" Height="173" Width="360" Margin="12,0,0,0"/>
                         </StackPanel>
                     </StackPanel>
                 </Grid>

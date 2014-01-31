@@ -1,0 +1,4 @@
+MainPackage=C:\Users\Ignacio\Desktop\MSSummerCamp\MimeticApps\MimeticAppsWindows\bin\Release\MimeticAppsWindows_1.1.0.0_Bundle\MimeticAppsWindows_1.1.0.0_AnyCPU.appx
+SymbolPackage=C:\Users\Ignacio\Desktop\MSSummerCamp\MimeticApps\MimeticAppsWindows\AppPackages\MimeticAppsWindows_1.1.0.0_Test\MimeticAppsWindows_1.1.0.0_AnyCPU.appxsym
+ResourcePack=C:\Users\Ignacio\Desktop\MSSummerCamp\MimeticApps\MimeticAppsWindows\bin\Release\MimeticAppsWindows_1.1.0.0_Bundle\MimeticAppsWindows_1.1.0.0_scale-140.appx
+ResourcePack=C:\Users\Ignacio\Desktop\MSSummerCamp\MimeticApps\MimeticAppsWindows\bin\Release\MimeticAppsWindows_1.1.0.0_Bundle\MimeticAppsWindows_1.1.0.0_scale-180.appx

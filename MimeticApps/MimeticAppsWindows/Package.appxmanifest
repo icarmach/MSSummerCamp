@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="a7a56cf3-c062-4b72-a70f-21ad653130ef" Publisher="CN=Ignacio" Version="1.0.0.0" />
+  <Identity Name="59645IgnacioCarmach.MimeticApps" Publisher="CN=B47FBA2A-A3B6-4950-BDF4-AA7C1C28D76C" Version="1.1.0.0" />
   <Properties>
-    <DisplayName>MimeticAppsWindows</DisplayName>
-    <PublisherDisplayName>Ignacio</PublisherDisplayName>
+    <DisplayName>MimeticApps</DisplayName>
+    <PublisherDisplayName>Ignacio Carmach</PublisherDisplayName>
     <Logo>Assets\50x50.png</Logo>
   </Properties>
   <Prerequisites>
@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MimeticAppsWindows.App">
-      <m2:VisualElements DisplayName="MimeticApps" Square150x150Logo="Assets\150x150.png" Square30x30Logo="Assets\30x30.png" Description="MimeticApps" ForegroundText="light" BackgroundColor="#FFEC00">
+      <m2:VisualElements DisplayName="MimeticApps" Square150x150Logo="Assets\150x150.png" Square30x30Logo="Assets\30x30.png" Description="MimeticApps" ForegroundText="light" BackgroundColor="#4af4bc">
         <m2:DefaultTile ShortName="MimeticApps" DefaultSize="square150x150Logo" Square70x70Logo="Assets/70x70.png" Wide310x150Logo="Assets\310x150.png" Square310x310Logo="Assets\310x310.png">
           <m2:ShowNameOnTiles>
             <m2:ShowOn Tile="square150x150Logo" />
@@ -23,7 +23,7 @@
             <m2:ShowOn Tile="square310x310Logo" />
           </m2:ShowNameOnTiles>
         </m2:DefaultTile>
-        <m2:SplashScreen Image="Assets\620x300.png" BackgroundColor="#FFEC00" />
+        <m2:SplashScreen Image="Assets\620x300.png" BackgroundColor="#FDEB00" />
         <m2:InitialRotationPreference>
           <m2:Rotation Preference="landscape" />
         </m2:InitialRotationPreference>

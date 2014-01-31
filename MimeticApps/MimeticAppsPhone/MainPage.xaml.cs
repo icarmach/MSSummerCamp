@@ -29,5 +29,37 @@ namespace MimeticAppsPhone
                 App.ViewModel.LoadData();
             }
         }
+
+        private async void memberText1_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var uri = new Uri("mailto:CatalinaL@summercampchile.com");
+            await Windows.System.Launcher.LaunchUriAsync(uri);
+        }
+
+        private async void memberText2_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var uri = new Uri("mailto:MarioA@summercampchile.com");
+            await Windows.System.Launcher.LaunchUriAsync(uri);
+        }
+
+        private async void memberText3_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var uri = new Uri("mailto:CamilaO@summercampchile.com");
+            await Windows.System.Launcher.LaunchUriAsync(uri);
+        }
+
+        private async void memberText4_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var uri = new Uri("mailto:IgnacioC@summercampchile.com");
+            await Windows.System.Launcher.LaunchUriAsync(uri);
+        }
+
+        private async void memberText5_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var uri = new Uri("mailto:CarlosC@summercampchile.com");
+            await Windows.System.Launcher.LaunchUriAsync(uri);
+        }
+
+        
     }
 }
