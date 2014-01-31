@@ -154,6 +154,21 @@
     <None Include="MimeticAppsWindows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\150x150.scale-100.png" />
+    <Content Include="Assets\150x150.scale-140.png" />
+    <Content Include="Assets\150x150.scale-180.png" />
+    <Content Include="Assets\150x150.scale-80.png" />
+    <Content Include="Assets\30x30.scale-100.png" />
+    <Content Include="Assets\310x150.scale-100.png" />
+    <Content Include="Assets\310x150.scale-140.png" />
+    <Content Include="Assets\310x150.scale-180.png" />
+    <Content Include="Assets\310x150.scale-80.png" />
+    <Content Include="Assets\310x310.scale-100.png" />
+    <Content Include="Assets\310x310.scale-140.png" />
+    <Content Include="Assets\310x310.scale-180.png" />
+    <Content Include="Assets\310x310.scale-80.png" />
+    <Content Include="Assets\50x50.scale-100.png" />
+    <Content Include="Assets\620x300.scale-100.png" />
     <Content Include="Assets\70x70.scale-100.png" />
     <Content Include="Assets\70x70.scale-140.png" />
     <Content Include="Assets\70x70.scale-180.png" />
@@ -175,6 +190,7 @@
     <Content Include="Assets\nachoF.jpg" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="Common\ReadMe.txt" />
   </ItemGroup>
