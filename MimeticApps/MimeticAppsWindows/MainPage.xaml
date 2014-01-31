@@ -42,7 +42,7 @@
     					<RowDefinition/>
     				</Grid.RowDefinitions>
     				<TextBlock x:Name="aboutTitle" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Quienes Somos" VerticalAlignment="Top" FontSize="26.667" Grid.ColumnSpan="2"/>
-    				<Grid x:Name="member1" Margin="0,0,10,10" Grid.Row="1" Width="150" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
+    				<Grid x:Name="member1" Margin="0,0,10,10" Grid.Row="1" Width="150" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="member1_Tapped">
     					<Grid.Background>
     						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/cataF.jpg"/>
     					</Grid.Background>
@@ -53,7 +53,7 @@
     					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
     					<TextBlock x:Name="member1Name" Margin="0,10,0,0" TextWrapping="Wrap" Text="Catalina Lagos Diseñadora" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
     				</Grid>
-    				<Grid x:Name="member2" Margin="0,0,10,10" Width="150" Height="150" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top">
+    				<Grid x:Name="member2" Margin="0,0,10,10" Width="150" Height="150" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="member2_Tapped">
     					<Grid.Background>
     						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/nachoF.jpg"/>
     					</Grid.Background>
@@ -64,9 +64,9 @@
     					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
     					<TextBlock x:Name="member2Name" Margin="0,10,0,0" TextWrapping="Wrap" Text="Ignacio Carmach Ingeniero TI" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
     				</Grid>
-    				<Grid x:Name="member3" Margin="0,0,10,10" Grid.Row="3" Width="150" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top">
+    				<Grid x:Name="member3" Margin="0,0,10,10" Grid.Row="3" Width="150" Height="150" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="member3_Tapped">
     					<Grid.Background>
-    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/carlosF.jpg"/>
+    						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/carlosF2.jpg"/>
     					</Grid.Background>
     					<Grid.RowDefinitions>
     						<RowDefinition Height="2*"/>
@@ -75,7 +75,7 @@
     					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
     					<TextBlock x:Name="member3Name" Margin="0,10,0,0" TextWrapping="Wrap" Text="Carlos Canales       Tutor" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
     				</Grid>
-    				<Grid x:Name="member4" Margin="0,0,0,10" Grid.Row="1" Width="150" Height="150" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+    				<Grid x:Name="member4" Margin="0,0,0,10" Grid.Row="1" Width="150" Height="150" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="member4_Tapped">
     					<Grid.Background>
     						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/marioF.jpg"/>
     					</Grid.Background>
@@ -86,7 +86,7 @@
     					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
     					<TextBlock x:Name="member4Name" Margin="0,10,0,0" TextWrapping="Wrap" Text="Mario Aburto  Ingeniero en Gestión" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
     				</Grid>
-    				<Grid x:Name="member5" Margin="0,0,0,10" Grid.Row="2" Width="150" Height="150" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+    				<Grid x:Name="member5" Margin="0,0,0,10" Grid.Row="2" Width="150" Height="150" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="member5_Tapped">
     					<Grid.Background>
     						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/camiF.jpg"/>
     					</Grid.Background>
@@ -97,7 +97,7 @@
     					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
     					<TextBlock x:Name="member5Name" Margin="0,10,0,0" TextWrapping="Wrap" Text="Camila Orellana Ingeniera TI" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
     				</Grid>
-    				<Grid x:Name="member6" Margin="0,0,0,10" Grid.Row="3" Width="150" Height="150" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+    				<Grid x:Name="member6" Margin="0,0,0,10" Grid.Row="3" Width="150" Height="150" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="member6_Tapped">
     					<Grid.Background>
     						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/logoFASN.png"/>
     					</Grid.Background>
@@ -122,7 +122,7 @@
     					<RowDefinition/>
     				</Grid.RowDefinitions>
     				<TextBlock x:Name="portfolioTitle" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Portafolio" VerticalAlignment="Top" FontSize="26.667" Grid.ColumnSpan="2"/>
-    				<Grid x:Name="portfolio1" Margin="0,0,10,10" Grid.Row="1" Width="310" Height="155" HorizontalAlignment="Left" VerticalAlignment="Top">
+    				<Grid x:Name="portfolio1" Margin="0,0,10,10" Grid.Row="1" Width="310" Height="155" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="portfolio1_Tapped">
     					<Grid.Background>
     						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/cataF.jpg"/>
     					</Grid.Background>
@@ -133,7 +133,7 @@
     					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
     					<TextBlock x:Name="portfolio1Text" Margin="0,10,0,0" TextWrapping="Wrap" Text="drinkingbuddy" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
     				</Grid>
-    				<Grid x:Name="portfolio2" Margin="0,0,0,10" Grid.Row="1" Width="310" Height="155" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+    				<Grid x:Name="portfolio2" Margin="0,0,0,10" Grid.Row="1" Width="310" Height="155" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="portfolio2_Tapped">
     					<Grid.Background>
     						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/marioF.jpg"/>
     					</Grid.Background>
@@ -144,7 +144,7 @@
     					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
     					<TextBlock x:Name="portfolio2Text" Margin="0,12,0,-2" TextWrapping="Wrap" Text="Travel Route                                                      En Desarrollo" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
     				</Grid>
-    				<Grid x:Name="portfolio3" Margin="0,0,0,10" Grid.Row="2" Width="310" Height="155" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+    				<Grid x:Name="portfolio3" Margin="0,0,0,10" Grid.Row="2" Width="310" Height="155" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="portfolio3_Tapped">
     					<Grid.Background>
     						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/camiF.jpg"/>
     					</Grid.Background>
@@ -155,7 +155,7 @@
     					<Canvas Margin="0" Grid.Row="1" Background="Black" Opacity="0.6"/>
     					<TextBlock x:Name="portfolio3Text" Margin="0,10,0,0" TextWrapping="Wrap" Text="What's for lunch?                                                      En Desarrollo" Canvas.ZIndex="1" Foreground="White" FontSize="14.667" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.Row="1"/>
     				</Grid>
-    				<Grid x:Name="portfolio4" Margin="0,0,0,10" Grid.Row="3" Width="310" Height="155" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+    				<Grid x:Name="portfolio4" Margin="0,0,0,10" Grid.Row="3" Width="310" Height="155" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Tapped="portfolio4_Tapped">
     					<Grid.Background>
     						<ImageBrush Stretch="UniformToFill" ImageSource="Assets/logoFASN.png"/>
     					</Grid.Background>

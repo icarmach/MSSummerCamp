@@ -108,10 +108,44 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Camila.xaml.cs">
+      <DependentUpon>Camila.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Carlos.xaml.cs">
+      <DependentUpon>Carlos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Catalina.xaml.cs">
+      <DependentUpon>Catalina.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\NavigationHelper.cs" />
+    <Compile Include="Common\ObservableDictionary.cs" />
+    <Compile Include="Common\RelayCommand.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="drinkingbuddy.xaml.cs">
+      <DependentUpon>drinkingbuddy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmergencyChat.xaml.cs">
+      <DependentUpon>EmergencyChat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ignacio.xaml.cs">
+      <DependentUpon>Ignacio.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mario.xaml.cs">
+      <DependentUpon>Mario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MimeticApps.xaml.cs">
+      <DependentUpon>MimeticApps.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TravelRoute.xaml.cs">
+      <DependentUpon>TravelRoute.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WhatsForLunch.xaml.cs">
+      <DependentUpon>WhatsForLunch.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -127,6 +161,7 @@
     <Content Include="Assets\camiC.jpg" />
     <Content Include="Assets\camiF.jpg" />
     <Content Include="Assets\carlosF.jpg" />
+    <Content Include="Assets\carlosF2.jpg" />
     <Content Include="Assets\cataC.jpg" />
     <Content Include="Assets\cataF.jpg" />
     <Content Include="Assets\contact.png" />
@@ -141,15 +176,56 @@
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Common\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Camila.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Carlos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Catalina.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="drinkingbuddy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmergencyChat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ignacio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Mario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MimeticApps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TravelRoute.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WhatsForLunch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">

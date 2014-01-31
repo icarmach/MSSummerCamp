@@ -27,5 +27,55 @@ namespace MimeticAppsWindows
             this.InitializeComponent();
         }
 
+        private void member1_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Catalina));
+        }
+
+        private void member2_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Ignacio));
+        }
+
+        private void member3_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Carlos));
+        }
+
+        private void member4_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Mario));
+        }
+
+        private void member5_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Camila));
+        }
+
+        private void member6_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MimeticApps));
+        }
+
+        private void portfolio1_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(drinkingbuddy));
+        }
+
+        private void portfolio2_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TravelRoute));
+        }
+
+        private void portfolio3_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(WhatsForLunch));
+        }
+
+        private void portfolio4_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(EmergencyChat));
+        }
+
     }
 }
