@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{31CA5B75-B6D2-4E61-88E8-FFD651AC525C}</ProjectGuid>
+    <ProjectGuid>{82B4AF6F-0154-4215-BD2E-E7C9BCDEF4A9}</ProjectGuid>
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -128,10 +128,26 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\PanoramaBackground.png" />
+    <Content Include="Assets\310x310.scale-100.png" />
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\camiC.jpg" />
+    <Content Include="Assets\camiF.jpg" />
+    <Content Include="Assets\carlosF.jpg" />
+    <Content Include="Assets\carlosF2.jpg" />
+    <Content Include="Assets\cataC.jpg" />
+    <Content Include="Assets\cataF.jpg" />
+    <Content Include="Assets\contact.png" />
+    <Content Include="Assets\fotoGrupo.jpg" />
+    <Content Include="Assets\logo.png" />
+    <Content Include="Assets\logoFASN.png" />
+    <Content Include="Assets\logoSFSN.png" />
+    <Content Include="Assets\marioC.jpg" />
+    <Content Include="Assets\marioF.jpg" />
+    <Content Include="Assets\nachoC.jpg" />
+    <Content Include="Assets\nachoF.jpg" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -36,60 +36,76 @@
             CurrentUICulture of the app at run time.
          -->
 
-         <!--Panorama control-->
-        <phone:Panorama Title="my application">
-            <phone:Panorama.Background>
-                <ImageBrush ImageSource="/MimeticAppsPhone;component/Assets/PanoramaBackground.png"/>
-            </phone:Panorama.Background>
+        <!--Panorama control-->
+        <phone:Panorama Title="MimeticApps" FontFamily="Segoe WP" Background="{x:Null}">
 
             <!--Panorama item one-->
-            <phone:PanoramaItem Header="first item">
+
+            <!--Panorama item one-->
+            <phone:PanoramaItem Header="nuestro equipo">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Image Margin="0" Source="/Assets/fotoGrupo.jpg"/>
+                    <TextBlock TextWrapping="Wrap" Text="Aplicaciones dinámicas, interactivas y prácticas. Buscamos la excelencia y calidad en todos nuestros proyectos" Grid.Row="1"/>
+                </Grid>
                 <!--Single line list with text wrapping-->
-                <phone:LongListSelector Margin="0,0,-22,0" ItemsSource="{Binding Items}">
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Margin="0,-6,0,12">
-                                <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
             </phone:PanoramaItem>
 
             <!--Panorama item two-->
-            <phone:PanoramaItem>
+            <phone:PanoramaItem Header="quienes somos">
+                <ScrollViewer>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="memberImage1" Margin="0" Source="/Assets/cataC.jpg"/>
+                        <TextBlock x:Name="memberText1" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+                        	<Run Text="Catalina Lagos&#xA;Diseñadora&#xA;&#xA;"/>
+                        	<Run FontSize="16" Text="CatalinaL@summercampchile.com"/>
+                        </TextBlock>
+                        <Image x:Name="memberImage2" Margin="0" Source="/Assets/marioC.jpg" Grid.Row="1"/>
+                        <TextBlock x:Name="memberText2" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1">
+                        	<Run Text="Mario Aburto&#xA;Ingeniero en Gestión&#xA;&#xA;"/>
+                        	<Run FontSize="16" Text="MarioA@summercampchile.com"/>
+                        </TextBlock>
+                        <Image x:Name="memberImage3" Margin="0" Source="/Assets/camiC.jpg" Grid.Row="2"/>
+                        <TextBlock x:Name="memberText3" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="2">
+                        	<Run Text="Camila Orellana&#xA;Ingeniera en TI&#xA;&#xA;"/>
+                        	<Run FontSize="16" Text="CamilaO@summercampchile.com"/>
+                        </TextBlock>
+                        <Image x:Name="memberImage4" Margin="0" Source="/Assets/nachoC.jpg" Grid.Row="3"/>
+                        <TextBlock x:Name="memberText4" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="3">
+                        	<Run Text="Ignacio Carmach&#xA;Ingeniero en TI&#xA;&#xA;"/>
+                        	<Run FontSize="16" Text="IgnacioC@summercampchile.com"/>
+                        </TextBlock>
+                        <Image x:Name="memberImage5" Margin="0" Source="/Assets/carlosF2.jpg" Grid.Row="4"/>
+                        <TextBlock x:Name="memberText5" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="4">
+                        	<Run Text="Carlos Canales&#xA;Tutor&#xA;&#xA;"/>
+                        	<Run FontSize="16" Text="CarlosC@summercampchile.com"/>
+                        </TextBlock>
+                        <Image x:Name="memberImage6" Margin="0" Source="/Assets/logoFASN.png" Grid.Row="5"/>
+                        <TextBlock x:Name="memberText6" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="5">
+                        	<Run Text="MimeticApps"/>
+                        </TextBlock>
+                    </Grid>
+                </ScrollViewer>
                 <!--Double line list with image placeholder and text wrapping using a floating header that scrolls with the content-->
-                <phone:LongListSelector Margin="0,-38,-22,2" ItemsSource="{Binding Items}">
-                    <phone:LongListSelector.ListHeaderTemplate>
-                        <DataTemplate>
-                            <Grid Margin="12,0,0,38">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="*"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Text="second item"
-                                           Style="{StaticResource PanoramaItemHeaderTextStyle}"
-                                           Grid.Row="0"/>
-                            </Grid>
-                        </DataTemplate>
-                    </phone:LongListSelector.ListHeaderTemplate>
-                    <phone:LongListSelector.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Margin="12,2,0,4" Height="105" Width="432">
-                                <!--Replace rectangle with image-->
-                                <Border BorderThickness="1" Width="99" Height="99" BorderBrush="#FFFFC700" Background="#FFFFC700"/>
-                                <StackPanel Width="311" Margin="8,-7,0,0">
-                                    <TextBlock Text="{Binding LineOne}" TextWrapping="Wrap" Margin="10,0" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="{StaticResource PhoneFontSizeLarge}" />
-                                    <TextBlock Text="{Binding LineTwo}" TextWrapping="Wrap" Margin="10,-2,10,0" Style="{StaticResource PhoneTextSubtleStyle}" />
-                                </StackPanel>
-                            </StackPanel>
-                        </DataTemplate>
-                    </phone:LongListSelector.ItemTemplate>
-                </phone:LongListSelector>
             </phone:PanoramaItem>
 
             <!--Panorama item three-->
-            <phone:PanoramaItem Header="third item" Orientation="Horizontal">
+            <phone:PanoramaItem Header="portafolio" Orientation="Horizontal">
                 <!--Double wide Panorama with large image placeholders-->
                 <Grid>
                     <StackPanel Margin="0,4,16,0" Orientation="Vertical" VerticalAlignment="Top">
