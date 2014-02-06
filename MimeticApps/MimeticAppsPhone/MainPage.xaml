@@ -110,12 +110,28 @@
                 <Grid>
                     <StackPanel Margin="0,4,16,0" Orientation="Vertical" VerticalAlignment="Top">
                         <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                            <Border Background="#FFFFC700" Height="173" Width="360" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="360" Margin="12,0,0,0"/>
+                            <Border Height="173" Width="360" Margin="12,0,0,0">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/DB.png"/>
+                                </Border.Background>
+                            </Border>
+                            <Border Height="173" Width="360" Margin="12,0,0,0">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/EC.png"/>
+                                </Border.Background>
+                            </Border>
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="0,12,0,0">
-                            <Border Background="#FFFFC700" Height="173" Width="360" Margin="12,0,0,0"/>
-                            <Border Background="#FFFFC700" Height="173" Width="360" Margin="12,0,0,0"/>
+                            <Border Height="173" Width="360" Margin="12,0,0,0">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/TR.png"/>
+                                </Border.Background>
+                            </Border>
+                            <Border Height="173" Width="360" Margin="12,0,0,0">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/WFL.png"/>
+                                </Border.Background>
+                            </Border>
                         </StackPanel>
                     </StackPanel>
                 </Grid>

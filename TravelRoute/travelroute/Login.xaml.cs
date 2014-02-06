@@ -20,14 +20,14 @@ namespace travelroute
         }
         private async void facebookLoginButton_Click(object sender, RoutedEventArgs e)
         {
-            await AuthenticateWithFacebook();
-            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+            //await AuthenticateWithFacebook();
+            NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
         }
 
         private async void twitterLoginButton_Click(object sender, RoutedEventArgs e)
         {
-            await AuthenticateWithTwitter();
-            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+            //await AuthenticateWithTwitter();
+            NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
         }
 
         private async System.Threading.Tasks.Task AuthenticateWithFacebook()

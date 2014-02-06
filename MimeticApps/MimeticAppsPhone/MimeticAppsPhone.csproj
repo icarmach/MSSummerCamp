@@ -127,6 +127,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\TR.png" />
+    <Content Include="Assets\WFL.png" />
     <Resource Include="Assets\PanoramaBackground.png" />
     <Content Include="Assets\310x310.scale-100.png" />
     <Content Include="Assets\AlignmentGrid.png" />
@@ -140,6 +142,8 @@
     <Content Include="Assets\cataC.jpg" />
     <Content Include="Assets\cataF.jpg" />
     <Content Include="Assets\contact.png" />
+    <Content Include="Assets\DB.png" />
+    <Content Include="Assets\EC.png" />
     <Content Include="Assets\fotoGrupo.jpg" />
     <Content Include="Assets\logo.png" />
     <Content Include="Assets\logoFASN.png" />
