@@ -23,15 +23,23 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock x:Name="appNameText" Text="Travel Route" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="pageNameText" Text="Login" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="pageNameText" Text="ingresar" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
 
         </Grid>
-        <Button x:Name="facebookLoginButton" Content="Login with Facebook" HorizontalAlignment="Center" Margin="0,0,0,200" Grid.Row="1" VerticalAlignment="Center" Click="facebookLoginButton_Click"/>
-        <Button x:Name="twitterLoginButton" Content="Login with Twitter" HorizontalAlignment="Center" Margin="0,0,0,2" Grid.Row="1" VerticalAlignment="Center" Click="twitterLoginButton_Click"/>
+        <Button x:Name="facebookLoginButton" Content="" Margin="0,0,0,300" Grid.Row="1" Click="facebookLoginButton_Click" Width="400" Height="100" BorderThickness="0">
+        	<Button.Background>
+        		<ImageBrush ImageSource="/Assets/facebookLogin.png" Stretch="UniformToFill"/>
+        	</Button.Background>
+        </Button>
+        <Button x:Name="twitterLoginButton" Content="" HorizontalAlignment="Center" Margin="0,0,0,2" Grid.Row="1" VerticalAlignment="Center" Click="twitterLoginButton_Click" Width="400" Height="100" BorderThickness="0">
+        	<Button.Background>
+        		<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/twitterLogin.png"/>
+        	</Button.Background>
+        </Button>
     </Grid>
 
 </phone:PhoneApplicationPage>

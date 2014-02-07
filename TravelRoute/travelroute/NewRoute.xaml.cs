@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Navigation;
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
+using System.Windows.Media.Imaging;
+
+namespace travelroute
+{
+    public partial class NewRoute : PhoneApplicationPage
+    {
+        public NewRoute()
+        {
+            InitializeComponent();
+        }
+
+        private void routeImage_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            //PhotoChooserTask gives you access to the gallery on the phone (and optionally to the camera)
+            //to let the user select or take a picture.
+            PhotoChooserTask photo = new PhotoChooserTask();
+            photo.ShowCamera = true;
+
+            //Shows the gallery app
+            photo.Show();
+
+            //When the user selects a picture, he is taken back to the app and the photo.Completed event is triggered.
+            photo.Completed += photo_Completed;
+        }
+
+        private void photo_Completed(object sender, PhotoResult e)
+        {
+            //If the user really selected a picture (didn't press back)
+            if (e != null && e.ChosenPhoto != null)
+            {
+                //Get the picture selected and set it as the source to the routeImage
+                BitmapImage image = new BitmapImage();
+                image.SetSource(e.ChosenPhoto);
+                routeImage.Source = image;
+
+                //Ultra Mega AuxImage to store the selected image until we can upload them to Azure
+                AzureDBM.auxImage = image;
+            }
+
+            
+        }
+
+        private void routeDescription_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //Scrolls to the end of the ScrollViewer so the user can see what he is typing.
+            routeDescriptionScrollViewer.ScrollToVerticalOffset(200);
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            //Creates the new Route and then it sends it to Azure so we can store the route data.
+            var ruta = new Ruta { Descripcion = routeDescription.Text, DiasDuracion = 0, Nombre = routeName.Text, Tags = routeTags.Text, Tipo = "activas", TipoClima = "", UserId = App.MobileService.CurrentUser.UserId };
+            AzureDBM.InsertRuta(ruta);
+
+            NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
+        }
+    }
+}

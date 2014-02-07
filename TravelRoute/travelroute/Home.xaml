@@ -102,7 +102,7 @@
 									<Image x:Name="p2Star5" Grid.Column="4" Stretch="None" Source="/Assets/starFull.png"/>
 								</Grid>
 							</Grid>
-							<Grid x:Name="p3Grid" Grid.Row="2">
+							<Grid x:Name="p3Grid" Grid.Row="2" Tap="p3Grid_Tap">
 								<Grid.RowDefinitions>
 									<RowDefinition/>
 									<RowDefinition/>
@@ -167,6 +167,21 @@
                             		<TextBlock x:Name="act1Days" HorizontalAlignment="Left" TextWrapping="Wrap" Text="5 días" VerticalAlignment="Bottom" Grid.Row="1" Margin="20,0,0,35" FontSize="21.333"/>
                             		<TextBlock x:Name="act1Price" HorizontalAlignment="Left" TextWrapping="Wrap" Text="$ 249.735" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Row="1" FontSize="21.333"/>
                             	</Grid>
+                            	<Grid x:Name="act2Grid" Margin="0" Grid.Row="1">
+                            		<Grid.RowDefinitions>
+                            			<RowDefinition/>
+                            			<RowDefinition/>
+                            		</Grid.RowDefinitions>
+                            		<Grid.ColumnDefinitions>
+                            			<ColumnDefinition/>
+                            			<ColumnDefinition/>
+                            		</Grid.ColumnDefinitions>
+                            		<Image x:Name="act2Image" Margin="10" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                            		<Canvas x:Name="act2Canvas" Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                            		<TextBlock x:Name="act2Name" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
+                            		<TextBlock x:Name="act2Days" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Row="1" Margin="20,0,0,35" FontSize="21.333"/>
+                            		<TextBlock x:Name="act2Price" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Row="1" FontSize="21.333"/>
+                            	</Grid>
                             </Grid>
                 		</phone:PivotItem>
                         <phone:PivotItem x:Name="planificadasPivotItem">
@@ -190,9 +205,9 @@
                             			<ColumnDefinition/>
                             			<ColumnDefinition/>
                             		</Grid.ColumnDefinitions>
-                            		<Image x:Name="plan1Image" Margin="10" Source="/Assets/populares-04.png" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                            		<Image x:Name="plan1Image" Margin="10" Source="/Assets/rutaPisco.png" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
                             		<Canvas x:Name="plan1Canvas" Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                            		<TextBlock x:Name="plan1Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Bosque Húmedo" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
+                            		<TextBlock x:Name="plan1Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ruta del Pisco" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
                             	</Grid>
                             </Grid>
                         </phone:PivotItem>
@@ -223,7 +238,7 @@
                             		<TextBlock x:Name="fin1Place" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Parque Nacional Torres del Paine, XII Región" VerticalAlignment="Top" Margin="20,40,0,0" FontSize="17.333" Grid.ColumnSpan="2"/>
                             		<TextBlock x:Name="fin1Days" HorizontalAlignment="Left" TextWrapping="Wrap" Text="7 días" VerticalAlignment="Bottom" Grid.Row="1" Margin="20,0,0,35" FontSize="21.333"/>
                             		<TextBlock x:Name="fin1Price" HorizontalAlignment="Left" TextWrapping="Wrap" Text="$ 326.910" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Row="1" FontSize="21.333"/>
-                            		<Image x:Name="fin1Privacy" Source="/Assets/starEmpty.png" Stretch="None" Margin="0,0,23,35" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                            		<Image x:Name="fin1Privacy" Source="/Assets/Icons/lock.opened.png" Margin="0,0,10,35" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="40" Height="40"/>
                             		<Grid x:Name="fin1Stars" Grid.Row="1" Grid.Column="1" Margin="30,50,20,10">
                             			<Grid.ColumnDefinitions>
                             				<ColumnDefinition/>
@@ -247,7 +262,9 @@
 					<Grid x:Name="buscarMainGrid"/>
 				</phone:PanoramaItem>
                 <phone:PanoramaItem x:Name="perfilPanorama" Header="perfil" Tag="perfil">
-					<Grid x:Name="perfilMainGrid"/>
+					<Grid x:Name="perfilMainGrid">
+						<Button x:Name="signOutButton" Content="Desconectarse" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Click="signOutButton_Click"/>
+					</Grid>
 				</phone:PanoramaItem>
                 <phone:PanoramaItem x:Name="tiendaPanorama" Header="tienda" Tag="tienda">
 					<Grid x:Name="tiendaMainGrid"/>

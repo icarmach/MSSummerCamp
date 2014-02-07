@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AzureDBM.cs" />
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -106,11 +107,17 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NewRoute.xaml.cs">
+      <DependentUpon>NewRoute.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RouteView.xaml.cs">
+      <DependentUpon>RouteView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +137,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NewRoute.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RouteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -139,10 +154,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\agregaImagen.png" />
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\facebookLogin.png" />
     <Content Include="Assets\Icons\add.png" />
     <Content Include="Assets\Icons\back.png" />
     <Content Include="Assets\Icons\basecircle.png" />
@@ -192,6 +209,10 @@
     <Content Include="Assets\populares-02.png" />
     <Content Include="Assets\populares-03.png" />
     <Content Include="Assets\populares-04.png" />
+    <Content Include="Assets\routeComments.png" />
+    <Content Include="Assets\routeMap.png" />
+    <Content Include="Assets\routeStat.png" />
+    <Content Include="Assets\rutaPisco.png" />
     <Content Include="Assets\starEmpty.png" />
     <Content Include="Assets\starFull.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
@@ -209,6 +230,7 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\twitterLogin.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.resx">

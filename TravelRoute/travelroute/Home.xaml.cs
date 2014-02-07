@@ -7,6 +7,10 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Newtonsoft.Json;
+using Microsoft.WindowsAzure.MobileServices;
+using travelroute.Resources;
+using System.Windows.Media.Imaging;
 
 namespace travelroute
 {
@@ -17,8 +21,44 @@ namespace travelroute
             InitializeComponent();
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            RefreshRutaItems();           
+        }
+
+        private async void RefreshRutaItems()
+        {
+            // This code refreshes the entries in the "rutas activas" view querying the Ruta table.
+            // The query excludes Rutas that do now belown to the current user
+            try
+            {
+                AzureDBM.items = await AzureDBM.rutaTable
+                    .Where(ruta => ruta.UserId == App.MobileService.CurrentUser.UserId)
+                    .ToCollectionAsync();
+
+                if (AzureDBM.items.Count > 0)
+                {
+                    act2Image.Source = AzureDBM.auxImage;
+                    act2Name.Text = AzureDBM.items.Last().Nombre;
+                    act2Days.Text = "0 días";
+                    act2Price.Text = "$ 0";
+                }
+
+                
+            }
+            catch (MobileServiceInvalidOperationException e)
+            {
+                MessageBox.Show(e.Message, "Error loading items", MessageBoxButton.OK);
+            }
+
+            //ListItems.ItemsSource = items;
+            
+        }
+
         private void HomePanorama_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //Detects when the user is at the Rutas view and adds or remove buttons from the App Bar
+            //in order to show the correct options that the user has on each section.
             if (e.AddedItems.Count < 1)
             {
                 return;
@@ -37,10 +77,13 @@ namespace travelroute
             {
                 if (this.ApplicationBar.Buttons.Count == 4)
                 {
+                    //Removes buttons from the app bar. It is always removing from the index 0 because the list gets
+                    //shorter and the second item is now the first item.
                     this.ApplicationBar.Buttons.RemoveAt(0);
                     this.ApplicationBar.Buttons.RemoveAt(0);
                     this.ApplicationBar.Buttons.RemoveAt(0);
 
+                    //Adds back the copy button
                     ApplicationBarIconButton button1 = new ApplicationBarIconButton();
                     button1.IconUri = new Uri("Assets/Icons/copy.png", UriKind.Relative);
                     button1.Text = "copiar";
@@ -51,13 +94,14 @@ namespace travelroute
 
             else if (tag.Equals("rutas"))
             {
+                //Adds 3 buttons acconrding to this section
                 this.ApplicationBar.Buttons.RemoveAt(0);
 
-                ApplicationBarIconButton button1 = new ApplicationBarIconButton();
-                button1.IconUri = new Uri("Assets/Icons/add.png", UriKind.Relative);
-                button1.Text = "agregar";
-                this.ApplicationBar.Buttons.Insert(0,button1);
-                //button1.Click += new EventHandler(button1_Click);
+                ApplicationBarIconButton newButton = new ApplicationBarIconButton();
+                newButton.IconUri = new Uri("Assets/Icons/add.png", UriKind.Relative);
+                newButton.Text = "agregar";
+                this.ApplicationBar.Buttons.Insert(0, newButton);
+                newButton.Click += new EventHandler(newButton_Click);
 
                 ApplicationBarIconButton button2 = new ApplicationBarIconButton();
                 button2.IconUri = new Uri("Assets/Icons/edit.png", UriKind.Relative);
@@ -74,6 +118,8 @@ namespace travelroute
 
             else if (tag.Equals("buscar"))
             {
+                //Removes buttons from the app bar. It is always removing from the index 0 because the list gets
+                //shorter and the second item is now the first item.
                 if (this.ApplicationBar.Buttons.Count == 4)
                 {
                     this.ApplicationBar.Buttons.RemoveAt(0);
@@ -100,5 +146,23 @@ namespace travelroute
             }
            
         }
+
+        private void newButton_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/NewRoute.xaml", UriKind.Relative));
+        }
+
+        private void signOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            //If there is an authenticated user then logout
+            AzureDBM.SignOut();
+            NavigationService.Navigate(new Uri("/Login.xaml", UriKind.Relative));
+        }
+
+        private void p3Grid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/RouteView.xaml", UriKind.Relative));
+        }
+
     }
 }
