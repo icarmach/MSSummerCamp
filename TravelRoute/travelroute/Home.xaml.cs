@@ -23,7 +23,7 @@ namespace travelroute
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            RefreshRutaItems();           
+            RefreshRutaItems();
         }
 
         private async void RefreshRutaItems()
@@ -33,13 +33,13 @@ namespace travelroute
             try
             {
                 AzureDBM.items = await AzureDBM.rutaTable
-                    .Where(ruta => ruta.UserId == App.MobileService.CurrentUser.UserId)
+                    .Where(ruta => ruta.OwnerId == App.MobileService.CurrentUser.UserId)
                     .ToCollectionAsync();
 
                 if (AzureDBM.items.Count > 0)
                 {
                     act2Image.Source = AzureDBM.auxImage;
-                    act2Name.Text = AzureDBM.items.Last().Nombre;
+                    act2Name.Text = AzureDBM.items.Last().Name;
                     act2Days.Text = "0 días";
                     act2Price.Text = "$ 0";
                 }

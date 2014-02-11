@@ -9,33 +9,34 @@ using Microsoft.WindowsAzure.MobileServices;
 using travelroute.Resources;
 using System.Windows.Media.Imaging;
 using Microsoft.Phone.Controls;
+using System.Windows;
 
 namespace travelroute
 {
-    public class Ruta
+    public class Route
     {
         public string Id { get; set; }
 
-        [JsonProperty(PropertyName = "tipo")]
-        public string Tipo { get; set; }
+        [JsonProperty(PropertyName = "ownerId")]
+        public string OwnerId { get; set; }
 
-        [JsonProperty(PropertyName = "descripcion")]
-        public string Descripcion { get; set; }
+        [JsonProperty(PropertyName = "originalRouteId")]
+        public string OriginalRouteId { get; set; }
 
-        [JsonProperty(PropertyName = "tipoclima")]
-        public string TipoClima { get; set; }
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
 
-        [JsonProperty(PropertyName = "diasduracion")]
-        public int DiasDuracion { get; set; }
+        [JsonProperty(PropertyName = "desciption")]
+        public string Description { get; set; }
 
-        [JsonProperty(PropertyName = "nombre")]
-        public string Nombre { get; set; }
+        [JsonProperty(PropertyName = "duration")]
+        public int Duration { get; set; }
 
-        [JsonProperty(PropertyName = "tags")]
-        public string Tags { get; set; }
+        [JsonProperty(PropertyName = "routePicture")]
+        public string RoutePicture { get; set; }
 
-        [JsonProperty(PropertyName = "userId")]
-        public string UserId { get; set; }
+        [JsonProperty(PropertyName = "copiedNumber")]
+        public string CopiedNumber { get; set; }
     }
 
     //static class so it is available to every class on the project. This way different interfaces can interact
@@ -47,14 +48,56 @@ namespace travelroute
         // MobileServiceCollectionView implements ICollectionView (useful for databinding to lists) and 
         // is integrated with your Mobile Service to make it easy to bind your data to the ListView
         
-        public static MobileServiceCollection<Ruta, Ruta> items;
+        public static MobileServiceCollection<Route, Route> items;
 
-        public static IMobileServiceTable<Ruta> rutaTable = App.MobileService.GetTable<Ruta>();
+        public static IMobileServiceTable<Route> rutaTable = App.MobileService.GetTable<Route>();
 
         //auxImage until we can host them on Azure
         public static BitmapImage auxImage = new BitmapImage(new Uri("Assets/rutaPisco.png", UriKind.Relative));
 
-        public static async void InsertRuta(Ruta ruta)
+        public static async System.Threading.Tasks.Task AuthenticateWithFacebook()
+        {
+            // Calls the Mobile Service available on Windows Azure and let the user login to the app using Facebook as the provider.
+            while (App.MobileService.CurrentUser == null)
+            {
+                string message;
+                try
+                {
+                    App.MobileService.CurrentUser = await App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
+                    //message = string.Format("You are now logged in - {0}", App.MobileService.CurrentUser.UserId);
+                }
+                catch (InvalidOperationException)
+                {
+                    message = "You must log in. Login Required";
+                    MessageBox.Show(message);
+                }
+
+
+            }
+        }
+
+        public static async System.Threading.Tasks.Task AuthenticateWithTwitter()
+        {
+            // Calls the Mobile Service available on Windows Azure and let the user login to the app using Twitter as the provider.
+            while (App.MobileService.CurrentUser == null)
+            {
+                string message;
+                try
+                {
+                    App.MobileService.CurrentUser = await App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.Twitter);
+                    //message = string.Format("You are now logged in - {0}", App.MobileService.CurrentUser.UserId);
+                }
+                catch (InvalidOperationException)
+                {
+                    message = "You must log in. Login Required";
+                    MessageBox.Show(message);
+                }
+
+
+            }
+        }
+
+        public static async void InsertRuta(Route ruta)
         {
             // This code inserts a new Ruta into the database. When the operation completes
             // and Mobile Services has assigned an Id, the item is added to the Home Page.
