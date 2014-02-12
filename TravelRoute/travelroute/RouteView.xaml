@@ -46,7 +46,10 @@
                     <phone:PanoramaItem.RenderTransform>
                         <TranslateTransform/>
                     </phone:PanoramaItem.RenderTransform>
-                    <maps:Map x:Name="routeMap" Margin="0,2,0,-2"/>
+                	<Grid Margin="0">
+                		<TextBlock x:Name="routeName" HorizontalAlignment="Left" Margin="0,-40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26.667" Text="Nombre de la Ruta"/>
+                		<Image Margin="0" Source="/Assets/routeMap.png"/>
+                	</Grid>
                 </phone:PanoramaItem>
                 <phone:PanoramaItem x:Name="RouteStatPanorama" Header="estadísticas" Tag="stats">
                     <Grid x:Name="statMainGrid">

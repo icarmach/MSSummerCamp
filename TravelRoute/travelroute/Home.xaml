@@ -34,12 +34,12 @@
 						<TranslateTransform/>
 					</phone:PanoramaItem.RenderTransform>
                     
-                    <!-- Route data bindings -->
+                    <!-- Popular routes data bindings -->
                     <phone:LongListSelector Margin="0,0,0,0" ItemsSource="{Binding PopularRouteList}">
                         <phone:LongListSelector.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <Grid Width="396" Height="180">
+                                    <Grid x:Name="popularGrid" Width="396" Height="180" Tap="popularGrid_Tap">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
                                             <RowDefinition/>
@@ -91,7 +91,7 @@
                                 <phone:LongListSelector.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
-                                            <Grid Width="372" Height="171">
+                                            <Grid x:Name="activeGrid" Width="372" Height="171" Tap="activeGrid_Tap">
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition/>
                                                     <RowDefinition/>

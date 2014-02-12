@@ -10,6 +10,7 @@ using travelroute.Resources;
 using System.Windows.Media.Imaging;
 using Microsoft.Phone.Controls;
 using System.Windows;
+using System.IO;
 
 namespace travelroute
 {
@@ -126,6 +127,43 @@ namespace travelroute
                 await new WebBrowser().ClearCookiesAsync();
                 //await new WebBrowser().ClearInternetCacheAsync();
             }
+        }
+
+        public static void UploadImageAsync(Stream PhotoStream)
+        {
+            try
+            {
+                WebClient w = new WebClient();
+                w.Headers["Content-type"] = "application/x-www-form-urlencoded";
+
+                string data = "key=" + "c026f73427bc1e9" +
+                        "&_fake_status=200" +
+                        "&type=base64" +
+                        "&image=" + PhotoStreamToBase64(PhotoStream);
+
+                w.UploadStringAsync(new Uri("http://api.imgur.com/2/upload", UriKind.Absolute), "POST", data);
+                
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        static string PhotoStreamToBase64(Stream PhotoStream)
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            PhotoStream.CopyTo(memoryStream);
+            byte[] result = memoryStream.ToArray();
+
+            string base64img = System.Convert.ToBase64String(result);
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < base64img.Length; i += 32766)
+            {
+                sb.Append(Uri.EscapeDataString(base64img.Substring(i, Math.Min(32766, base64img.Length - i))));
+            }
+
+            return sb.ToString();
         }
     }
 }

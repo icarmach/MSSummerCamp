@@ -167,9 +167,14 @@ namespace travelroute
             NavigationService.Navigate(new Uri("/Login.xaml", UriKind.Relative));
         }
 
-        private void p3Grid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void popularGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             NavigationService.Navigate(new Uri("/RouteView.xaml", UriKind.Relative));
+        }
+
+        private void activeGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/RouteEdit.xaml", UriKind.Relative));
         }
 
     }

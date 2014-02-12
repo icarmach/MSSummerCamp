@@ -45,6 +45,9 @@ namespace travelroute
 
                 //Ultra Mega AuxImage to store the selected image until we can upload them to Azure
                 AzureDBM.auxImage = image;
+
+                //tries to upload the picture
+                //AzureDBM.UploadImageAsync(image);
             }
 
             
