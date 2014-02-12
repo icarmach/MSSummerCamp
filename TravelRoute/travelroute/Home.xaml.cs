@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using Microsoft.WindowsAzure.MobileServices;
 using travelroute.Resources;
 using System.Windows.Media.Imaging;
+using travelroute.ViewModels;
 
 namespace travelroute
 {
@@ -33,7 +34,7 @@ namespace travelroute
                 App.HomeViewModel.LoadData();
             }
         }
-
+        
         private async void RefreshRutaItems()
         {
             // This code refreshes the entries in the "rutas activas" view querying the Ruta table.
@@ -44,12 +45,11 @@ namespace travelroute
                     .Where(ruta => ruta.OwnerId == App.MobileService.CurrentUser.UserId)
                     .ToCollectionAsync();
 
-                if (AzureDBM.routeItems.Count > 0)
+                App.HomeViewModel.ActiveRouteList.Clear();
+
+                for (int i = 0; i < AzureDBM.routeItems.Count; i++)
                 {
-                    act2Image.Source = AzureDBM.auxImage;
-                    act2Name.Text = AzureDBM.routeItems.Last().Name;
-                    act2Days.Text = "0 días";
-                    act2Price.Text = "$ 0";
+                    App.HomeViewModel.ActiveRouteList.Add(new RouteViewModel() { Image = AzureDBM.auxImage, Name = AzureDBM.routeItems.ElementAt(i).Name, Duration = "0", Price = "0" });
                 }
 
                 

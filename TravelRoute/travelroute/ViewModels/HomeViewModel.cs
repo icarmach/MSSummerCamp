@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Media.Imaging;
 using travelroute.Resources;
 
 
@@ -10,13 +11,18 @@ namespace travelroute.ViewModels
     {
         public HomeViewModel()
         {
-            this.RouteList = new ObservableCollection<RouteViewModel>();
+            this.PopularRouteList = new ObservableCollection<RouteViewModel>();
+            this.ActiveRouteList = new ObservableCollection<RouteViewModel>();
+            this.PlannedRouteList = new ObservableCollection<RouteViewModel>();
+            this.EndedRouteList = new ObservableCollection<RouteViewModel>();
         }
 
-        /// <summary>
-        /// A collection for ItemViewModel objects.
-        /// </summary>
-        public ObservableCollection<RouteViewModel> RouteList { get; private set; }
+        //Collections for RouteViewModel objects.
+        public ObservableCollection<RouteViewModel> PopularRouteList { get; private set; }
+        public ObservableCollection<RouteViewModel> ActiveRouteList { get; private set; }
+        public ObservableCollection<RouteViewModel> PlannedRouteList { get; private set; }
+        public ObservableCollection<RouteViewModel> EndedRouteList { get; private set; }
+
 
         public bool IsDataLoaded
         {
@@ -29,9 +35,20 @@ namespace travelroute.ViewModels
         /// </summary>
         public void LoadData()
         {
-            // Sample data; replace with real data
+            //Popular routes to show
+            this.PopularRouteList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri("/Assets/populares-02.png", UriKind.Relative)), Name = "Circuito " + '"' + "W" + '"' + " Torres del Paine", Place = "Parque Nacional Torres del Paine, XII Región", Owner = "Por Camila Orellana", Duration = "7", Price = "326.910", Star1 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star2 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star3 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star4 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star5 = new BitmapImage(new Uri("/Assets/starEmpty.png", UriKind.Relative)) });
+            this.PopularRouteList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri("/Assets/populares-04.png", UriKind.Relative)), Name = "Explorando el Bosque", Place = "Parque Nacional Conguillio, IX Región", Owner = "Por Ignacio Carmach", Duration = "3", Price = "123.790", Star1 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star2 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star3 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star4 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star5 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)) });
+            this.PopularRouteList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri("/Assets/populares-03.png", UriKind.Relative)), Name = "Recorrido en Kayak", Place = "Lago Llanquihue, X Región", Owner = "Por Catalina Lagos", Duration = "12", Price = "97.340", Star1 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star2 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star3 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star4 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star5 = new BitmapImage(new Uri("/Assets/starEmpty.png", UriKind.Relative)) });
+            this.PopularRouteList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri("/Assets/populares-02.png", UriKind.Relative)), Name = "Circuito " + '"' + "W" + '"' + " Torres del Paine", Place = "Parque Nacional Torres del Paine, XII Región", Owner = "Por Camila Orellana", Duration = "7", Price = "326.910", Star1 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star2 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star3 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star4 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star5 = new BitmapImage(new Uri("/Assets/starEmpty.png", UriKind.Relative)) });
+            this.PopularRouteList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri("/Assets/populares-04.png", UriKind.Relative)), Name = "Explorando el Bosque", Place = "Parque Nacional Conguillio, IX Región", Owner = "Por Ignacio Carmach", Duration = "3", Price = "123.790", Star1 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star2 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star3 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star4 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star5 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)) });
+            this.PopularRouteList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri("/Assets/populares-03.png", UriKind.Relative)), Name = "Recorrido en Kayak", Place = "Lago Llanquihue, X Región", Owner = "Por Catalina Lagos", Duration = "12", Price = "97.340", Star1 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star2 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star3 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star4 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star5 = new BitmapImage(new Uri("/Assets/starEmpty.png", UriKind.Relative)) });
+            this.PopularRouteList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri("/Assets/populares-02.png", UriKind.Relative)), Name = "Circuito " + '"' + "W" + '"' + " Torres del Paine", Place = "Parque Nacional Torres del Paine, XII Región", Owner = "Por Camila Orellana", Duration = "7", Price = "326.910", Star1 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star2 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star3 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star4 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star5 = new BitmapImage(new Uri("/Assets/starEmpty.png", UriKind.Relative)) });
+            this.PopularRouteList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri("/Assets/populares-04.png", UriKind.Relative)), Name = "Explorando el Bosque", Place = "Parque Nacional Conguillio, IX Región", Owner = "Por Ignacio Carmach", Duration = "3", Price = "123.790", Star1 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star2 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star3 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star4 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star5 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)) });
+            this.PopularRouteList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri("/Assets/populares-03.png", UriKind.Relative)), Name = "Recorrido en Kayak", Place = "Lago Llanquihue, X Región", Owner = "Por Catalina Lagos", Duration = "12", Price = "97.340", Star1 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star2 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star3 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star4 = new BitmapImage(new Uri("/Assets/starFull.png", UriKind.Relative)), Star5 = new BitmapImage(new Uri("/Assets/starEmpty.png", UriKind.Relative)) });
 
-            this.RouteList.Add(new RouteViewModel() { LineOne = "runtime one", LineTwo = "Maecenas praesent accumsan bibendum", LineThree = "Facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis senectus sociosqu" });
+            //Active routes to show
+            //this.ActiveRouteList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri("/Assets/populares-03.png", UriKind.Relative)), Name = "San Pedro de Atacama", Duration = "5", Price = "249.735" });
+
 
             this.IsDataLoaded = true;
             

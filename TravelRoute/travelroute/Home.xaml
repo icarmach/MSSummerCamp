@@ -11,7 +11,6 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
-    d:DataContext="{d:DesignData SampleData/HomeViewModelSampleData.xaml}"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
@@ -34,118 +33,13 @@
 					<phone:PanoramaItem.RenderTransform>
 						<TranslateTransform/>
 					</phone:PanoramaItem.RenderTransform>
-					<Grid x:Name="popularesMainGrid">
-						<Grid.RowDefinitions>
-							<RowDefinition/>
-							<RowDefinition/>
-							<RowDefinition/>
-						</Grid.RowDefinitions>
-                        
-							<Grid x:Name="p1Grid">
-						<Grid.RowDefinitions>
-						    <RowDefinition/>
-						    <RowDefinition/>
-						</Grid.RowDefinitions>
-						<Grid.ColumnDefinitions>
-						    <ColumnDefinition/>
-						    <ColumnDefinition/>
-						</Grid.ColumnDefinitions>
-                            <Image x:Name="p1Image" Margin="10" Source="/Assets/populares-02.png" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                            <Canvas x:Name="p1Canvas" Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                            <TextBlock x:Name="p1Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Circuito &quot;W&quot; Torres del Paine" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
-							<TextBlock x:Name="p1Place" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Parque Nacional Torres del Paine, XII Región" VerticalAlignment="Top" Margin="20,40,0,0" FontSize="17.333" Grid.ColumnSpan="2"/>
-							<TextBlock x:Name="p1Owner" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Por Camila Orellana" VerticalAlignment="Top" Margin="20,60,0,0" FontSize="13.333" Grid.ColumnSpan="2"/>
-							<TextBlock x:Name="p1Days" HorizontalAlignment="Left" TextWrapping="Wrap" Text="7 días" VerticalAlignment="Bottom" Grid.Row="1" Margin="20,0,0,35" FontSize="21.333"/>
-							<TextBlock x:Name="p1Price" HorizontalAlignment="Left" TextWrapping="Wrap" Text="$ 326.910" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Row="1" FontSize="21.333"/>
-							<Grid x:Name="p1Stars" Grid.Row="1" Grid.Column="1" Margin="30,50,20,10">
-								<Grid.ColumnDefinitions>
-									<ColumnDefinition/>
-									<ColumnDefinition/>
-									<ColumnDefinition/>
-									<ColumnDefinition/>
-									<ColumnDefinition/>
-								</Grid.ColumnDefinitions>
-								<Image x:Name="p1Star1" Source="/Assets/starFull.png" Stretch="None"/>
-								<Image x:Name="p1Star2" Grid.Column="1" Stretch="None" Source="/Assets/starFull.png"/>
-								<Image x:Name="p1Star3" Grid.Column="2" Source="/Assets/starFull.png" Stretch="None"/>
-								<Image x:Name="p1Star4" Grid.Column="3" Source="/Assets/starFull.png" Stretch="None"/>
-								<Image x:Name="p1Star5" Grid.Column="4" Stretch="None" Source="/Assets/starEmpty.png"/>
-							</Grid>
-						</Grid>
-							<Grid x:Name="p2Grid" Grid.Row="1">
-								<Grid.RowDefinitions>
-									<RowDefinition/>
-									<RowDefinition/>
-								</Grid.RowDefinitions>
-								<Grid.ColumnDefinitions>
-									<ColumnDefinition/>
-									<ColumnDefinition/>
-								</Grid.ColumnDefinitions>
-								<Image x:Name="p2Image" Margin="10" Source="/Assets/populares-04.png" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-								<Canvas x:Name="p2Canvas" Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-								<TextBlock x:Name="p2Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Explorando el Bosque" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
-								<TextBlock x:Name="p2Place" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Parque Nacional Conguillio, IX Región" VerticalAlignment="Top" Margin="20,40,0,0" FontSize="17.333" Grid.ColumnSpan="2"/>
-								<TextBlock x:Name="p2Owner" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Por Ignacio Carmach " VerticalAlignment="Top" Margin="20,60,0,0" FontSize="13.333" Grid.ColumnSpan="2"/>
-								<TextBlock x:Name="p2Days" HorizontalAlignment="Left" TextWrapping="Wrap" Text="3 días" VerticalAlignment="Bottom" Grid.Row="1" Margin="20,0,0,35" FontSize="21.333"/>
-								<TextBlock x:Name="p2Price" HorizontalAlignment="Left" TextWrapping="Wrap" Text="$ 123.790" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Row="1" FontSize="21.333"/>
-								<Grid x:Name="p2Stars" Grid.Row="1" Grid.Column="1" Margin="30,50,20,10">
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition/>
-										<ColumnDefinition/>
-										<ColumnDefinition/>
-										<ColumnDefinition/>
-										<ColumnDefinition/>
-									</Grid.ColumnDefinitions>
-									<Image x:Name="p2Star1" Source="/Assets/starFull.png" Stretch="None"/>
-									<Image x:Name="p2Star2" Grid.Column="1" Stretch="None" Source="/Assets/starFull.png"/>
-									<Image x:Name="p2Star3" Grid.Column="2" Source="/Assets/starFull.png" Stretch="None"/>
-									<Image x:Name="p2Star4" Grid.Column="3" Source="/Assets/starFull.png" Stretch="None"/>
-									<Image x:Name="p2Star5" Grid.Column="4" Stretch="None" Source="/Assets/starFull.png"/>
-								</Grid>
-							</Grid>
-							<Grid x:Name="p3Grid" Grid.Row="2" Tap="p3Grid_Tap">
-								<Grid.RowDefinitions>
-									<RowDefinition/>
-									<RowDefinition/>
-								</Grid.RowDefinitions>
-								<Grid.ColumnDefinitions>
-									<ColumnDefinition/>
-									<ColumnDefinition/>
-								</Grid.ColumnDefinitions>
-								<Image x:Name="p3Image" Margin="10" Source="/Assets/populares-03.png" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-								<Canvas x:Name="p3Canvas" Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-								<TextBlock x:Name="p3Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Recorrido en Kayak" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
-								<TextBlock x:Name="p3Place" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Lago Llanquihue, X Región" VerticalAlignment="Top" Margin="20,40,0,0" FontSize="17.333" Grid.ColumnSpan="2"/>
-								<TextBlock x:Name="p3Owner" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Por Catalina Lagos" VerticalAlignment="Top" Margin="20,60,0,0" FontSize="13.333" Grid.ColumnSpan="2"/>
-								<TextBlock x:Name="p3Days" HorizontalAlignment="Left" TextWrapping="Wrap" Text="12 días" VerticalAlignment="Bottom" Grid.Row="1" Margin="20,0,0,35" FontSize="21.333"/>
-								<TextBlock x:Name="p3Price" HorizontalAlignment="Left" TextWrapping="Wrap" Text="$ 97.340" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Row="1" FontSize="21.333"/>
-								<Grid x:Name="p3Stars" Grid.Row="1" Grid.Column="1" Margin="30,50,20,10">
-									<Grid.ColumnDefinitions>
-										<ColumnDefinition/>
-										<ColumnDefinition/>
-										<ColumnDefinition/>
-										<ColumnDefinition/>
-										<ColumnDefinition/>
-									</Grid.ColumnDefinitions>
-									<Image x:Name="p3Star1" Source="/Assets/starFull.png" Stretch="None"/>
-									<Image x:Name="p3Star2" Grid.Column="1" Stretch="None" Source="/Assets/starFull.png"/>
-									<Image x:Name="p3Star3" Grid.Column="2" Source="/Assets/starFull.png" Stretch="None"/>
-									<Image x:Name="p3Star4" Grid.Column="3" Source="/Assets/starFull.png" Stretch="None"/>
-									<Image x:Name="p3Star5" Grid.Column="4" Stretch="None" Source="/Assets/starEmpty.png"/>
-								</Grid>
-							</Grid>
-					</Grid>
-				</phone:PanoramaItem>
-                <phone:PanoramaItem x:Name="popularesPanorama_Copy" Header="populares" Tag="populares2">
-                	<phone:PanoramaItem.RenderTransform>
-                		<TranslateTransform/>
-                	</phone:PanoramaItem.RenderTransform>
-                    <!--Double line list with text wrapping-->
-                    <phone:LongListSelector Margin="0,0,0,0" ItemsSource="{Binding RouteList}">
+                    
+                    <!-- Route data bindings -->
+                    <phone:LongListSelector Margin="0,0,0,0" ItemsSource="{Binding PopularRouteList}">
                         <phone:LongListSelector.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Margin="0,0,0,17">
-                                    <Grid>
+                                <StackPanel>
+                                    <Grid Width="396" Height="180">
                                         <Grid.RowDefinitions>
                                             <RowDefinition/>
                                             <RowDefinition/>
@@ -192,43 +86,30 @@
                                     <TextBlock Name="rutasActivas" FontSize="30" Text="activas" />
                                 </Grid>
                             </phone:PivotItem.Header>
-                            <Grid x:Name="activasMainGrid">
-                            	<Grid.RowDefinitions>
-                            		<RowDefinition/>
-                            		<RowDefinition/>
-                            		<RowDefinition/>
-                            	</Grid.RowDefinitions>
-                            	<Grid x:Name="act1Grid" Margin="0">
-                            		<Grid.RowDefinitions>
-                            			<RowDefinition/>
-                            			<RowDefinition/>
-                            		</Grid.RowDefinitions>
-                            		<Grid.ColumnDefinitions>
-                            			<ColumnDefinition/>
-                            			<ColumnDefinition/>
-                            		</Grid.ColumnDefinitions>
-                            		<Image x:Name="act1Image" Margin="10" Source="/Assets/populares-01.png" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                            		<Canvas x:Name="act1Canvas" Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                            		<TextBlock x:Name="act1Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="San Pedro de Atacama" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
-                            		<TextBlock x:Name="act1Days" HorizontalAlignment="Left" TextWrapping="Wrap" Text="5 días" VerticalAlignment="Bottom" Grid.Row="1" Margin="20,0,0,35" FontSize="21.333"/>
-                            		<TextBlock x:Name="act1Price" HorizontalAlignment="Left" TextWrapping="Wrap" Text="$ 249.735" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Row="1" FontSize="21.333"/>
-                            	</Grid>
-                            	<Grid x:Name="act2Grid" Margin="0" Grid.Row="1">
-                            		<Grid.RowDefinitions>
-                            			<RowDefinition/>
-                            			<RowDefinition/>
-                            		</Grid.RowDefinitions>
-                            		<Grid.ColumnDefinitions>
-                            			<ColumnDefinition/>
-                            			<ColumnDefinition/>
-                            		</Grid.ColumnDefinitions>
-                            		<Image x:Name="act2Image" Margin="10" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                            		<Canvas x:Name="act2Canvas" Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                            		<TextBlock x:Name="act2Name" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
-                            		<TextBlock x:Name="act2Days" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Row="1" Margin="20,0,0,35" FontSize="21.333"/>
-                            		<TextBlock x:Name="act2Price" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Row="1" FontSize="21.333"/>
-                            	</Grid>
-                            </Grid>
+                            <!-- Route data bindings -->
+                            <phone:LongListSelector Margin="0,0,0,0" ItemsSource="{Binding ActiveRouteList}">
+                                <phone:LongListSelector.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Grid Width="372" Height="171">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Margin="10" Source="{Binding Image}" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                                                <Canvas Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                                                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
+                                                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Duration}" VerticalAlignment="Bottom" Grid.Row="1" Margin="20,0,0,35" FontSize="21.333"/>
+                                                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Price}" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Row="1" FontSize="21.333"/>
+                                            </Grid>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </phone:LongListSelector.ItemTemplate>
+                            </phone:LongListSelector>
                 		</phone:PivotItem>
                         <phone:PivotItem x:Name="planificadasPivotItem">
                             <phone:PivotItem.Header>
