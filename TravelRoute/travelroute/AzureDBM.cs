@@ -36,7 +36,10 @@ namespace travelroute
         public string RoutePicture { get; set; }
 
         [JsonProperty(PropertyName = "copiedNumber")]
-        public string CopiedNumber { get; set; }
+        public int CopiedNumber { get; set; }
+
+        [JsonProperty(PropertyName = "status")]
+        public string Status { get; set; }
     }
 
     //static class so it is available to every class on the project. This way different interfaces can interact
@@ -97,7 +100,7 @@ namespace travelroute
             }
         }
 
-        public static async void InsertRuta(Route ruta)
+        public static async void InsertRoute(Route ruta)
         {
             // This code inserts a new Ruta into the database. When the operation completes
             // and Mobile Services has assigned an Id, the item is added to the Home Page.
