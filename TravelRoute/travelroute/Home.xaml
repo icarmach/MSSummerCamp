@@ -11,6 +11,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
+    d:DataContext="{d:DesignData SampleData/HomeViewModelSampleData.xaml}"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
@@ -135,6 +136,51 @@
 							</Grid>
 					</Grid>
 				</phone:PanoramaItem>
+                <phone:PanoramaItem x:Name="popularesPanorama_Copy" Header="populares" Tag="populares2">
+                	<phone:PanoramaItem.RenderTransform>
+                		<TranslateTransform/>
+                	</phone:PanoramaItem.RenderTransform>
+                    <!--Double line list with text wrapping-->
+                    <phone:LongListSelector Margin="0,0,0,0" ItemsSource="{Binding RouteList}">
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="0,0,0,17">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Margin="10" Source="{Binding Image}" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                                        <Canvas Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
+                                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Place}" VerticalAlignment="Top" Margin="20,40,0,0" FontSize="17.333" Grid.ColumnSpan="2"/>
+                                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Owner}" VerticalAlignment="Top" Margin="20,60,0,0" FontSize="13.333" Grid.ColumnSpan="2"/>
+                                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Duration}" VerticalAlignment="Bottom" Grid.Row="1" Margin="20,0,0,35" FontSize="21.333"/>
+                                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Price}" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Row="1" FontSize="21.333"/>
+                                        <Grid Grid.Row="1" Grid.Column="1" Margin="30,50,20,10">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="{Binding Star1}" Stretch="None"/>
+                                            <Image Grid.Column="1" Stretch="None" Source="{Binding Star2}"/>
+                                            <Image Grid.Column="2" Source="{Binding Star3}" Stretch="None"/>
+                                            <Image Grid.Column="3" Source="{Binding Star4}" Stretch="None"/>
+                                            <Image Grid.Column="4" Stretch="None" Source="{Binding Star5}"/>
+                                        </Grid>
+                                    </Grid>
+                                </StackPanel>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+                    </phone:LongListSelector>
+                </phone:PanoramaItem>
                 <phone:PanoramaItem x:Name="misRutasPanorama" CacheMode="{x:Null}" Header="mis rutas" Tag="rutas">
 					<phone:PanoramaItem.RenderTransform>
 						<TranslateTransform/>

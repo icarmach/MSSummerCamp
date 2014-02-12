@@ -40,6 +40,15 @@ namespace travelroute
 
         [JsonProperty(PropertyName = "status")]
         public string Status { get; set; }
+
+        [JsonProperty(PropertyName = "isShared")]
+        public bool IsShared { get; set; }
+
+        [JsonProperty(PropertyName = "isPopular")]
+        public bool IsPopular { get; set; }
+
+        [JsonProperty(PropertyName = "place")]
+        public string Place { get; set; }
     }
 
     //static class so it is available to every class on the project. This way different interfaces can interact
@@ -51,9 +60,9 @@ namespace travelroute
         // MobileServiceCollectionView implements ICollectionView (useful for databinding to lists) and 
         // is integrated with your Mobile Service to make it easy to bind your data to the ListView
         
-        public static MobileServiceCollection<Route, Route> items;
+        public static MobileServiceCollection<Route, Route> routeItems;
 
-        public static IMobileServiceTable<Route> rutaTable = App.MobileService.GetTable<Route>();
+        public static IMobileServiceTable<Route> routeTable = App.MobileService.GetTable<Route>();
 
         //auxImage until we can host them on Azure
         public static BitmapImage auxImage = new BitmapImage(new Uri("Assets/rutaPisco.png", UriKind.Relative));
@@ -104,7 +113,7 @@ namespace travelroute
         {
             // This code inserts a new Ruta into the database. When the operation completes
             // and Mobile Services has assigned an Id, the item is added to the Home Page.
-            await rutaTable.InsertAsync(ruta);
+            await routeTable.InsertAsync(ruta);
             //items.Add(ruta);
         }
 

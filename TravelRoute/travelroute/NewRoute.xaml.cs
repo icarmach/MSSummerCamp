@@ -58,13 +58,17 @@ namespace travelroute
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            //Creates the new Route and then it sends it to Azure so we can store the route data.
+            var ruta = new Route { Description = routeDescription.Text, Duration = 0, Name = routeName.Text, OwnerId = App.MobileService.CurrentUser.UserId, CopiedNumber = 0, Status = "planned", IsPopular = false, IsShared = false };
+            AzureDBM.InsertRoute(ruta);
 
+            NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
         }
 
         private void playButton_Click(object sender, EventArgs e)
         {
             //Creates the new Route and then it sends it to Azure so we can store the route data.
-            var ruta = new Route { Description = routeDescription.Text, Duration = 0, Name = routeName.Text, OwnerId = App.MobileService.CurrentUser.UserId, CopiedNumber = 0, Status = "active" };
+            var ruta = new Route { Description = routeDescription.Text, Duration = 0, Name = routeName.Text, OwnerId = App.MobileService.CurrentUser.UserId, CopiedNumber = 0, Status = "active", IsPopular = false, IsShared = false };
             AzureDBM.InsertRoute(ruta);
 
             NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));

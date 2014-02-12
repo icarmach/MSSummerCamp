@@ -104,9 +104,6 @@
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="NewRoute.xaml.cs">
       <DependentUpon>NewRoute.xaml</DependentUpon>
     </Compile>
@@ -119,6 +116,8 @@
     <Compile Include="RouteView.xaml.cs">
       <DependentUpon>RouteView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\RouteViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -130,10 +129,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Login.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -283,6 +278,7 @@
       <HintPath>..\packages\Microsoft.Net.Http.2.2.13\lib\sl4-windowsphone71\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

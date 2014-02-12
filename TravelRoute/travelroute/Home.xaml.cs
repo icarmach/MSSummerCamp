@@ -19,11 +19,19 @@ namespace travelroute
         public Home()
         {
             InitializeComponent();
+
+            // Set the data context of the listbox control to the sample data
+            DataContext = App.HomeViewModel;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             RefreshRutaItems();
+
+            if (!App.HomeViewModel.IsDataLoaded)
+            {
+                App.HomeViewModel.LoadData();
+            }
         }
 
         private async void RefreshRutaItems()
@@ -32,14 +40,14 @@ namespace travelroute
             // The query excludes Rutas that do now belown to the current user
             try
             {
-                AzureDBM.items = await AzureDBM.rutaTable
+                AzureDBM.routeItems = await AzureDBM.routeTable
                     .Where(ruta => ruta.OwnerId == App.MobileService.CurrentUser.UserId)
                     .ToCollectionAsync();
 
-                if (AzureDBM.items.Count > 0)
+                if (AzureDBM.routeItems.Count > 0)
                 {
                     act2Image.Source = AzureDBM.auxImage;
-                    act2Name.Text = AzureDBM.items.Last().Name;
+                    act2Name.Text = AzureDBM.routeItems.Last().Name;
                     act2Days.Text = "0 días";
                     act2Price.Text = "$ 0";
                 }

@@ -7,6 +7,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using travelroute.Resources;
+using travelroute.ViewModels;
 
 using Microsoft.WindowsAzure.MobileServices;
 
@@ -24,6 +25,24 @@ namespace travelroute
             "https://travelroute.azure-mobile.net/",
             "fCVtJOBrlRrmUkePbPluglypwfjjjt66"
             );
+
+        private static HomeViewModel homeViewModel = null;
+
+        /// <summary>
+        /// A static ViewModel used by the views to bind against.
+        /// </summary>
+        /// <returns>The MainViewModel object.</returns>
+        public static HomeViewModel HomeViewModel
+        {
+            get
+            {
+                // Delay creation of the view model until necessary
+                if (homeViewModel == null)
+                    homeViewModel = new HomeViewModel();
+
+                return homeViewModel;
+            }
+        }
         
         /// <summary>
         /// Constructor for the Application object.
@@ -74,6 +93,11 @@ namespace travelroute
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
+            // Ensure that application state is restored appropriately
+            if (!App.HomeViewModel.IsDataLoaded)
+            {
+                App.HomeViewModel.LoadData();
+            }
         }
 
         // Code to execute when the application is deactivated (sent to background)
