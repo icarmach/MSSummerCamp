@@ -77,9 +77,6 @@ namespace travelroute
 
         public static IMobileServiceTable<Route> routeTable = App.MobileService.GetTable<Route>();
 
-        //auxImage until we can host them on Azure
-        public static BitmapImage auxImage = new BitmapImage(new Uri("Assets/rutaPisco.png", UriKind.Relative));
-
         public static async System.Threading.Tasks.Task AuthenticateWithFacebook()
         {
             // Calls the Mobile Service available on Windows Azure and let the user login to the app using Facebook as the provider.
@@ -135,12 +132,13 @@ namespace travelroute
 
             else
             {
+                imageStream.Seek(0, SeekOrigin.Begin);
                 string errorString = string.Empty;
 
                 if (imageStream != null)
                 {
                     // Set blob properties of TodoItem.
-                    route.ContainerName = "routeCoverImages";
+                    route.ContainerName = "routecoverimages";
                     route.ResourceName = Guid.NewGuid().ToString() + ".jpg";
                 }
 
