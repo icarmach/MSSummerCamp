@@ -9,11 +9,15 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Tasks;
 using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace travelroute
 {
     public partial class NewRoute : PhoneApplicationPage
     {
+        // Using a stream reference to upload the image to blob storage.
+        Stream imageStream = null;
+
         public NewRoute()
         {
             InitializeComponent();
@@ -43,11 +47,7 @@ namespace travelroute
                 image.SetSource(e.ChosenPhoto);
                 routeImage.Source = image;
 
-                //Ultra Mega AuxImage to store the selected image until we can upload them to Azure
-                AzureDBM.auxImage = image;
-
-                //tries to upload the picture
-                //AzureDBM.UploadImageAsync(image);
+                imageStream = e.ChosenPhoto;
             }
 
             
@@ -63,7 +63,7 @@ namespace travelroute
         {
             //Creates the new Route and then it sends it to Azure so we can store the route data.
             var ruta = new Route { Description = routeDescription.Text, Duration = 0, Name = routeName.Text, OwnerId = App.MobileService.CurrentUser.UserId, CopiedNumber = 0, Status = "planned", IsPopular = false, IsShared = false };
-            AzureDBM.InsertRoute(ruta);
+            AzureDBM.InsertRoute(ruta, imageStream);
 
             NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
         }
@@ -72,7 +72,7 @@ namespace travelroute
         {
             //Creates the new Route and then it sends it to Azure so we can store the route data.
             var ruta = new Route { Description = routeDescription.Text, Duration = 0, Name = routeName.Text, OwnerId = App.MobileService.CurrentUser.UserId, CopiedNumber = 0, Status = "active", IsPopular = false, IsShared = false };
-            AzureDBM.InsertRoute(ruta);
+            AzureDBM.InsertRoute(ruta, imageStream);
 
             NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
         }

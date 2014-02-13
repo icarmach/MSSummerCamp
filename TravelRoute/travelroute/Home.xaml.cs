@@ -47,10 +47,11 @@ namespace travelroute
 
                 App.HomeViewModel.ActiveRouteList.Clear();
 
-                for (int i = 0; i < AzureDBM.routeItems.Count; i++)
+                foreach (Route r in AzureDBM.routeItems)
                 {
-                    App.HomeViewModel.ActiveRouteList.Add(new RouteViewModel() { Image = AzureDBM.auxImage, Name = AzureDBM.routeItems.ElementAt(i).Name, Duration = "0", Price = "0" });
+                    App.HomeViewModel.ActiveRouteList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri(r.RoutePicture, UriKind.Absolute)), Name = r.Name, Duration = "0", Price = "0" });
                 }
+
 
                 
             }

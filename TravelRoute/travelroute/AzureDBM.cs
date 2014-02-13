@@ -10,7 +10,10 @@ using travelroute.Resources;
 using System.Windows.Media.Imaging;
 using Microsoft.Phone.Controls;
 using System.Windows;
+using Microsoft.Phone.Tasks;
 using System.IO;
+using Microsoft.WindowsAzure.Storage.Auth;
+using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace travelroute
 {
@@ -50,6 +53,15 @@ namespace travelroute
 
         [JsonProperty(PropertyName = "place")]
         public string Place { get; set; }
+
+        [JsonProperty(PropertyName = "containerName")]
+        public string ContainerName { get; set; }
+
+        [JsonProperty(PropertyName = "resourceName")]
+        public string ResourceName { get; set; }
+
+        [JsonProperty(PropertyName = "sasQueryString")]
+        public string SasQueryString { get; set; }
     }
 
     //static class so it is available to every class on the project. This way different interfaces can interact
@@ -110,12 +122,59 @@ namespace travelroute
             }
         }
 
-        public static async void InsertRoute(Route ruta)
+        public static async void InsertRoute(Route route, Stream imageStream)
         {
-            // This code inserts a new Ruta into the database. When the operation completes
-            // and Mobile Services has assigned an Id, the item is added to the Home Page.
-            await routeTable.InsertAsync(ruta);
-            //items.Add(ruta);
+            //The user didn't added a picture to the route
+            if (imageStream == null)
+            {
+                // This code inserts a new Ruta into the database. When the operation completes
+                // and Mobile Services has assigned an Id, the item is added to the Home Page.
+                await routeTable.InsertAsync(route);
+                //items.Add(ruta);
+            }
+
+            else
+            {
+                string errorString = string.Empty;
+
+                if (imageStream != null)
+                {
+                    // Set blob properties of TodoItem.
+                    route.ContainerName = "routeCoverImages";
+                    route.ResourceName = Guid.NewGuid().ToString() + ".jpg";
+                }
+
+                // Send the item to be inserted. When blob properties are set this
+                // generates an SAS in the response.
+                await routeTable.InsertAsync(route);
+
+                // If we have a returned SAS, then upload the blob.
+                if (!string.IsNullOrEmpty(route.SasQueryString))
+                {
+                    // Get the URI generated that contains the SAS 
+                    // and extract the storage credentials.
+                    StorageCredentials cred = new StorageCredentials(route.SasQueryString);
+                    var imageUri = new Uri(route.RoutePicture);
+
+                    // Instantiate a Blob store container based on the info in the returned item.
+                    CloudBlobContainer container = new CloudBlobContainer(
+                        new Uri(string.Format("https://{0}/{1}",
+                            imageUri.Host, route.ContainerName)), cred);
+
+                    // Upload the new image as a BLOB from the stream.
+                    CloudBlockBlob blobFromSASCredential =
+                        container.GetBlockBlobReference(route.ResourceName);
+                    await blobFromSASCredential.UploadFromStreamAsync(imageStream);
+
+                    // When you request an SAS at the container-level instead of the blob-level,
+                    // you are able to upload multiple streams using the same container credentials.
+
+                    imageStream = null;
+                }
+
+                // Add the new item to the collection.
+                routeItems.Add(route);
+            }
         }
 
         public static async void SignOut()
@@ -127,43 +186,6 @@ namespace travelroute
                 await new WebBrowser().ClearCookiesAsync();
                 //await new WebBrowser().ClearInternetCacheAsync();
             }
-        }
-
-        public static void UploadImageAsync(Stream PhotoStream)
-        {
-            try
-            {
-                WebClient w = new WebClient();
-                w.Headers["Content-type"] = "application/x-www-form-urlencoded";
-
-                string data = "key=" + "c026f73427bc1e9" +
-                        "&_fake_status=200" +
-                        "&type=base64" +
-                        "&image=" + PhotoStreamToBase64(PhotoStream);
-
-                w.UploadStringAsync(new Uri("http://api.imgur.com/2/upload", UriKind.Absolute), "POST", data);
-                
-            }
-            catch (Exception ex)
-            {
-            }
-        }
-
-        static string PhotoStreamToBase64(Stream PhotoStream)
-        {
-            MemoryStream memoryStream = new MemoryStream();
-            PhotoStream.CopyTo(memoryStream);
-            byte[] result = memoryStream.ToArray();
-
-            string base64img = System.Convert.ToBase64String(result);
-            StringBuilder sb = new StringBuilder();
-
-            for (int i = 0; i < base64img.Length; i += 32766)
-            {
-                sb.Append(Uri.EscapeDataString(base64img.Substring(i, Math.Min(32766, base64img.Length - i))));
-            }
-
-            return sb.ToString();
         }
     }
 }
