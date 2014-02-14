@@ -18,9 +18,11 @@ namespace travelroute
         {
             InitializeComponent();
         }
-        private void facebookLoginButton_Click(object sender, RoutedEventArgs e)
+        private async void facebookLoginButton_Click(object sender, RoutedEventArgs e)
         {
-            //Put some fairy dust in here
+            //Awaits for the facebook login and the redirects the user to the Home layout
+            await AzureDBM.AuthenticateWithFacebook();
+            NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
         }
 
         private async void twitterLoginButton_Click(object sender, RoutedEventArgs e)
@@ -29,22 +31,6 @@ namespace travelroute
             await AzureDBM.AuthenticateWithTwitter();
             NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
         }
-
-        private async void SecondSecretFacebookLogin(object sender, Facebook.Client.Controls.SessionStateChangedEventArgs e)
-        {
-
-            //pero acá estas poniendo en la base de datos, datos que de donde salen?? ...
-
-            
-            //AzureDBM.userCity = loginButton.CurrentUser.Location.ToString();
-            //AzureDBM.userProfilePicture = loginButton.CurrentUser.ProfilePictureUrl.ToString();
-
-            //Awaits for the facebook login and the redirects the user to the Home layout
-            await AzureDBM.AuthenticateWithFacebook();
-            AzureDBM.userName = loginButton.CurrentUser.Name;
-            NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
-        }
-
         
     }
 }

@@ -192,10 +192,7 @@
                 <phone:PanoramaItem x:Name="perfilPanorama" Header="perfil" Tag="perfil">
                     <Grid x:Name="perfilMainGrid">
                         <Button x:Name="signOutButton" Content="Desconectarse" HorizontalAlignment="Center" Margin="197,468,0,0" VerticalAlignment="Center" Click="signOutButton_Click"/>
-                        <TextBlock x:Name="userName" HorizontalAlignment="Left" Margin="212,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Ignacio José Carmach Iturrieta" Width="164"/>
-                        <Image x:Name="userProfilePicture" HorizontalAlignment="Left" Height="188" Margin="10,10,0,0" VerticalAlignment="Top" Width="188"/>
-                        <TextBlock x:Name="userCity" HorizontalAlignment="Left" Margin="212,93,0,0" TextWrapping="Wrap" Text="Santiago, Chile" VerticalAlignment="Top"/>
-                        
+
                     </Grid>
                 </phone:PanoramaItem>
                 <phone:PanoramaItem x:Name="tiendaPanorama" Header="tienda" Tag="tienda">

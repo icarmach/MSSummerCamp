@@ -36,9 +36,6 @@ namespace travelroute
                 App.HomeViewModel.LoadData();
             }
 
-            userName.Text = AzureDBM.userName;
-            userCity.Text = AzureDBM.userCity;
-            //userProfilePicture.Source = new BitmapImage(new Uri(AzureDBM.userProfilePicture, UriKind.Absolute));
         }
         
         private async void RefreshRutaItems()
