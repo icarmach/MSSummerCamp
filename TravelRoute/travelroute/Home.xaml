@@ -11,29 +11,30 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
+    xmlns:facebookControls="clr-namespace:Facebook.Client.Controls;assembly=Facebook.Client"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot" Background="Transparent">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
-		</Grid.RowDefinitions>
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-		<!--TitlePanel contains the name of the application and page title-->
-		<StackPanel Grid.Row="0" Margin="12,17,0,28">
-			<TextBlock x:Name="appNameText" Text="Travel Route" Style="{StaticResource PhoneTextNormalStyle}"/>
-		</StackPanel>
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="appNameText" Text="Travel Route" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-			<phone:Panorama x:Name="HomePanorama" Margin="0,-40,0,0" Title="" SelectionChanged="HomePanorama_SelectionChanged">
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <phone:Panorama x:Name="HomePanorama" Margin="0,-40,0,0" Title="" SelectionChanged="HomePanorama_SelectionChanged">
                 <phone:PanoramaItem x:Name="popularesPanorama" CacheMode="{x:Null}" Header="populares" Tag="populares">
-					<phone:PanoramaItem.RenderTransform>
-						<TranslateTransform/>
-					</phone:PanoramaItem.RenderTransform>
-                    
+                    <phone:PanoramaItem.RenderTransform>
+                        <TranslateTransform/>
+                    </phone:PanoramaItem.RenderTransform>
+
                     <!-- Popular routes data bindings -->
                     <phone:LongListSelector Margin="0,0,0,0" ItemsSource="{Binding PopularRouteList}">
                         <phone:LongListSelector.ItemTemplate>
@@ -76,11 +77,11 @@
                     </phone:LongListSelector>
                 </phone:PanoramaItem>
                 <phone:PanoramaItem x:Name="misRutasPanorama" CacheMode="{x:Null}" Header="mis rutas" Tag="rutas">
-					<phone:PanoramaItem.RenderTransform>
-						<TranslateTransform/>
-					</phone:PanoramaItem.RenderTransform>
-					<phone:Pivot x:Name="rutasPivot" Title="" Margin="0,-50,0,0">
-                		<phone:PivotItem x:Name="activasPivotItem">
+                    <phone:PanoramaItem.RenderTransform>
+                        <TranslateTransform/>
+                    </phone:PanoramaItem.RenderTransform>
+                    <phone:Pivot x:Name="rutasPivot" Title="" Margin="0,-50,0,0">
+                        <phone:PivotItem x:Name="activasPivotItem">
                             <phone:PivotItem.Header>
                                 <Grid>
                                     <TextBlock Name="rutasActivas" FontSize="30" Text="activas" />
@@ -110,7 +111,7 @@
                                     </DataTemplate>
                                 </phone:LongListSelector.ItemTemplate>
                             </phone:LongListSelector>
-                		</phone:PivotItem>
+                        </phone:PivotItem>
                         <phone:PivotItem x:Name="planificadasPivotItem">
                             <phone:PivotItem.Header>
                                 <Grid>
@@ -118,24 +119,24 @@
                                 </Grid>
                             </phone:PivotItem.Header>
                             <Grid x:Name="planificadasMainGrid">
-                            	<Grid.RowDefinitions>
-                            		<RowDefinition/>
-                            		<RowDefinition/>
-                            		<RowDefinition/>
-                            	</Grid.RowDefinitions>
-                            	<Grid x:Name="plan1Grid" Margin="0">
-                            		<Grid.RowDefinitions>
-                            			<RowDefinition/>
-                            			<RowDefinition/>
-                            		</Grid.RowDefinitions>
-                            		<Grid.ColumnDefinitions>
-                            			<ColumnDefinition/>
-                            			<ColumnDefinition/>
-                            		</Grid.ColumnDefinitions>
-                            		<Image x:Name="plan1Image" Margin="10" Source="/Assets/rutaPisco.png" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                            		<Canvas x:Name="plan1Canvas" Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                            		<TextBlock x:Name="plan1Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ruta del Pisco" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
-                            	</Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid x:Name="plan1Grid" Margin="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image x:Name="plan1Image" Margin="10" Source="/Assets/rutaPisco.png" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                                    <Canvas x:Name="plan1Canvas" Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                                    <TextBlock x:Name="plan1Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ruta del Pisco" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
+                                </Grid>
                             </Grid>
                         </phone:PivotItem>
                         <phone:PivotItem x:Name="finalizadasPivotItem">
@@ -145,62 +146,67 @@
                                 </Grid>
                             </phone:PivotItem.Header>
                             <Grid x:Name="finalizadasMainGrid">
-                            	<Grid.RowDefinitions>
-                            		<RowDefinition/>
-                            		<RowDefinition/>
-                            		<RowDefinition/>
-                            	</Grid.RowDefinitions>
-                            	<Grid x:Name="fin1Grid" Margin="0">
-                            		<Grid.RowDefinitions>
-                            			<RowDefinition/>
-                            			<RowDefinition/>
-                            		</Grid.RowDefinitions>
-                            		<Grid.ColumnDefinitions>
-                            			<ColumnDefinition/>
-                            			<ColumnDefinition/>
-                            		</Grid.ColumnDefinitions>
-                            		<Image x:Name="fin1Image" Margin="10" Source="/Assets/populares-02.png" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                            		<Canvas x:Name="fin1Canvas" Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                            		<TextBlock x:Name="fin1Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Circuito &quot;W&quot; Torres del Paine" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
-                            		<TextBlock x:Name="fin1Place" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Parque Nacional Torres del Paine, XII Región" VerticalAlignment="Top" Margin="20,40,0,0" FontSize="17.333" Grid.ColumnSpan="2"/>
-                            		<TextBlock x:Name="fin1Days" HorizontalAlignment="Left" TextWrapping="Wrap" Text="7 días" VerticalAlignment="Bottom" Grid.Row="1" Margin="20,0,0,35" FontSize="21.333"/>
-                            		<TextBlock x:Name="fin1Price" HorizontalAlignment="Left" TextWrapping="Wrap" Text="$ 326.910" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Row="1" FontSize="21.333"/>
-                            		<Image x:Name="fin1Privacy" Source="/Assets/Icons/lock.opened.png" Margin="0,0,10,35" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="40" Height="40"/>
-                            		<Grid x:Name="fin1Stars" Grid.Row="1" Grid.Column="1" Margin="30,50,20,10">
-                            			<Grid.ColumnDefinitions>
-                            				<ColumnDefinition/>
-                            				<ColumnDefinition/>
-                            				<ColumnDefinition/>
-                            				<ColumnDefinition/>
-                            				<ColumnDefinition/>
-                            			</Grid.ColumnDefinitions>
-                            			<Image x:Name="fin1Star1" Source="/Assets/starFull.png" Stretch="None"/>
-                            			<Image x:Name="fin1Star2" Grid.Column="1" Stretch="None" Source="/Assets/starFull.png"/>
-                            			<Image x:Name="fin1Star3" Grid.Column="2" Source="/Assets/starFull.png" Stretch="None"/>
-                            			<Image x:Name="fin1Star4" Grid.Column="3" Source="/Assets/starFull.png" Stretch="None"/>
-                            			<Image x:Name="fin1Star5" Grid.Column="4" Stretch="None" Source="/Assets/starEmpty.png"/>
-                            		</Grid>
-                            	</Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid x:Name="fin1Grid" Margin="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image x:Name="fin1Image" Margin="10" Source="/Assets/populares-02.png" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                                    <Canvas x:Name="fin1Canvas" Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                                    <TextBlock x:Name="fin1Name" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Circuito &quot;W&quot; Torres del Paine" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667"/>
+                                    <TextBlock x:Name="fin1Place" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Parque Nacional Torres del Paine, XII Región" VerticalAlignment="Top" Margin="20,40,0,0" FontSize="17.333" Grid.ColumnSpan="2"/>
+                                    <TextBlock x:Name="fin1Days" HorizontalAlignment="Left" TextWrapping="Wrap" Text="7 días" VerticalAlignment="Bottom" Grid.Row="1" Margin="20,0,0,35" FontSize="21.333"/>
+                                    <TextBlock x:Name="fin1Price" HorizontalAlignment="Left" TextWrapping="Wrap" Text="$ 326.910" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Row="1" FontSize="21.333"/>
+                                    <Image x:Name="fin1Privacy" Source="/Assets/Icons/lock.opened.png" Margin="0,0,10,35" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="40" Height="40"/>
+                                    <Grid x:Name="fin1Stars" Grid.Row="1" Grid.Column="1" Margin="30,50,20,10">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image x:Name="fin1Star1" Source="/Assets/starFull.png" Stretch="None"/>
+                                        <Image x:Name="fin1Star2" Grid.Column="1" Stretch="None" Source="/Assets/starFull.png"/>
+                                        <Image x:Name="fin1Star3" Grid.Column="2" Source="/Assets/starFull.png" Stretch="None"/>
+                                        <Image x:Name="fin1Star4" Grid.Column="3" Source="/Assets/starFull.png" Stretch="None"/>
+                                        <Image x:Name="fin1Star5" Grid.Column="4" Stretch="None" Source="/Assets/starEmpty.png"/>
+                                    </Grid>
+                                </Grid>
                             </Grid>
                         </phone:PivotItem>
                     </phone:Pivot>
-				</phone:PanoramaItem>
+                </phone:PanoramaItem>
                 <phone:PanoramaItem x:Name="buscarPanorama" Header="buscar" Tag="buscar">
-					<Grid x:Name="buscarMainGrid"/>
-				</phone:PanoramaItem>
+                    <Grid x:Name="buscarMainGrid"/>
+                </phone:PanoramaItem>
                 <phone:PanoramaItem x:Name="perfilPanorama" Header="perfil" Tag="perfil">
-					<Grid x:Name="perfilMainGrid">
-						<Button x:Name="signOutButton" Content="Desconectarse" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Click="signOutButton_Click"/>
-					</Grid>
-				</phone:PanoramaItem>
+                    <Grid x:Name="perfilMainGrid">
+                        <Button x:Name="signOutButton" Content="Desconectarse" HorizontalAlignment="Center" Margin="197,468,0,0" VerticalAlignment="Center" Click="signOutButton_Click"/>
+                        <TextBlock x:Name="userName" HorizontalAlignment="Left" Margin="212,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Ignacio José Carmach Iturrieta" Width="164"/>
+                        <Image x:Name="userProfilePicture" HorizontalAlignment="Left" Height="188" Margin="10,10,0,0" VerticalAlignment="Top" Width="188"/>
+                        <TextBlock x:Name="userCity" HorizontalAlignment="Left" Margin="212,93,0,0" TextWrapping="Wrap" Text="Santiago, Chile" VerticalAlignment="Top"/>
+                        
+                    </Grid>
+                </phone:PanoramaItem>
                 <phone:PanoramaItem x:Name="tiendaPanorama" Header="tienda" Tag="tienda">
-					<Grid x:Name="tiendaMainGrid"/>
-				</phone:PanoramaItem>
-			</phone:Panorama>
+                    <Grid x:Name="tiendaMainGrid"/>
+                </phone:PanoramaItem>
+            </phone:Panorama>
 
-            
-		</Grid>
-	</Grid>
+
+        </Grid>
+        
+    </Grid>
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
             <shell:ApplicationBarIconButton IconUri="Assets/Icons/copy.png" Text="copiar"/>

@@ -23,6 +23,8 @@ namespace travelroute
 
             // Set the data context of the listbox control to the sample data
             DataContext = App.HomeViewModel;
+
+            
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -33,6 +35,10 @@ namespace travelroute
             {
                 App.HomeViewModel.LoadData();
             }
+
+            userName.Text = AzureDBM.userName;
+            userCity.Text = AzureDBM.userCity;
+            //userProfilePicture.Source = new BitmapImage(new Uri(AzureDBM.userProfilePicture, UriKind.Absolute));
         }
         
         private async void RefreshRutaItems()
@@ -51,9 +57,6 @@ namespace travelroute
                 {
                     App.HomeViewModel.ActiveRouteList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri(r.RoutePicture, UriKind.Absolute)), Name = r.Name, Duration = "0", Price = "0" });
                 }
-
-
-                
             }
             catch (MobileServiceInvalidOperationException e)
             {

@@ -68,7 +68,9 @@ namespace travelroute
     //with the database hosted in Windows Azure
     public static class AzureDBM
     {
-        
+        public static string userName = "";
+        public static string userCity = "";
+        public static string userProfilePicture = "";
 
         // MobileServiceCollectionView implements ICollectionView (useful for databinding to lists) and 
         // is integrated with your Mobile Service to make it easy to bind your data to the ListView
