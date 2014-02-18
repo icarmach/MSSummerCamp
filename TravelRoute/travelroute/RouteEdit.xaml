@@ -35,4 +35,11 @@
 		</Grid>
 	</Grid>
 
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="Assets/Icons/add.png" Text="registro"/>
+            <shell:ApplicationBarIconButton IconUri="Assets/Icons/share.png" Text="compartir"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
 </phone:PhoneApplicationPage>

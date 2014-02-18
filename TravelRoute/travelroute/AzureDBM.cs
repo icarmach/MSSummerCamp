@@ -64,6 +64,35 @@ namespace travelroute
         public string SasQueryString { get; set; }
     }
 
+    public class User
+    {
+        public string Id { get; set; }
+
+        [JsonProperty(PropertyName = "facebookId")]
+        public string FacebookId { get; set; }
+
+        [JsonProperty(PropertyName = "twitterId")]
+        public string TwitterId { get; set; }
+
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; set; }
+
+        [JsonProperty(PropertyName = "description")]
+        public string Description { get; set; }
+
+        [JsonProperty(PropertyName = "gender")]
+        public string Gender { get; set; }
+
+        [JsonProperty(PropertyName = "birthdate")]
+        public string Birthdate { get; set; }
+
+        [JsonProperty(PropertyName = "profilePicture")]
+        public string ProfilePicture { get; set; }
+
+        [JsonProperty(PropertyName = "facebookAccessToken")]
+        public string FacebookAccessToken { get; set; }
+    }
+
     //static class so it is available to every class on the project. This way different interfaces can interact
     //with the database hosted in Windows Azure
     public static class AzureDBM
@@ -73,8 +102,10 @@ namespace travelroute
         // is integrated with your Mobile Service to make it easy to bind your data to the ListView
         
         public static MobileServiceCollection<Route, Route> routeItems;
-
         public static IMobileServiceTable<Route> routeTable = App.MobileService.GetTable<Route>();
+
+        public static MobileServiceCollection<User, User> userItems;
+        public static IMobileServiceTable<User> userTable = App.MobileService.GetTable<User>();
 
         public static async System.Threading.Tasks.Task AuthenticateWithFacebook()
         {
@@ -85,7 +116,7 @@ namespace travelroute
                 try
                 {
                     App.MobileService.CurrentUser = await App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
-                    //message = string.Format("You are now logged in - {0}", App.MobileService.CurrentUser.UserId);
+                    AzureDBM.LoadUserData();
                 }
                 catch (InvalidOperationException)
                 {
@@ -183,6 +214,22 @@ namespace travelroute
                 await new WebBrowser().ClearCookiesAsync();
                 //await new WebBrowser().ClearInternetCacheAsync();
             }
+        }
+
+        public static async void LoadUserData()
+        {
+            //Loads user data
+            try
+            {
+                AzureDBM.userItems = await AzureDBM.userTable
+                    .Where(usuario => usuario.FacebookId == App.MobileService.CurrentUser.UserId)
+                    .ToCollectionAsync();
+            }
+            catch (MobileServiceInvalidOperationException e)
+            {
+                MessageBox.Show(e.Message, "Error loading user data", MessageBoxButton.OK);
+            }
+
         }
     }
 }

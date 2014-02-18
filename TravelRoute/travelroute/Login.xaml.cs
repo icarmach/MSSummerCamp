@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -23,6 +24,17 @@ namespace travelroute
             //Awaits for the facebook login and the redirects the user to the Home layout
             await AzureDBM.AuthenticateWithFacebook();
             NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
+            /*
+            if(AzureDBM.userItems == null)
+            {
+                NavigationService.Navigate(new Uri("/NewUser.xaml", UriKind.Relative));
+            }
+
+            else
+            {
+                NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
+            }
+            */
         }
 
         private async void twitterLoginButton_Click(object sender, RoutedEventArgs e)
