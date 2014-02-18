@@ -34,6 +34,8 @@ namespace travelroute
             mapCircle.Height = 20;
             mapCircle.Width = 20;
             mapCircle.Opacity = 50;
+
+            registerGrid.Visibility = System.Windows.Visibility.Collapsed;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -68,6 +70,19 @@ namespace travelroute
                 routeMap.Center = gc;
                 routeMap.ZoomLevel = 18;
             });
+        }
+
+        private void addRegisterButton_Click(object sender, EventArgs e)
+        {
+            if(registerGrid.Visibility == System.Windows.Visibility.Collapsed)
+            {
+                registerGrid.Visibility = System.Windows.Visibility.Visible;
+            }
+
+            else
+            {
+                registerGrid.Visibility = System.Windows.Visibility.Collapsed;
+            }
         }
     }
 }

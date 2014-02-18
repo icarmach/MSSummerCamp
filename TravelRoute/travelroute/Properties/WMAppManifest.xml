@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
-  <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{3002e0ca-d005-4d93-bca4-e23e83ddd847}" Title="travelroute" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="travelroute author" Description="Sample description" Publisher="travelroute" PublisherID="{7997efcb-3c27-4ade-94e0-950ebe5c1043}">
+  <DefaultLanguage xmlns="" code="es-CL" />
+  <App xmlns="" ProductID="{3002e0ca-d005-4d93-bca4-e23e83ddd847}" Title="Travel Route" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="MimeticApps" Description="Sample description" Publisher="Ignacio Carmach" PublisherID="{7997efcb-3c27-4ade-94e0-950ebe5c1043}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -22,23 +22,20 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>travelroute</Title>
+          <Title>Travel Route</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
-          <LargeBackgroundImageURI>
-          </LargeBackgroundImageURI>
-          <LargeBackContent>
-          </LargeBackContent>
-          <LargeBackBackgroundImageURI>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileLarge.png</LargeBackgroundImageURI>
+          <LargeBackContent />
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
           </LargeBackBackgroundImageURI>
           <DeviceLockImageURI>
           </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
+          <HasLarge>True</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

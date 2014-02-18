@@ -30,14 +30,60 @@
         <!--ContentPanel - place additional content here-->
 		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
 
-            <maps:Map x:Name="routeMap" Margin="0"/>
+            <Grid x:Name="contentGrid">
+            	<Grid.RowDefinitions>
+            		<RowDefinition Height="4*"/>
+            		<RowDefinition/>
+            	</Grid.RowDefinitions>
+            	<maps:Map x:Name="routeMap" Margin="0" Grid.RowSpan="2"/>
+            	<Grid x:Name="registerGrid" Grid.Row="1" Background="Black">
+            		<Grid.ColumnDefinitions>
+            			<ColumnDefinition/>
+            			<ColumnDefinition/>
+            			<ColumnDefinition/>
+            			<ColumnDefinition/>
+            			<ColumnDefinition/>
+            			<ColumnDefinition/>
+            		</Grid.ColumnDefinitions>
+            		<Button x:Name="POIButton" Content="" BorderThickness="0">
+            			<Button.Background>
+            				<ImageBrush ImageSource="/Assets/Icons/POI.png" Stretch="UniformToFill"/>
+            			</Button.Background>
+            		</Button>
+            		<Button x:Name="sleepButton" Content="" BorderThickness="0" Grid.Column="1">
+            			<Button.Background>
+            				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Icons/bed.png"/>
+            			</Button.Background>
+            		</Button>
+            		<Button x:Name="restaurantButton" Content="" BorderThickness="0" Grid.Column="2">
+            			<Button.Background>
+            				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Icons/restaurant.png"/>
+            			</Button.Background>
+            		</Button>
+            		<Button x:Name="transportButton" Content="" BorderThickness="0" Grid.Column="3">
+            			<Button.Background>
+            				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Icons/transport.png"/>
+            			</Button.Background>
+            		</Button>
+            		<Button x:Name="pictureButton" Content="" BorderThickness="0" Grid.Column="4">
+            			<Button.Background>
+            				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Icons/camera.png"/>
+            			</Button.Background>
+            		</Button>
+            		<Button x:Name="commentButton" Content="" BorderThickness="0" Grid.Column="5">
+            			<Button.Background>
+            				<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Icons/comment.png"/>
+            			</Button.Background>
+            		</Button>
+            	</Grid>
+            </Grid>
 
 		</Grid>
 	</Grid>
 
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="Assets/Icons/add.png" Text="registro"/>
+            <shell:ApplicationBarIconButton x:Name="addRegisterButton" IconUri="Assets/Icons/add.png" Text="registro" Click="addRegisterButton_Click"/>
             <shell:ApplicationBarIconButton IconUri="Assets/Icons/share.png" Text="compartir"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>

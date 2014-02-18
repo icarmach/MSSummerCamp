@@ -164,7 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\agregaImagen.png" />
-    <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -172,10 +171,13 @@
     <Content Include="Assets\Icons\add.png" />
     <Content Include="Assets\Icons\back.png" />
     <Content Include="Assets\Icons\basecircle.png" />
+    <Content Include="Assets\Icons\bed.png" />
+    <Content Include="Assets\Icons\camera.png" />
     <Content Include="Assets\Icons\cancel.png" />
     <Content Include="Assets\Icons\check.png" />
     <Content Include="Assets\Icons\clock.png" />
     <Content Include="Assets\Icons\close.png" />
+    <Content Include="Assets\Icons\comment.png" />
     <Content Include="Assets\Icons\copy.png" />
     <Content Include="Assets\Icons\cross.png" />
     <Content Include="Assets\Icons\delete.png" />
@@ -202,8 +204,16 @@
     <Content Include="Assets\Icons\new.png" />
     <Content Include="Assets\Icons\next.png" />
     <Content Include="Assets\Icons\overflowdots.png" />
+    <Content Include="Assets\Icons\POI.png" />
     <Content Include="Assets\Icons\questionmark.png" />
     <Content Include="Assets\Icons\refresh.png" />
+    <Content Include="Assets\Icons\registerComment.png" />
+    <Content Include="Assets\Icons\registerEat.png" />
+    <Content Include="Assets\Icons\registerPicture.png" />
+    <Content Include="Assets\Icons\registerPOI.png" />
+    <Content Include="Assets\Icons\registerSleep.png" />
+    <Content Include="Assets\Icons\registerTransport.png" />
+    <Content Include="Assets\Icons\restaurant.png" />
     <Content Include="Assets\Icons\save.png" />
     <Content Include="Assets\Icons\share.png" />
     <Content Include="Assets\Icons\stop.png" />
@@ -211,6 +221,7 @@
     <Content Include="Assets\Icons\transport.ff.png" />
     <Content Include="Assets\Icons\transport.pause.png" />
     <Content Include="Assets\Icons\transport.play.png" />
+    <Content Include="Assets\Icons\transport.png" />
     <Content Include="Assets\Icons\transport.rew.png" />
     <Content Include="Assets\Icons\twitter.png" />
     <Content Include="Assets\Icons\upload.png" />
@@ -241,6 +252,7 @@
     </Content>
     <Content Include="Assets\twitterLogin.png" />
     <Content Include="README_FIRST.txt" />
+    <Content Include="SplashScreenImage.jpg" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
