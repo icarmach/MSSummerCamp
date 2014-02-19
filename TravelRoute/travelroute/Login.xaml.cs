@@ -26,8 +26,8 @@ namespace travelroute
             
             //Old code, go to Home
             //NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
-            /*
-            if(AzureDBM.userItems == null)
+
+            if (AzureDBM.userItems == null)
             {
                 NavigationService.Navigate(new Uri("/NewUser.xaml", UriKind.Relative));
             }
@@ -36,13 +36,7 @@ namespace travelroute
             {
                 NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
             }
-            */
-
-            //Temp code, check if the user is logged in using facebook
-            if (App.MobileService.CurrentUser != null)
-            {
-                NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
-            }
+            
         }
 
         private async void twitterLoginButton_Click(object sender, RoutedEventArgs e)

@@ -43,7 +43,20 @@ namespace travelroute
                 try
                 {
                     App.MobileService.CurrentUser = await App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
-                    AzureDBM.LoadUserData();
+
+                    //Loads user data
+                    try
+                    {
+                        AzureDBM.userItems = await AzureDBM.userTable
+                            .Where(usuario => usuario.FacebookId == App.MobileService.CurrentUser.UserId.Split(':')[1])
+                            .ToCollectionAsync();
+
+                        MessageBox.Show("dato 1" + userItems[0].FacebookId + "       dato 2" + App.MobileService.CurrentUser.UserId.Split(':')[1]);
+                    }
+                    catch (MobileServiceInvalidOperationException e)
+                    {
+                        MessageBox.Show(e.Message, "Error loading user data", MessageBoxButton.OK);
+                    }
                 }
                 catch (InvalidOperationException)
                 {
@@ -52,6 +65,9 @@ namespace travelroute
 
                     break;
                 }
+
+                MessageBox.Show("HOla"++=AzureDBM.userItems[0].FacebookId);
+                //MessageBox.Show(userItems[0].FacebookId);
 
 
             }
@@ -154,18 +170,13 @@ namespace travelroute
 
         public static async void LoadUserData()
         {
-            //Loads user data
-            try
-            {
-                AzureDBM.userItems = await AzureDBM.userTable
-                    .Where(usuario => usuario.FacebookId == App.MobileService.CurrentUser.UserId)
-                    .ToCollectionAsync();
-            }
-            catch (MobileServiceInvalidOperationException e)
-            {
-                MessageBox.Show(e.Message, "Error loading user data", MessageBoxButton.OK);
-            }
+            
 
+        }
+
+        public static async void InsertUser(User user)
+        {
+            await userTable.InsertAsync(user);
         }
     }
 }
