@@ -16,7 +16,7 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-	<Grid x:Name="LayoutRoot" Background="Transparent">
+	<Grid x:Name="LayoutRoot">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
@@ -37,15 +37,21 @@
 
             <TextBlock Text="Nombre" HorizontalAlignment="Left" Margin="12,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
             <TextBox x:Name="userName" HorizontalAlignment="Center" Height="72" Margin="0,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Text="{Binding CurrentUser.Name, ElementName=loginButton}"/>
-			<TextBlock HorizontalAlignment="Left" Margin="12,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Sexo"/>
-            <toolkit:ListPicker VerticalAlignment="Center" Margin="10,50,10,0" >
+			<TextBlock HorizontalAlignment="Left" Margin="12,40,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Text="Sexo"/>
+            <toolkit:ListPicker VerticalAlignment="Center" Margin="10,140,10,0" >
                 <toolkit:ListPickerItem x:Name="emptyItem" Content="Seleccione una de las opciones" Margin="8,0,-8,0" />
                 <toolkit:ListPickerItem x:Name="hombreItem" Content="Hombre" />
                 <toolkit:ListPickerItem x:Name="mujerItem" Content="Mujer" />
             </toolkit:ListPicker>
-            <TextBlock HorizontalAlignment="Left" Margin="12,200,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Text="Fecha de Nacimiento"/>
-            <toolkit:DatePicker Margin="0,300,0,0" VerticalAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Margin="12,300,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Text="Fecha de Nacimiento"/>
+            <toolkit:DatePicker Margin="0,400,0,0" VerticalAlignment="Center"/>
 		</Grid>
 	</Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="Assets/Icons/save.png" Text="guardar"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
 
 </phone:PhoneApplicationPage>

@@ -10,12 +10,17 @@ using Microsoft.Phone.Shell;
 
 namespace travelroute
 {
-    public partial class RouteView : PhoneApplicationPage
+    public partial class ViewRoute : PhoneApplicationPage
     {
-        public RouteView()
+        public ViewRoute()
         {
             InitializeComponent();
-  
+
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            //routeName.Text = AzureDBM.selectedRoute.Name;
         }
 
         private void RouteViewPanorama_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -85,7 +90,7 @@ namespace travelroute
                 this.ApplicationBar.Buttons.Insert(0, button2);
                 //button2.Click += new EventHandler(button2_Click);
 
-                
+
             }
 
             else if (tag.Equals("comments"))
@@ -117,7 +122,7 @@ namespace travelroute
                     //Removes buttons from the app bar. It is always removing from the index 0 because the list gets
                     //shorter and the second item is now the first item.
                     this.ApplicationBar.Buttons.RemoveAt(0);
-                    
+
 
                     //Adds back the check button
                     ApplicationBarIconButton button1 = new ApplicationBarIconButton();

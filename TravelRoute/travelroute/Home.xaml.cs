@@ -10,6 +10,7 @@ using Microsoft.Phone.Shell;
 using Newtonsoft.Json;
 using Microsoft.WindowsAzure.MobileServices;
 using travelroute.Resources;
+using travelroute.DBClasses;
 using System.Windows.Media.Imaging;
 using travelroute.ViewModels;
 
@@ -36,6 +37,19 @@ namespace travelroute
                 App.HomeViewModel.LoadData();
             }
 
+        }
+
+        // Back Button pressed: notify MainPage so it can exit application
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            base.OnBackKeyPress(e);
+            if (NavigationService.CanGoBack)
+            {
+                while (NavigationService.RemoveBackEntry() != null)
+                {
+                    NavigationService.RemoveBackEntry();
+                }
+            }
         }
         
         private async void RefreshRutaItems()
@@ -168,14 +182,19 @@ namespace travelroute
             NavigationService.Navigate(new Uri("/Login.xaml", UriKind.Relative));
         }
 
-        private void popularGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("/RouteView.xaml", UriKind.Relative));
-        }
-
         private void activeGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/RouteEdit.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/EditRoute.xaml", UriKind.Relative));
+        }
+
+        private void LongListSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //Route r = new Route();
+            //r.Id = ((LongListSelector)sender).SelectedItem.Id;
+
+
+            //AzureDBM.selectedRoute = r;
+            NavigationService.Navigate(new Uri("/ViewRoute.xaml", UriKind.Relative));
         }
 
     }
