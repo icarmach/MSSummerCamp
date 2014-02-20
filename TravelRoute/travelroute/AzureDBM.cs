@@ -38,6 +38,7 @@ namespace travelroute
 
         //temp variables
         public static Route selectedRoute;
+        public static bool isUserLoggedIn = false;
 
         public static async System.Threading.Tasks.Task AuthenticateWithFacebook()
         {
@@ -48,6 +49,7 @@ namespace travelroute
                 try
                 {
                     App.MobileService.CurrentUser = await App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
+                    isUserLoggedIn = true;
 
                     //Loads user data
                     try
@@ -167,6 +169,8 @@ namespace travelroute
                 App.MobileService.Logout();
                 await new WebBrowser().ClearCookiesAsync();
                 //await new WebBrowser().ClearInternetCacheAsync();
+
+                isUserLoggedIn = false;
             }
         }
 

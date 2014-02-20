@@ -42,6 +42,9 @@ namespace travelroute.DBClasses
         public string Icon { get; set; }
 
         [JsonProperty(PropertyName = "isShared")]
+
         public bool isShared { get; set; }
+        [JsonProperty(PropertyName = "__createdAt")]
+        public string CreatedAt { get; set; }
     }
 }

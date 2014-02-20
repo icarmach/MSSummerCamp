@@ -26,9 +26,12 @@ namespace travelroute
         private Ellipse mapCircle = new Ellipse();
 
         private MapOverlay myLocationOverlay = new MapOverlay();
+        
         private MapLayer myLocationLayer = new MapLayer();
-
         private MapLayer registerLayer = new MapLayer();
+        private MapLayer polyLayer = new MapLayer();
+
+        private MapPolyline polyLine = new MapPolyline();
 
         private bool firstMapLoad = true;
 
@@ -46,6 +49,12 @@ namespace travelroute
             registerGrid.Visibility = System.Windows.Visibility.Collapsed;
 
             routeMap.Layers.Add(registerLayer);
+            routeMap.Layers.Add(polyLayer);
+
+            polyLine.StrokeColor = Colors.Green;
+            polyLine.StrokeThickness = 6;
+
+            routeMap.MapElements.Add(polyLine);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -97,7 +106,11 @@ namespace travelroute
             {
                 AzureDBM.registerItems = await AzureDBM.registerTable
                     .Where(reg => reg.RouteId == AzureDBM.selectedRoute.Id)
+                    .OrderBy(reg => reg.CreatedAt)
                     .ToCollectionAsync();
+
+                polyLine.Path.Clear();
+                
 
                 foreach (Register r in AzureDBM.registerItems)
                 {
@@ -143,6 +156,8 @@ namespace travelroute
                     registerOverlay.GeoCoordinate = new GeoCoordinate(r.Latitude, r.Longitude);
 
                     registerLayer.Add(registerOverlay);
+
+                    polyLine.Path.Add(new GeoCoordinate(r.Latitude, r.Longitude));
                 }
             }
             catch (MobileServiceInvalidOperationException e)
@@ -184,6 +199,9 @@ namespace travelroute
             r.Latitude = registerOverlay.GeoCoordinate.Latitude;
             r.Longitude = registerOverlay.GeoCoordinate.Longitude;
             r.RouteId = AzureDBM.selectedRoute.Id;
+            r.CreatedByCurrentUser = true;
+
+            polyLine.Path.Add(new GeoCoordinate(r.Latitude, r.Longitude));
 
             AzureDBM.InsertRegister(r);
         }
@@ -208,6 +226,9 @@ namespace travelroute
             r.Latitude = registerOverlay.GeoCoordinate.Latitude;
             r.Longitude = registerOverlay.GeoCoordinate.Longitude;
             r.RouteId = AzureDBM.selectedRoute.Id;
+            r.CreatedByCurrentUser = true;
+
+            polyLine.Path.Add(new GeoCoordinate(r.Latitude, r.Longitude));
 
             AzureDBM.InsertRegister(r);
         }
@@ -232,6 +253,9 @@ namespace travelroute
             r.Latitude = registerOverlay.GeoCoordinate.Latitude;
             r.Longitude = registerOverlay.GeoCoordinate.Longitude;
             r.RouteId = AzureDBM.selectedRoute.Id;
+            r.CreatedByCurrentUser = true;
+
+            polyLine.Path.Add(new GeoCoordinate(r.Latitude, r.Longitude));
 
             AzureDBM.InsertRegister(r);
         }
@@ -256,6 +280,9 @@ namespace travelroute
             r.Latitude = registerOverlay.GeoCoordinate.Latitude;
             r.Longitude = registerOverlay.GeoCoordinate.Longitude;
             r.RouteId = AzureDBM.selectedRoute.Id;
+            r.CreatedByCurrentUser = true;
+
+            polyLine.Path.Add(new GeoCoordinate(r.Latitude, r.Longitude));
 
             AzureDBM.InsertRegister(r);
         }
@@ -280,6 +307,9 @@ namespace travelroute
             r.Latitude = registerOverlay.GeoCoordinate.Latitude;
             r.Longitude = registerOverlay.GeoCoordinate.Longitude;
             r.RouteId = AzureDBM.selectedRoute.Id;
+            r.CreatedByCurrentUser = true;
+
+            polyLine.Path.Add(new GeoCoordinate(r.Latitude, r.Longitude));
 
             AzureDBM.InsertRegister(r);
         }
@@ -304,6 +334,9 @@ namespace travelroute
             r.Latitude = registerOverlay.GeoCoordinate.Latitude;
             r.Longitude = registerOverlay.GeoCoordinate.Longitude;
             r.RouteId = AzureDBM.selectedRoute.Id;
+            r.CreatedByCurrentUser = true;
+
+            polyLine.Path.Add(new GeoCoordinate(r.Latitude, r.Longitude));
 
             AzureDBM.InsertRegister(r);
         }

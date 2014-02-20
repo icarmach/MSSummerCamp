@@ -21,7 +21,7 @@
         <!--TitlePanel contains the name of the application and page title-->
 		<StackPanel Grid.Row="0" Margin="12,17,0,28">
 			<TextBlock x:Name="appName" Text="Travel Route" Style="{StaticResource PhoneTextNormalStyle}"/>
-			<TextBlock x:Name="newRouteTitle" Text="nueva ruta" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+			<TextBlock x:Name="newRouteTitle" Text="nuevo registro" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
 		</StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -37,7 +37,7 @@
 						<RowDefinition/>
 						<RowDefinition/>
 					</Grid.RowDefinitions>
-					<TextBlock HorizontalAlignment="Left" Margin="12,0,0,0" TextWrapping="Wrap" Text="nombre de la ruta" VerticalAlignment="Bottom" Padding="0"/>
+					<TextBlock HorizontalAlignment="Left" Margin="12,0,0,0" TextWrapping="Wrap" Text="nombre del registro" VerticalAlignment="Bottom" Padding="0"/>
 					<TextBox x:Name="routeName" Margin="0,0,0,30" TextWrapping="Wrap" Grid.Row="1" Padding="2" Height="72" VerticalAlignment="Center"/>
 					<Image x:Name="routeImage" Margin="12,0,12,30" Grid.Row="2" Source="/Assets/agregaImagen.png" HorizontalAlignment="Center" VerticalAlignment="Center" Tap="routeImage_Tap" Stretch="UniformToFill" Height="192"/>
 					<TextBlock HorizontalAlignment="Left" Margin="12,0,0,0" TextWrapping="Wrap" Text="descripción de la ruta" VerticalAlignment="Bottom" Padding="0" Grid.Row="3"/>
