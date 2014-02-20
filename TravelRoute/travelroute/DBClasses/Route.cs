@@ -20,7 +20,7 @@ namespace travelroute.DBClasses
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
 
-        [JsonProperty(PropertyName = "desciption")]
+        [JsonProperty(PropertyName = "description")]
         public string Description { get; set; }
 
         [JsonProperty(PropertyName = "duration")]
@@ -52,5 +52,8 @@ namespace travelroute.DBClasses
 
         [JsonProperty(PropertyName = "sasQueryString")]
         public string SasQueryString { get; set; }
+
+        [JsonProperty(PropertyName = "price")]
+        public int Price { get; set; }
     }
 }

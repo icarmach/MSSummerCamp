@@ -13,24 +13,6 @@ namespace travelroute.ViewModels
 {
     public class RouteViewModel : INotifyPropertyChanged
     {
-        private string _lineOne;
-
-        public string LineOne
-        {
-            get
-            {
-                return _lineOne;
-            }
-            set
-            {
-                if (value != _lineOne)
-                {
-                    _lineOne = value;
-                    NotifyPropertyChanged("LineOne");
-                }
-            }
-        }
-
         private BitmapImage _image;
 
         public BitmapImage Image

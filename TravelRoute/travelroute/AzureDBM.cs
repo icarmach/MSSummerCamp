@@ -26,6 +26,7 @@ namespace travelroute
         // is integrated with your Mobile Service to make it easy to bind your data to the ListView
         
         public static MobileServiceCollection<Route, Route> routeItems;
+        public static MobileServiceCollection<Route, Route> popularRouteItems;
         public static IMobileServiceTable<Route> routeTable = App.MobileService.GetTable<Route>();
 
         public static MobileServiceCollection<User, User> userItems;
@@ -47,11 +48,11 @@ namespace travelroute
                     //Loads user data
                     try
                     {
-                        AzureDBM.userItems = await AzureDBM.userTable
+                        /*AzureDBM.userItems = await AzureDBM.userTable
                             .Where(usuario => usuario.FacebookId == App.MobileService.CurrentUser.UserId.Split(':')[1])
                             .ToCollectionAsync();
-
-                        MessageBox.Show("dato 1" + userItems[0].FacebookId + "       dato 2" + App.MobileService.CurrentUser.UserId.Split(':')[1]);
+                        */
+                        //MessageBox.Show("dato 1" + userItems[0].FacebookId + "       dato 2" + App.MobileService.CurrentUser.UserId.Split(':')[1]);
                     }
                     catch (MobileServiceInvalidOperationException e)
                     {
@@ -66,7 +67,7 @@ namespace travelroute
                     break;
                 }
 
-                MessageBox.Show("HOla"++=AzureDBM.userItems[0].FacebookId);
+                //MessageBox.Show("HOla"++=AzureDBM.userItems[0].FacebookId);
                 //MessageBox.Show(userItems[0].FacebookId);
 
 
