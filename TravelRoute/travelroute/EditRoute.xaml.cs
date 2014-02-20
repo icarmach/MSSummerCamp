@@ -15,6 +15,8 @@ using System.Windows.Media;
 using Microsoft.Phone.Maps.Controls;
 using Microsoft.Phone.Maps.Toolkit;
 using System.Windows.Media.Imaging;
+using travelroute.DBClasses;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace travelroute
 {
@@ -61,6 +63,8 @@ namespace travelroute
 
             myLocationLayer.Add(myLocationOverlay);
             routeMap.Layers.Add(myLocationLayer);
+
+            RefreshRegisters();
         }
 
         private void geolocator_PositionChanged(Geolocator sender, PositionChangedEventArgs args)
@@ -83,6 +87,68 @@ namespace travelroute
                     firstMapLoad = false;
                 }
             });
+        }
+
+        private async void RefreshRegisters()
+        {
+            // This code refreshes the entries in the "rutas activas" view querying the Ruta table.
+            // The query excludes Rutas that do now belown to the current user
+            try
+            {
+                AzureDBM.registerItems = await AzureDBM.registerTable
+                    .Where(reg => reg.RouteId == AzureDBM.selectedRoute.Id)
+                    .ToCollectionAsync();
+
+                foreach (Register r in AzureDBM.registerItems)
+                {
+                    Image image = new Image();
+                    //Define the URI location of the image
+
+                    if(r.Type.Equals("POI"))
+                    {
+                        image.Source = new BitmapImage(new Uri("Assets/Icons/registerPOI.png", UriKind.Relative));
+                    }
+
+                    else if (r.Type.Equals("Sleep"))
+                    {
+                        image.Source = new BitmapImage(new Uri("Assets/Icons/registerSleep.png", UriKind.Relative));
+                    }
+
+                    else if (r.Type.Equals("Restaurant"))
+                    {
+                        image.Source = new BitmapImage(new Uri("Assets/Icons/registerEat.png", UriKind.Relative));
+                    }
+
+                    else if (r.Type.Equals("Transport"))
+                    {
+                        image.Source = new BitmapImage(new Uri("Assets/Icons/registerTransport.png", UriKind.Relative));
+                    }
+
+                    else if (r.Type.Equals("Picture"))
+                    {
+                        image.Source = new BitmapImage(new Uri("Assets/Icons/registerPicture.png", UriKind.Relative));
+                    }
+
+                    else if (r.Type.Equals("Comment"))
+                    {
+                        image.Source = new BitmapImage(new Uri("Assets/Icons/registerComment.png", UriKind.Relative));
+                    }
+
+                    image.Stretch = System.Windows.Media.Stretch.None;
+
+                    MapOverlay registerOverlay = new MapOverlay();
+
+                    registerOverlay.Content = image;
+                    registerOverlay.PositionOrigin = new Point(0.5, 0.9);
+                    registerOverlay.GeoCoordinate = new GeoCoordinate(r.Latitude, r.Longitude);
+
+                    registerLayer.Add(registerOverlay);
+                }
+            }
+            catch (MobileServiceInvalidOperationException e)
+            {
+                MessageBox.Show(e.Message, "Error loading items", MessageBoxButton.OK);
+            }
         }
 
         private void addRegisterButton_Click(object sender, EventArgs e)
@@ -113,7 +179,13 @@ namespace travelroute
 
             registerLayer.Add(registerOverlay);
 
-            NavigationService.Navigate(new Uri("/NewRegister.xaml", UriKind.Relative));
+            Register r = new Register();
+            r.Type = "POI";
+            r.Latitude = registerOverlay.GeoCoordinate.Latitude;
+            r.Longitude = registerOverlay.GeoCoordinate.Longitude;
+            r.RouteId = AzureDBM.selectedRoute.Id;
+
+            AzureDBM.InsertRegister(r);
         }
 
         private void sleepButton_Click(object sender, RoutedEventArgs e)
@@ -130,6 +202,14 @@ namespace travelroute
             registerOverlay.GeoCoordinate = myLocationOverlay.GeoCoordinate;
 
             registerLayer.Add(registerOverlay);
+
+            Register r = new Register();
+            r.Type = "Sleep";
+            r.Latitude = registerOverlay.GeoCoordinate.Latitude;
+            r.Longitude = registerOverlay.GeoCoordinate.Longitude;
+            r.RouteId = AzureDBM.selectedRoute.Id;
+
+            AzureDBM.InsertRegister(r);
         }
 
         private void restaurantButton_Click(object sender, RoutedEventArgs e)
@@ -146,6 +226,14 @@ namespace travelroute
             registerOverlay.GeoCoordinate = myLocationOverlay.GeoCoordinate;
 
             registerLayer.Add(registerOverlay);
+
+            Register r = new Register();
+            r.Type = "Restaurant";
+            r.Latitude = registerOverlay.GeoCoordinate.Latitude;
+            r.Longitude = registerOverlay.GeoCoordinate.Longitude;
+            r.RouteId = AzureDBM.selectedRoute.Id;
+
+            AzureDBM.InsertRegister(r);
         }
 
         private void transportButton_Click(object sender, RoutedEventArgs e)
@@ -162,6 +250,14 @@ namespace travelroute
             registerOverlay.GeoCoordinate = myLocationOverlay.GeoCoordinate;
 
             registerLayer.Add(registerOverlay);
+
+            Register r = new Register();
+            r.Type = "Transport";
+            r.Latitude = registerOverlay.GeoCoordinate.Latitude;
+            r.Longitude = registerOverlay.GeoCoordinate.Longitude;
+            r.RouteId = AzureDBM.selectedRoute.Id;
+
+            AzureDBM.InsertRegister(r);
         }
 
         private void pictureButton_Click(object sender, RoutedEventArgs e)
@@ -178,6 +274,14 @@ namespace travelroute
             registerOverlay.GeoCoordinate = myLocationOverlay.GeoCoordinate;
 
             registerLayer.Add(registerOverlay);
+
+            Register r = new Register();
+            r.Type = "Picture";
+            r.Latitude = registerOverlay.GeoCoordinate.Latitude;
+            r.Longitude = registerOverlay.GeoCoordinate.Longitude;
+            r.RouteId = AzureDBM.selectedRoute.Id;
+
+            AzureDBM.InsertRegister(r);
         }
 
         private void commentButton_Click(object sender, RoutedEventArgs e)
@@ -194,6 +298,14 @@ namespace travelroute
             registerOverlay.GeoCoordinate = myLocationOverlay.GeoCoordinate;
 
             registerLayer.Add(registerOverlay);
+
+            Register r = new Register();
+            r.Type = "Comment";
+            r.Latitude = registerOverlay.GeoCoordinate.Latitude;
+            r.Longitude = registerOverlay.GeoCoordinate.Longitude;
+            r.RouteId = AzureDBM.selectedRoute.Id;
+
+            AzureDBM.InsertRegister(r);
         }
     }
 }

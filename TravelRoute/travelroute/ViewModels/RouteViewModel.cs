@@ -115,9 +115,9 @@ namespace travelroute.ViewModels
             }
             set
             {
-                if (value != _price)
+                if (value != _price && value.Equals("0") == false)
                 {
-                    _price = "$ " + value;
+                    _price = "$ " + value.Insert(value.Length-3, ".");
                     NotifyPropertyChanged("Price");
                 }
             }

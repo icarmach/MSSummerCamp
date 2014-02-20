@@ -104,13 +104,13 @@ namespace travelroute
             // The query excludes Rutas that do now belown to the current user
             try
             {
-                AzureDBM.routeItems = await AzureDBM.routeTable
+                AzureDBM.activeRouteItems = await AzureDBM.routeTable
                     .Where(ruta => ruta.OwnerId == App.MobileService.CurrentUser.UserId)
                     .ToCollectionAsync();
 
                 App.HomeViewModel.ActiveRouteList.Clear();
 
-                foreach (Route r in AzureDBM.routeItems)
+                foreach (Route r in AzureDBM.activeRouteItems)
                 {
                     App.HomeViewModel.ActiveRouteList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri(r.RoutePicture, UriKind.Absolute)), Name = r.Name, Duration = "0", Price = "0" });
                 }
@@ -253,19 +253,16 @@ namespace travelroute
             NavigationService.Navigate(new Uri("/Login.xaml", UriKind.Relative));
         }
 
-        private void activeGrid_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        private void popularLLS_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/EditRoute.xaml", UriKind.Relative));
+            AzureDBM.selectedRoute = AzureDBM.popularRouteItems[((LongListSelector)sender).ItemsSource.IndexOf(((LongListSelector)sender).SelectedItem)];
+            NavigationService.Navigate(new Uri("/ViewRoute.xaml", UriKind.Relative));
         }
 
-        private void LongListSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void activeLLS_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //Route r = new Route();
-            //r.Id = ((LongListSelector)sender).SelectedItem.Id;
-
-
-            //AzureDBM.selectedRoute = r;
-            NavigationService.Navigate(new Uri("/ViewRoute.xaml", UriKind.Relative));
+            AzureDBM.selectedRoute = AzureDBM.activeRouteItems[((LongListSelector)sender).ItemsSource.IndexOf(((LongListSelector)sender).SelectedItem)];
+            NavigationService.Navigate(new Uri("/EditRoute.xaml", UriKind.Relative));
         }
 
     }

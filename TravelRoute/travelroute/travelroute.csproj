@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AzureDBM.cs" />
+    <Compile Include="DBClasses\Register.cs" />
     <Compile Include="DBClasses\Route.cs" />
     <Compile Include="DBClasses\User.cs" />
     <Compile Include="EditRoute.xaml.cs">

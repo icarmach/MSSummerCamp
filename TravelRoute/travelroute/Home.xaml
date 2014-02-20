@@ -36,7 +36,7 @@
                     </phone:PanoramaItem.RenderTransform>
 
                     <!-- Popular routes data bindings -->
-                    <phone:LongListSelector Margin="0,0,0,0" ItemsSource="{Binding PopularRouteList}" SelectionChanged="LongListSelector_SelectionChanged">
+                    <phone:LongListSelector x:Name="popularLLS" Margin="0,0,0,0" ItemsSource="{Binding PopularRouteList}" SelectionChanged="popularLLS_SelectionChanged">
                         <phone:LongListSelector.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel>
@@ -88,11 +88,11 @@
                                 </Grid>
                             </phone:PivotItem.Header>
                             <!-- Route data bindings -->
-                            <phone:LongListSelector Margin="0,0,0,0" ItemsSource="{Binding ActiveRouteList}">
+                            <phone:LongListSelector x:Name="activeLLS" Margin="0,0,0,0" ItemsSource="{Binding ActiveRouteList}" SelectionChanged="activeLLS_SelectionChanged">
                                 <phone:LongListSelector.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
-                                            <Grid x:Name="activeGrid" Width="372" Height="171" Tap="activeGrid_Tap">
+                                            <Grid x:Name="activeGrid" Width="372" Height="171">
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition/>
                                                     <RowDefinition/>
@@ -179,7 +179,7 @@
                                         <Image x:Name="fin1Star2" Grid.Column="1" Stretch="None" Source="/Assets/starFull.png"/>
                                         <Image x:Name="fin1Star3" Grid.Column="2" Source="/Assets/starFull.png" Stretch="None"/>
                                         <Image x:Name="fin1Star4" Grid.Column="3" Source="/Assets/starFull.png" Stretch="None"/>
-                                        <Image x:Name="fin1Star5" Grid.Column="4" Stretch="None" Source="/Assets/starEmpty.png"/>
+                                        <Image x:Name="fin1Star5" Grid.Column="4" Stretch="None" Source="/Assets/starFull.png"/>
                                     </Grid>
                                 </Grid>
                             </Grid>

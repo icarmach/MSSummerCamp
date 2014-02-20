@@ -20,7 +20,7 @@ namespace travelroute
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            //routeName.Text = AzureDBM.selectedRoute.Name;
+            routeName.Text = AzureDBM.selectedRoute.Name;
         }
 
         private void RouteViewPanorama_SelectionChanged(object sender, SelectionChangedEventArgs e)

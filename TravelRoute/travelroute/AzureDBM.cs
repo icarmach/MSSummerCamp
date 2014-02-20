@@ -27,10 +27,14 @@ namespace travelroute
         
         public static MobileServiceCollection<Route, Route> routeItems;
         public static MobileServiceCollection<Route, Route> popularRouteItems;
+        public static MobileServiceCollection<Route, Route> activeRouteItems;
         public static IMobileServiceTable<Route> routeTable = App.MobileService.GetTable<Route>();
 
         public static MobileServiceCollection<User, User> userItems;
         public static IMobileServiceTable<User> userTable = App.MobileService.GetTable<User>();
+
+        public static MobileServiceCollection<Register, Register> registerItems;
+        public static IMobileServiceTable<Register> registerTable = App.MobileService.GetTable<Register>();
 
         //temp variables
         public static Route selectedRoute;
@@ -152,9 +156,6 @@ namespace travelroute
 
                     imageStream = null;
                 }
-
-                // Add the new item to the collection.
-                routeItems.Add(route);
             }
         }
 
@@ -178,6 +179,11 @@ namespace travelroute
         public static async void InsertUser(User user)
         {
             await userTable.InsertAsync(user);
+        }
+
+        public static async void InsertRegister(Register register)
+        {
+            await registerTable.InsertAsync(register);
         }
     }
 }
