@@ -55,11 +55,6 @@ namespace travelroute
             polyLine.StrokeThickness = 6;
 
             routeMap.MapElements.Add(polyLine);
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            routeName.Text = AzureDBM.selectedRoute.Name;
 
             geolocator = new Geolocator();
             geolocator.DesiredAccuracy = PositionAccuracy.High;
@@ -74,8 +69,17 @@ namespace travelroute
 
             myLocationLayer.Add(myLocationOverlay);
             routeMap.Layers.Add(myLocationLayer);
+        }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            routeName.Text = AzureDBM.selectedRoute.Name;
             RefreshRegisters();
+        }
+
+        protected override void OnBackKeyPress(System.ComponentModel.CancelEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
         }
 
         private void geolocator_PositionChanged(Geolocator sender, PositionChangedEventArgs args)
