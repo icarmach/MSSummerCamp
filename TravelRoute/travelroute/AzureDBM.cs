@@ -39,6 +39,9 @@ namespace travelroute
         //temp variables
         public static Route selectedRoute;
         public static bool isUserLoggedIn = false;
+        public static string selectedRegisterType;
+        public static double selectedRegisterLat;
+        public static double selectedRegisterLon;
 
         public static async System.Threading.Tasks.Task AuthenticateWithFacebook()
         {
