@@ -52,8 +52,9 @@
 					<TextBlock HorizontalAlignment="Left" Margin="12,0,0,0" TextWrapping="Wrap" Text="¿cuál fue el costo de este registro?" VerticalAlignment="Bottom" Padding="0" Grid.Row="5"/>
 					<TextBox x:Name="registerExpenses" Margin="0" TextWrapping="Wrap" Grid.Row="6" InputScope="Number"/>
 					<TextBlock HorizontalAlignment="Left" Margin="12,10,0,0" TextWrapping="Wrap" Text="¿cómo valorarías esta experiencia?" VerticalAlignment="Bottom" Padding="0" Grid.Row="7"/>
-					<toolkit:Rating x:Name="registerAppreciation" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="8" Margin="12,0,0,0"/>
-				</Grid>
+                    <toolkit:Rating x:Name="registerAppreciation" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="8" Margin="12,0,0,0" ValueChanged="registerAppreciation_ValueChanged">
+                    </toolkit:Rating>
+                </Grid>
 			</ScrollViewer>
 		</Grid>
 	</Grid>
