@@ -27,6 +27,7 @@ namespace travelroute
             );
 
         private static HomeViewModel homeViewModel = null;
+        private static RouteViewModel routeViewModel = null;
 
         /// <summary>
         /// A static ViewModel used by the views to bind against.
@@ -41,6 +42,22 @@ namespace travelroute
                     homeViewModel = new HomeViewModel();
 
                 return homeViewModel;
+            }
+        }
+
+        /// <summary>
+        /// A static ViewModel used by the views to bind against.
+        /// </summary>
+        /// <returns>The RouteViewModel object.</returns>
+        public static RouteViewModel RouteViewModel
+        {
+            get
+            {
+                // Delay creation of the view model until necessary
+                if (routeViewModel == null)
+                    routeViewModel = new RouteViewModel();
+
+                return routeViewModel;
             }
         }
         

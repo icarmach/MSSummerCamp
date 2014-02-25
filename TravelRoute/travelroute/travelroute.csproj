@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AzureDBM.cs" />
+    <Compile Include="DBClasses\RouteComment.cs" />
     <Compile Include="DBClasses\Register.cs" />
     <Compile Include="DBClasses\Route.cs" />
     <Compile Include="DBClasses\User.cs" />
@@ -125,6 +126,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CommentViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\RouteViewModel.cs" />
     <Compile Include="ViewRoute.xaml.cs">

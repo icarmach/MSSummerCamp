@@ -97,7 +97,7 @@ namespace travelroute
                 if (firstMapLoad)
                 {
                     routeMap.Center = gc;
-                    routeMap.ZoomLevel = 18;
+                    routeMap.ZoomLevel = 15;
 
                     firstMapLoad = false;
                 }

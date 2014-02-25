@@ -140,7 +140,7 @@ namespace travelroute
             gender = this.List1.SelectedItem.ToString();
             name = userInfo.Text;
             birthday = birDate.Value.ToString();
-            location = location;
+            //location = location;
 
             User u = new User();
             u.Birthdate = birthday;

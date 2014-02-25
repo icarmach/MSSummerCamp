@@ -36,6 +36,9 @@ namespace travelroute
         public static MobileServiceCollection<Register, Register> registerItems;
         public static IMobileServiceTable<Register> registerTable = App.MobileService.GetTable<Register>();
 
+        public static MobileServiceCollection<RouteComment, RouteComment> commentItems;
+        public static IMobileServiceTable<RouteComment> commentTable = App.MobileService.GetTable<RouteComment>();
+
         //temp variables
         public static Route selectedRoute;
         public static bool isUserLoggedIn = false;
@@ -191,6 +194,11 @@ namespace travelroute
         public static async void InsertRegister(Register register)
         {
             await registerTable.InsertAsync(register);
+        }
+
+        public static async void InsertComment(RouteComment c)
+        {
+            await commentTable.InsertAsync(c);
         }
     }
 }
