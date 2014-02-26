@@ -10,6 +10,7 @@ using travelroute.Resources;
 using travelroute.ViewModels;
 
 using Microsoft.WindowsAzure.MobileServices;
+using Facebook.Client;
 
 namespace travelroute
 {
@@ -26,8 +27,13 @@ namespace travelroute
             "fCVtJOBrlRrmUkePbPluglypwfjjjt66"
             );
 
+        internal static string AccessToken = String.Empty;
+        public static string codigo = "453272671466871";
+
         private static HomeViewModel homeViewModel = null;
         private static RouteViewModel routeViewModel = null;
+
+        public static FacebookSessionClient FacebookSessionClient = new FacebookSessionClient(codigo);
 
         /// <summary>
         /// A static ViewModel used by the views to bind against.

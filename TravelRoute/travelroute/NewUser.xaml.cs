@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Windows.Media.Imaging;
 using travelroute.DBClasses;
+using System.Windows.Threading;
 
 namespace travelroute
 {
@@ -25,7 +26,6 @@ namespace travelroute
         public NewUser()
         {
             InitializeComponent();
-
         }
 
         private void Combo1_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -85,7 +85,7 @@ namespace travelroute
 
         private void OnUserInfoChanged(object sender, Facebook.Client.Controls.UserInfoChangedEventArgs e)
         {
-
+            userInfo.Text = Home.palabra;
             this.userInfo.Text = this.BuildUserInfoDisplay(e.User);
 
 
@@ -112,6 +112,7 @@ namespace travelroute
 
 
                 //Obtener nombre del usuario de facebook
+
                 this.userInfo.Visibility = Visibility.Visible;
 
                 //Obtener fecha de nacimiento usuario de facebook
@@ -126,21 +127,64 @@ namespace travelroute
             }
             else if (e.SessionState == Facebook.Client.Controls.FacebookSessionState.Closed)
             {
-                this.userInfo.Visibility = Visibility.Collapsed;
-                ImageUser.Visibility = Visibility.Collapsed;
-                this.birDate.Visibility = Visibility.Collapsed;
                 //this.shareButton.Visibility = Visibility.Collapsed;
             }
         }
 
+
+        public static async void PublishStory(string namePost, string captionPost, string descriptionPost, string picturePost)
+        {
+            ////travelroute.NewUser.
+            //await facebookDataButton.RequestNewPermissions("publish_stream");
+
+            ////this.facebookDataButton.CurrentSession.AccessToken
+            //var facebookClient = new Facebook.FacebookClient(AzureDBM.accessToken);
+
+            //var postParams = new
+            //{
+            //    name = namePost,
+            //    caption = captionPost,
+            //    description = descriptionPost,
+            //    link = "https://www.facebook.com/TravelRouteSummerCamp",
+            //    picture = "picturePost"
+            //};
+
+            //try
+            //{
+
+            //    MessageBoxResult result = MessageBox.Show("¿Desea compartir en facebook?", "MessageBox Example", MessageBoxButton.OKCancel);
+
+            //    if (result == MessageBoxResult.OK)
+            //    {
+            //        dynamic fbPostTaskResult = await facebookClient.PostTaskAsync("/me/feed", postParams);
+            //        var resulta = (IDictionary<string, object>)fbPostTaskResult;
+
+            //        Dispatcher.BeginInvoke(() =>
+            //        {
+            //            MessageBox.Show("Se ha publicado correctamente");
+            //        });
+            //        MessageBox.Show("No caption, one button.");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Dispatcher.BeginInvoke(() =>
+            //    {
+            //        MessageBox.Show("Exception during post: " + ex.Message, "Error", MessageBoxButton.OK);
+            //    });
+            //}
+        }
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            userInfo.Text = Home.palabra;
             URLProfilePicture = "http://graph.facebook.com/" + App.MobileService.CurrentUser.UserId.Split(':')[1] + "/picture?type=small";
-            
+
             gender = this.List1.SelectedItem.ToString();
             name = userInfo.Text;
             birthday = birDate.Value.ToString();
-            //location = location;
+
 
             User u = new User();
             u.Birthdate = birthday;
@@ -148,6 +192,8 @@ namespace travelroute
             u.Gender = gender;
             u.Name = name;
             u.FacebookId = App.MobileService.CurrentUser.UserId.Split(':')[1];
+            u.Location = location;
+            u.Points = "0";
 
             AzureDBM.InsertUser(u);
 

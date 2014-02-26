@@ -99,10 +99,12 @@
     <Compile Include="DBClasses\RouteComment.cs" />
     <Compile Include="DBClasses\Register.cs" />
     <Compile Include="DBClasses\Route.cs" />
+    <Compile Include="DBClasses\Tag.cs" />
     <Compile Include="DBClasses\User.cs" />
     <Compile Include="EditRoute.xaml.cs">
       <DependentUpon>EditRoute.xaml</DependentUpon>
     </Compile>
+    <Compile Include="facebookClass.cs" />
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
       <SubType>Code</SubType>

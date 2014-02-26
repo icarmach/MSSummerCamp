@@ -187,11 +187,74 @@
                     </phone:Pivot>
                 </phone:PanoramaItem>
                 <phone:PanoramaItem x:Name="buscarPanorama" Header="buscar" Tag="buscar">
-                    <Grid x:Name="buscarMainGrid"/>
+                    <Grid x:Name="buscarMainGrid">
+
+                        <phone:LongListSelector x:Name="busqueda" Margin="0,0,0,0" ItemsSource="{Binding SearchList}" SelectionChanged="busqueda_SelectionChanged">
+                            <phone:LongListSelector.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Grid x:Name="busqueda" Width="396" Height="180">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Margin="10" Source="{Binding Image}" Stretch="UniformToFill" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                                            <Canvas Background="Black" Opacity="0.3" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="20,10,0,0" FontSize="26.667" Foreground="White"/>
+                                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Place}" VerticalAlignment="Top" Margin="20,40,0,0" FontSize="17.333" Grid.ColumnSpan="2" Foreground="White"/>
+                                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Owner}" VerticalAlignment="Top" Margin="20,60,0,0" FontSize="13.333" Grid.ColumnSpan="2" Foreground="White"/>
+                                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Duration}" VerticalAlignment="Bottom" Grid.Row="1" Margin="20,0,0,35" FontSize="21.333" Foreground="White"/>
+                                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Price}" VerticalAlignment="Bottom" Margin="20,0,0,10" Grid.Row="1" FontSize="21.333" Foreground="White"/>
+                                            <Grid Grid.Row="1" Grid.Column="1" Margin="30,50,20,10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Image Source="{Binding Star1}" Stretch="None"/>
+                                                <Image Grid.Column="1" Stretch="None" Source="{Binding Star2}"/>
+                                                <Image Grid.Column="2" Source="{Binding Star3}" Stretch="None"/>
+                                                <Image Grid.Column="3" Source="{Binding Star4}" Stretch="None"/>
+                                                <Image Grid.Column="4" Stretch="None" Source="{Binding Star5}"/>
+                                            </Grid>
+                                        </Grid>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </phone:LongListSelector.ItemTemplate>
+                        </phone:LongListSelector>
+                        <TextBox x:Name="textprueba" HorizontalAlignment="Left" Height="72" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="396"/>
+                        <Button x:Name="Button34" Content="Button" HorizontalAlignment="Left" Margin="119,161,0,0" VerticalAlignment="Top" Click="Button34_Click"/>
+
+
+                    </Grid>
                 </phone:PanoramaItem>
                 <phone:PanoramaItem x:Name="perfilPanorama" Header="perfil" Tag="perfil">
                     <Grid x:Name="perfilMainGrid">
-                        <Button x:Name="signOutButton" Content="Desconectarse" HorizontalAlignment="Center" Margin="197,468,0,0" VerticalAlignment="Center" Click="signOutButton_Click"/>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="signOutButton"  Margin="36,0,10,10" Click="signOutButton_Click" Grid.Row="3" Padding="0" RenderTransformOrigin="1.004,0.497" Grid.Column="1">
+                            <Button.Background>
+                                <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/Icons/logOut.png"/>
+                            </Button.Background>
+                        </Button>
+
+                        <Image x:Name="imagePerfil" Margin="124,0,122,10" Width="150" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="globalName" Grid.ColumnSpan="2" Height="72" Margin="0" Grid.Row="1" TextWrapping="Wrap" Width="396" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsEnabled="False"/>
+                        <TextBox x:Name="pointUser" Grid.ColumnSpan="2" Height="72" Margin="0" Grid.Row="2" TextWrapping="Wrap" IsEnabled="False"/>
 
                     </Grid>
                 </phone:PanoramaItem>

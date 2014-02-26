@@ -18,6 +18,7 @@ namespace travelroute
 {
     public partial class Home : PhoneApplicationPage
     {
+        public static string palabra = "";
         private bool loadedFirstTime = true;
         public Home()
         {
@@ -57,6 +58,8 @@ namespace travelroute
             {
                 this.ApplicationBar.IsVisible = false;
             }
+
+            RefreshPerfilData();
 
             //Rutas Populares de ejemplo, Just In Case
             /*
@@ -166,6 +169,48 @@ namespace travelroute
             }
 
             //ListItems.ItemsSource = items;
+
+        }
+
+        private void RefreshPerfilData()
+        {
+            try
+            {
+
+                if (AzureDBM.isUserLoggedIn == true && Login.variableDePasada == 0)
+                {
+
+                    imagePerfil.Source = new BitmapImage(new Uri("http://graph.facebook.com/" + App.MobileService.CurrentUser.UserId.Split(':')[1] + "/picture?type=small", UriKind.Absolute));
+                    globalName.Text = AzureDBM.usuarioGlobal;
+                }
+                else
+                {
+                    if (AzureDBM.isUserLoggedIn == true && Login.variableDePasada == 5)
+                    {
+                        imagePerfil.Source = new BitmapImage(new Uri(NewUser.URLProfilePicture, UriKind.Absolute));
+                        globalName.Text = NewUser.name;
+                        pointUser.Text = "Usted aún no posee puntos";
+                    }
+
+
+                }
+                if (AzureDBM.puntosGlobal == null || AzureDBM.puntosGlobal == "0")
+                {
+                    pointUser.Text = "Usted aún no posee puntos";
+
+                }
+                else
+                {
+                    pointUser.Text = AzureDBM.puntosGlobal;
+
+                }
+            }
+            catch
+            {
+
+                MessageBox.Show("Error loading items");
+
+            }
 
         }
 
@@ -285,5 +330,59 @@ namespace travelroute
             NavigationService.Navigate(new Uri("/EditRoute.xaml", UriKind.Relative));
         }
 
+        private void shareButton_Click(object sender, EventArgs e)
+        {
+
+            TextBox Comentar = new TextBox();
+
+            Comentar.Visibility = Visibility.Visible;
+            string descripcion = Comentar.Text;
+            string picture = "";
+
+            facebookClass.PublishStory(descripcion, picture);
+
+            NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
+        }
+
+        private async void Button34_Click(object sender, RoutedEventArgs e)
+        {
+            string tag = textprueba.Text;
+            try
+            {
+                AzureDBM.tagItems = await AzureDBM.tagTable
+                    .Where(tag2 => tag2.TagNom == tag)
+                    .ToCollectionAsync();
+                App.HomeViewModel.SearchList.Clear();
+
+                foreach (Tag t in AzureDBM.tagItems)
+                {
+                    AzureDBM.searchItems = await AzureDBM.routeTable
+                        .Where(ruta => ruta.Id == t.RouteId)
+                        .ToCollectionAsync();
+                    foreach (Route r in AzureDBM.searchItems)
+                    {
+
+                        MessageBox.Show(r.ToString());
+                        App.HomeViewModel.SearchList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri(r.RoutePicture, UriKind.Absolute)), Name = r.Name, Duration = "0", Price = "0" });
+
+                    }
+
+                }
+            }
+
+            catch
+            {
+                MessageBox.Show("Error loading items");
+            }
+
+
+
+
+        }
+
+        private void busqueda_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

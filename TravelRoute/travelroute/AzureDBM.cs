@@ -28,10 +28,15 @@ namespace travelroute
         public static MobileServiceCollection<Route, Route> routeItems;
         public static MobileServiceCollection<Route, Route> popularRouteItems;
         public static MobileServiceCollection<Route, Route> activeRouteItems;
+        public static MobileServiceCollection<Route, Route> searchItems;
         public static IMobileServiceTable<Route> routeTable = App.MobileService.GetTable<Route>();
 
         public static MobileServiceCollection<User, User> userItems;
+        public static MobileServiceCollection<User, User> usuariosSeleccionados;
         public static IMobileServiceTable<User> userTable = App.MobileService.GetTable<User>();
+
+        public static MobileServiceCollection<Tag, Tag> tagItems;
+        public static IMobileServiceTable<Tag> tagTable = App.MobileService.GetTable<Tag>();
 
         public static MobileServiceCollection<Register, Register> registerItems;
         public static IMobileServiceTable<Register> registerTable = App.MobileService.GetTable<Register>();
@@ -46,6 +51,14 @@ namespace travelroute
         public static double selectedRegisterLat;
         public static double selectedRegisterLon;
 
+        public static string usuarioID;
+        public static string routeID;
+        public static string usuarioGlobal;
+        public static string puntosGlobal;
+        public static string accessToken;
+
+        public static int variableEstado = 4;
+
         public static async System.Threading.Tasks.Task AuthenticateWithFacebook()
         {
             // Calls the Mobile Service available on Windows Azure and let the user login to the app using Facebook as the provider.
@@ -56,20 +69,50 @@ namespace travelroute
                 {
                     App.MobileService.CurrentUser = await App.MobileService.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
                     isUserLoggedIn = true;
+                    accessToken = App.MobileService.CurrentUser.MobileServiceAuthenticationToken;
 
                     //Loads user data
                     try
                     {
-                        /*AzureDBM.userItems = await AzureDBM.userTable
-                            .Where(usuario => usuario.FacebookId == App.MobileService.CurrentUser.UserId.Split(':')[1])
+                        if (isUserLoggedIn != false)
+                        {
+                            usuarioID = App.MobileService.CurrentUser.UserId.Split(':')[1];
+
+                            AzureDBM.usuariosSeleccionados = await AzureDBM.userTable
+                            .Where(ruta => ruta.FacebookId == usuarioID)
                             .ToCollectionAsync();
-                        */
-                        //MessageBox.Show("dato 1" + userItems[0].FacebookId + "       dato 2" + App.MobileService.CurrentUser.UserId.Split(':')[1]);
+
+                            if (AzureDBM.usuariosSeleccionados.Count == 0)
+                            {
+                                variableEstado = 11;
+                            }
+
+                            foreach (User r in AzureDBM.usuariosSeleccionados)
+                            {
+                                if (r.FacebookId == usuarioID)
+                                {
+                                    variableEstado = 10;
+                                    usuarioGlobal = r.Name;
+                                    puntosGlobal = r.Points;
+
+                                }
+                                else
+                                {
+                                    variableEstado = 11;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Revise su conexión ");
+                        }
+
                     }
                     catch (MobileServiceInvalidOperationException e)
                     {
                         MessageBox.Show(e.Message, "Error loading user data", MessageBoxButton.OK);
                     }
+
                 }
                 catch (InvalidOperationException)
                 {
@@ -78,10 +121,6 @@ namespace travelroute
 
                     break;
                 }
-
-                //MessageBox.Show("HOla"++=AzureDBM.userItems[0].FacebookId);
-                //MessageBox.Show(userItems[0].FacebookId);
-
 
             }
         }
@@ -114,15 +153,18 @@ namespace travelroute
             }
         }
 
-        public static async void InsertRoute(Route route, Stream imageStream)
+        public static async Task<string> InsertRoute(Route route, Stream imageStream)
         {
+
+            string idRuta;
+
             //The user didn't added a picture to the route
             if (imageStream == null)
             {
                 // This code inserts a new Ruta into the database. When the operation completes
                 // and Mobile Services has assigned an Id, the item is added to the Home Page.
                 await routeTable.InsertAsync(route);
-                //items.Add(ruta);
+                idRuta = route.Id;
             }
 
             else
@@ -140,6 +182,8 @@ namespace travelroute
                 // Send the item to be inserted. When blob properties are set this
                 // generates an SAS in the response.
                 await routeTable.InsertAsync(route);
+                idRuta = route.Id;
+
 
                 // If we have a returned SAS, then upload the blob.
                 if (!string.IsNullOrEmpty(route.SasQueryString))
@@ -165,6 +209,8 @@ namespace travelroute
                     imageStream = null;
                 }
             }
+
+            return idRuta;
         }
 
         public static async void SignOut()
@@ -199,6 +245,11 @@ namespace travelroute
         public static async void InsertComment(RouteComment c)
         {
             await commentTable.InsertAsync(c);
+        }
+
+        public static async void InsertTag(Tag tag)
+        {
+            await tagTable.InsertAsync(tag);
         }
     }
 }
