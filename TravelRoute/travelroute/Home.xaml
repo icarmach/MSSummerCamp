@@ -259,7 +259,7 @@
                     </Grid>
                 </phone:PanoramaItem>
                 <phone:PanoramaItem x:Name="tiendaPanorama" Header="tienda" Tag="tienda">
-                    <Grid x:Name="tiendaMainGrid"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="12,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Proximamente..."/>
                 </phone:PanoramaItem>
             </phone:Panorama>
 

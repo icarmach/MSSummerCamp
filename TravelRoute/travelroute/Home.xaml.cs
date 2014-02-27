@@ -18,7 +18,6 @@ namespace travelroute
 {
     public partial class Home : PhoneApplicationPage
     {
-        public static string palabra = "";
         private bool loadedFirstTime = true;
         public Home()
         {
@@ -180,7 +179,7 @@ namespace travelroute
                 if (AzureDBM.isUserLoggedIn == true && Login.variableDePasada == 0)
                 {
 
-                    imagePerfil.Source = new BitmapImage(new Uri("http://graph.facebook.com/" + App.MobileService.CurrentUser.UserId.Split(':')[1] + "/picture?type=small", UriKind.Absolute));
+                    imagePerfil.Source = new BitmapImage(new Uri("http://graph.facebook.com/" + App.MobileService.CurrentUser.UserId.Split(':')[1] + "/picture?type=large", UriKind.Absolute));
                     globalName.Text = AzureDBM.usuarioGlobal;
                 }
                 else
