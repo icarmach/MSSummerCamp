@@ -19,6 +19,7 @@ namespace travelroute
     {
         // Using a stream reference to upload the image to blob storage.
         Stream imageStream = null;
+        int appreciation = 0;
 
         public NewRegister()
         {
@@ -64,51 +65,42 @@ namespace travelroute
         private void saveButton_Click(object sender, EventArgs e)
         {
             //Creates the new Register and then it sends it to Azure so we can store the route data.
-            var register = new Register { Appreciation = Convert.ToInt32(registerAppreciation.Value), CreatedByCurrentUser = true, Description = registerDescription.Text, Expenses = Convert.ToInt32(registerExpenses.Text), Type = AzureDBM.selectedRegisterType, Latitude = AzureDBM.selectedRegisterLat, Longitude = AzureDBM.selectedRegisterLon, Name = registerName.Text, RouteId = AzureDBM.selectedRoute.Id };
+            var register = new Register { Appreciation = appreciation, CreatedByCurrentUser = true, Description = registerDescription.Text, Expenses = Convert.ToInt32(registerExpenses.Text), Type = AzureDBM.selectedRegisterType, Latitude = AzureDBM.selectedRegisterLat, Longitude = AzureDBM.selectedRegisterLon, Name = registerName.Text, RouteId = AzureDBM.selectedRoute.Id };
             AzureDBM.InsertRegister(register);
 
             NavigationService.Navigate(new Uri("/EditRoute.xaml", UriKind.Relative));
         }
 
-        private void registerAppreciation_ValueChanged(object sender, EventArgs e)
+        private void muyMalaImage_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-            /*
-            if(((Rating)sender).Value == 1)
-            {
-                Style style = new Style(typeof(RatingItem));
-                style.Setters.Add(new Setter(RatingItem.BackgroundProperty, new SolidColorBrush(Colors.Red)));
-                ((Rating)sender).Style = style;
-            }
-
-            else if (((Rating)sender).Value == 2)
-            {
-                Style style = new Style(typeof(RatingItem));
-                style.Setters.Add(new Setter(RatingItem.BackgroundProperty, new SolidColorBrush(Colors.Orange)));
-                ((Rating)sender).Style = style;
-            }
-
-            else if (((Rating)sender).Value == 3)
-            {
-                Style style = ((Rating)sender).Style;
-                //style.Setters.Clear();
-                style.Setters.Add(new Setter(RatingItem.BackgroundProperty, new SolidColorBrush(Colors.Yellow)));
-                ((Rating)sender).Style = style;
-            }
-
-            else if (((Rating)sender).Value == 4)
-            {
-                Style style = new Style(typeof(RatingItem));
-                style.Setters.Add(new Setter(RatingItem.BackgroundProperty, new SolidColorBrush(Colors.Purple)));
-                ((Rating)sender).Style = style;
-            }
-
-            else if (((Rating)sender).Value == 5)
-            {
-                Style style = new Style(typeof(RatingItem));
-                style.Setters.Add(new Setter(RatingItem.BackgroundProperty, new SolidColorBrush(Colors.Green)));
-                ((Rating)sender).Style = style;
-            }
-             */
+            appreciation = 1;
+            muyMalaImage.Source = new BitmapImage(new Uri("/Assets/rutaPisco.png", UriKind.Relative));
+            malaImage.Source = new BitmapImage(new Uri("/Assets/rutaPisco.png", UriKind.Relative));
+            regularImage.Source = new BitmapImage(new Uri("/Assets/rutaPisco.png", UriKind.Relative));
+            buenaImage.Source = new BitmapImage(new Uri("/Assets/rutaPisco.png", UriKind.Relative));
+            muyBuenaImage.Source = new BitmapImage(new Uri("/Assets/rutaPisco.png", UriKind.Relative));
         }
+
+        private void malaImage_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+
+        }
+
+        private void regularImage_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+
+        }
+
+        private void buenaImage_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+
+        }
+
+        private void muyBuenaImage_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+
+        }
+
+        
     }
 }

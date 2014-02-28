@@ -188,19 +188,19 @@ namespace travelroute
                     {
                         imagePerfil.Source = new BitmapImage(new Uri(NewUser.URLProfilePicture, UriKind.Absolute));
                         globalName.Text = NewUser.name;
-                        pointUser.Text = "Usted aún no posee puntos";
+                        pointUser.Text = "Puntos Travel Route: " + AzureDBM.puntosGlobal;
                     }
 
 
                 }
                 if (AzureDBM.puntosGlobal == null || AzureDBM.puntosGlobal == "0")
                 {
-                    pointUser.Text = "Usted aún no posee puntos";
+                    pointUser.Text = "Puntos Travel Route: Usted aún no posee puntos";
 
                 }
                 else
                 {
-                    pointUser.Text = AzureDBM.puntosGlobal;
+                    pointUser.Text = "Puntos Travel Route: " + AzureDBM.puntosGlobal;
 
                 }
             }
@@ -343,14 +343,21 @@ namespace travelroute
             NavigationService.Navigate(new Uri("/Home.xaml", UriKind.Relative));
         }
 
-        private async void Button34_Click(object sender, RoutedEventArgs e)
+        private void busqueda_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string tag = textprueba.Text;
+            AzureDBM.selectedRoute = AzureDBM.searchItems[((LongListSelector)sender).ItemsSource.IndexOf(((LongListSelector)sender).SelectedItem)];
+            NavigationService.Navigate(new Uri("/ViewRoute.xaml", UriKind.Relative));
+        }
+
+        private async void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+            string tag = searchText.Text;
             try
             {
                 AzureDBM.tagItems = await AzureDBM.tagTable
                     .Where(tag2 => tag2.TagNom == tag)
                     .ToCollectionAsync();
+                
                 App.HomeViewModel.SearchList.Clear();
 
                 foreach (Tag t in AzureDBM.tagItems)
@@ -373,15 +380,6 @@ namespace travelroute
             {
                 MessageBox.Show("Error loading items");
             }
-
-
-
-
-        }
-
-        private void busqueda_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }
