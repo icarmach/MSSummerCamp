@@ -83,7 +83,7 @@ namespace travelroute
         private async void playButton_Click(object sender, EventArgs e)
         {
             //Creates the new Route and then it sends it to Azure so we can store the route data.
-            var route = new Route { Description = routeDescription.Text, Duration = 0, Name = routeName.Text, OwnerId = App.MobileService.CurrentUser.UserId, CopiedNumber = 0, Status = "planned", IsPopular = false, IsShared = false };
+            var route = new Route { Description = routeDescription.Text, Duration = 0, Name = routeName.Text, OwnerId = App.MobileService.CurrentUser.UserId, CopiedNumber = 0, Status = "active", IsPopular = false, IsShared = false };
             string idruta = await AzureDBM.InsertRoute(route, imageStream);
 
             string tags = this.routeTags.Text;
