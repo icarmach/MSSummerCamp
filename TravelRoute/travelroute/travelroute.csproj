@@ -182,6 +182,8 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\bns.png" />
+    <Content Include="Assets\bs.png" />
     <Content Include="Assets\facebookLogin.png" />
     <Content Include="Assets\Icons\add.png" />
     <Content Include="Assets\Icons\back.png" />
@@ -240,13 +242,21 @@
     <Content Include="Assets\Icons\transport.rew.png" />
     <Content Include="Assets\Icons\twitter.png" />
     <Content Include="Assets\Icons\upload.png" />
+    <Content Include="Assets\mbns.png" />
+    <Content Include="Assets\mbs.png" />
+    <Content Include="Assets\mmns.png" />
+    <Content Include="Assets\mms.png" />
+    <Content Include="Assets\mns.png" />
+    <Content Include="Assets\ms.png" />
     <Content Include="Assets\populares-01.png" />
     <Content Include="Assets\populares-02.png" />
     <Content Include="Assets\populares-03.png" />
     <Content Include="Assets\populares-04.png" />
+    <Content Include="Assets\rns.png" />
     <Content Include="Assets\routeComments.png" />
     <Content Include="Assets\routeMap.png" />
     <Content Include="Assets\routeStat.png" />
+    <Content Include="Assets\rs.png" />
     <Content Include="Assets\rutaPisco.png" />
     <Content Include="Assets\starEmpty.png" />
     <Content Include="Assets\starFull.png" />

@@ -29,8 +29,9 @@
 
         <!--ContentPanel - place additional content here-->
 		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+			<TextBlock x:Name="registerType" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Alojamiento" VerticalAlignment="Top" Margin="12,-30,0,0"/>
 			<ScrollViewer>
-				<Grid Margin="0,-500,0,0">
+				<Grid Margin="0">
 					<Grid.RowDefinitions>
 						<RowDefinition/>
 						<RowDefinition/>
@@ -60,15 +61,15 @@
 							<ColumnDefinition/>
 							<ColumnDefinition/>
 						</Grid.ColumnDefinitions>
-						<Image x:Name="muyMalaImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="50" Tap="muyMalaImage_Tap"/>
+						<Image x:Name="muyMalaImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="50" Tap="muyMalaImage_Tap" Source="Assets/mmns.png"/>
 						<TextBlock x:Name="muyMalaText" TextWrapping="Wrap" Text="Muy mala" FontSize="16" VerticalAlignment="Bottom" TextAlignment="Center" Margin="0,0,0,15"/>
-						<Image x:Name="malaImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="50" Margin="0" Grid.Column="1" Tap="malaImage_Tap"/>
+						<Image x:Name="malaImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="50" Margin="0" Grid.Column="1" Tap="malaImage_Tap" Source="/Assets/mns.png"/>
 						<TextBlock x:Name="malaText" TextWrapping="Wrap" Text="Mala" FontSize="16" Grid.Column="1" VerticalAlignment="Bottom" TextAlignment="Center" Margin="0,0,0,15"/>
-						<Image x:Name="regularImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="50" Margin="0" Grid.Column="2" Tap="regularImage_Tap"/>
+						<Image x:Name="regularImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="50" Margin="0" Grid.Column="2" Tap="regularImage_Tap" Source="/Assets/rns.png"/>
 						<TextBlock x:Name="regularText" TextWrapping="Wrap" Text="Regular" FontSize="16" Grid.Column="2" VerticalAlignment="Bottom" TextAlignment="Center" Margin="0,0,0,15"/>
-						<Image x:Name="buenaImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="50" Margin="0" Grid.Column="3" Tap="buenaImage_Tap"/>
+						<Image x:Name="buenaImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="50" Margin="0" Grid.Column="3" Tap="buenaImage_Tap" Source="/Assets/bns.png"/>
 						<TextBlock x:Name="buenaText" TextWrapping="Wrap" Text="Buena" FontSize="16" Grid.Column="3" VerticalAlignment="Bottom" TextAlignment="Center" Margin="0,0,0,15"/>
-						<Image x:Name="muyBuenaImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="50" Margin="0" Grid.Column="4" Tap="muyBuenaImage_Tap"/>
+						<Image x:Name="muyBuenaImage" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="50" Margin="0" Grid.Column="4" Tap="muyBuenaImage_Tap" Source="/Assets/mbns.png"/>
 						<TextBlock x:Name="muyBuenaText" TextWrapping="Wrap" Text="Muy buena" FontSize="16" Grid.Column="4" VerticalAlignment="Bottom" TextAlignment="Center" Margin="0,0,0,15"/>
 					</Grid>
                 </Grid>

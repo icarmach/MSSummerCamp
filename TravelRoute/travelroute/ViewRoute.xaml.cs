@@ -24,9 +24,8 @@ namespace travelroute
     public partial class ViewRoute : PhoneApplicationPage
     {
         private MapLayer registerLayer = new MapLayer();
-        private MapLayer polyLayer = new MapLayer();
 
-        private MapPolyline polyLine = new MapPolyline();
+        private List<GeoCoordinate> registerCoordinates = new List<GeoCoordinate>();
 
         public ViewRoute()
         {
@@ -36,12 +35,6 @@ namespace travelroute
             DataContext = App.RouteViewModel;
 
             routeMap.Layers.Add(registerLayer);
-            routeMap.Layers.Add(polyLayer);
-
-            polyLine.StrokeColor = Colors.Green;
-            polyLine.StrokeThickness = 6;
-
-            routeMap.MapElements.Add(polyLine);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -75,9 +68,8 @@ namespace travelroute
                     .OrderBy(reg => reg.CreatedAt)
                     .ToCollectionAsync();
 
-                polyLine.Path.Clear();
-
                 Register lastReg = null;
+                registerCoordinates.Clear();
 
                 foreach (Register r in AzureDBM.registerItems)
                 {
@@ -124,7 +116,7 @@ namespace travelroute
 
                     registerLayer.Add(registerOverlay);
 
-                    polyLine.Path.Add(new GeoCoordinate(r.Latitude, r.Longitude));
+                    registerCoordinates.Add(new GeoCoordinate(r.Latitude, r.Longitude));
 
                     lastReg = r;
                 }
@@ -132,14 +124,80 @@ namespace travelroute
                 if(lastReg != null)
                 {
                     routeMap.Center = new GeoCoordinate(lastReg.Latitude, lastReg.Longitude);
-                    routeMap.ZoomLevel = 15;
+                    routeMap.ZoomLevel = 12;
                 }
+
+                RefreshPolylines();
                 
             }
             catch (MobileServiceInvalidOperationException e)
             {
                 MessageBox.Show(e.Message, "Error loading items", MessageBoxButton.OK);
             }
+        }
+
+        private void RefreshPolylines()
+        {
+            //delete polylines from the map
+            routeMap.MapElements.Clear();
+
+            if (registerCoordinates.Count > 1)
+            {
+                //creates n-1 polylines for the route
+                for (int i = 0; i < registerCoordinates.Count - 1; i++)
+                {
+                    MapPolyline polyLine = new MapPolyline();
+
+                    byte R = 0;
+                    byte G = 0;
+                    byte B = 0;
+
+                    if (AzureDBM.registerItems[i + 1].Appreciation == 1)
+                    {
+                        R = 200;
+                        G = 55;
+                        B = 55;
+                    }
+
+                    else if (AzureDBM.registerItems[i + 1].Appreciation == 2)
+                    {
+                        R = 253;
+                        G = 125;
+                        B = 48;
+                    }
+
+                    else if (AzureDBM.registerItems[i + 1].Appreciation == 3)
+                    {
+                        R = 253;
+                        G = 227;
+                        B = 69;
+                    }
+
+                    else if (AzureDBM.registerItems[i + 1].Appreciation == 4)
+                    {
+                        R = 193;
+                        G = 219;
+                        B = 63;
+                    }
+
+                    else if (AzureDBM.registerItems[i + 1].Appreciation == 5)
+                    {
+                        R = 23;
+                        G = 176;
+                        B = 76;
+                    }
+
+                    polyLine.StrokeColor = Color.FromArgb(255, R, G, B);
+                    polyLine.StrokeThickness = 6;
+
+                    polyLine.Path.Add(registerCoordinates[i]);
+                    polyLine.Path.Add(registerCoordinates[i + 1]);
+
+                    routeMap.MapElements.Add(polyLine);
+                }
+
+            }
+
         }
 
         private void RouteViewPanorama_SelectionChanged(object sender, SelectionChangedEventArgs e)

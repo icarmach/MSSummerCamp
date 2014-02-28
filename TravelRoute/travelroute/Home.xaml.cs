@@ -59,52 +59,6 @@ namespace travelroute
             }
 
             RefreshPerfilData();
-
-            //Rutas Populares de ejemplo, Just In Case
-            /*
-            Route r1 = new Route();
-            r1.CopiedNumber = 0;
-            r1.Description = "Ruta por el Parque Nacional Torres del Paine";
-            r1.Duration = 7;
-            r1.IsPopular = true;
-            r1.IsShared = true;
-            r1.Name = "Circuito W Torres del Paine";
-            r1.OwnerId = "Anonymous";
-            r1.Place = "Parque Nacional Torres del Paine, XII Región";
-            r1.RoutePicture = "http://travelroutestorage.blob.core.windows.net/routecoverimages/04107852-d5e0-4695-826b-b3883fc8f1dd.jpg";
-            r1.Status = "active";
-            r1.Price = 326910;
-
-            Route r2 = new Route();
-            r2.CopiedNumber = 0;
-            r2.Description = "Explorando el Bosque";
-            r2.Duration = 3;
-            r2.IsPopular = true;
-            r2.IsShared = true;
-            r2.Name = "Explorando el Bosque";
-            r2.OwnerId = "Anonymous";
-            r2.Place = "Parque Nacional Conguillio, IX Región";
-            r2.RoutePicture = "http://travelroutestorage.blob.core.windows.net/routecoverimages/cb059430-95d7-4995-acd9-c0cec7dc6eb9.jpg";
-            r2.Status = "active";
-            r2.Price = 123790;
-
-            Route r3 = new Route();
-            r3.CopiedNumber = 0;
-            r3.Description = "Recorrido en Kayak";
-            r3.Duration = 12;
-            r3.IsPopular = true;
-            r3.IsShared = true;
-            r3.Name = "Recorrido en Kayak";
-            r3.OwnerId = "Anonymous";
-            r3.Place = "Lago LLanquihue, X Región";
-            r3.RoutePicture = "http://travelroutestorage.blob.core.windows.net/routecoverimages/231595d4-a1dd-485a-b0f5-3a05b301d25c.jpg";
-            r3.Status = "active";
-            r3.Price = 97340;
-
-            AzureDBM.InsertRoute(r1, null);
-            AzureDBM.InsertRoute(r2, null);
-            AzureDBM.InsertRoute(r3, null);
-            */
         }
 
         // Back Button pressed: notify MainPage so it can exit application
@@ -367,8 +321,6 @@ namespace travelroute
                         .ToCollectionAsync();
                     foreach (Route r in AzureDBM.searchItems)
                     {
-
-                        MessageBox.Show(r.ToString());
                         App.HomeViewModel.SearchList.Add(new RouteViewModel() { Image = new BitmapImage(new Uri(r.RoutePicture, UriKind.Absolute)), Name = r.Name, Duration = "0", Price = "0" });
 
                     }
